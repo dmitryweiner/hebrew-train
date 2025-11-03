@@ -16,7 +16,7 @@ const EmojiDisplay: React.FC<EmojiDisplayProps> = ({ emoji, size = 'medium', cla
   }[size];
 
   return (
-    <div className={`emoji-display ${sizeClass} ${className}`} role="img" aria-label={`Эмодзи: ${emoji}`}>
+    <div className={`emoji-display ${sizeClass} ${className}`} role="img" aria-label={`${emoji}`}>
       {emoji}
     </div>
   );
