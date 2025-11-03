@@ -1,0 +1,189 @@
+/* Основные стили для Hebrew Train */
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --error-color: #F44336;
+  --success-color: #4CAF50;
+  --bg-color: #FFFFFF;
+  --text-color: #212121;
+  --border-color: #E0E0E0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Контейнер приложения */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Основной контент */
+.main-content {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Карточки */
+.game-card {
+  background: var(--bg-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+.btn {
+  min-height: 44px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1976D2;
+}
+
+.btn-large {
+  min-height: 60px;
+  font-size: 20px;
+  padding: 16px 32px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 0.5s ease;
+}
+
+/* Обратная связь */
+.feedback {
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.feedback-correct {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border: 2px solid var(--success-color);
+}
+
+.feedback-incorrect {
+  background-color: #FFEBEE;
+  color: #C62828;
+  border: 2px solid var(--error-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 12px;
+  }
+
+  .game-card {
+    padding: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* Утилиты */
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+

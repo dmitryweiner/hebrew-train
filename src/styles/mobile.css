@@ -1,0 +1,101 @@
+/* Мобильные стили для Hebrew Train */
+
+/* Mobile-first подход */
+@media (max-width: 576px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* Увеличенные области нажатия для мобильных */
+  .btn {
+    min-height: 50px;
+    padding: 14px 20px;
+  }
+
+  /* Больше отступов на мобильных для удобства */
+  .game-card {
+    padding: 20px;
+  }
+
+  /* Увеличенный шрифт для ивритского текста */
+  .hebrew-text {
+    font-size: 24px;
+  }
+
+  /* Мобильная навигация */
+  .header {
+    padding: 12px;
+  }
+
+  /* Эмодзи */
+  .emoji-display {
+    font-size: 100px;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 577px) and (max-width: 768px) {
+  .main-content {
+    max-width: 90%;
+  }
+
+  .emoji-display {
+    font-size: 120px;
+  }
+}
+
+/* Десктоп */
+@media (min-width: 769px) {
+  .main-content {
+    max-width: 600px;
+  }
+
+  .emoji-display {
+    font-size: 140px;
+  }
+}
+
+/* Поддержка touch-событий */
+@media (hover: none) and (pointer: coarse) {
+  /* Убираем hover-эффекты на touch-устройствах */
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Увеличиваем активную область */
+  .btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+  .emoji-display {
+    font-size: 80px;
+  }
+
+  .game-card {
+    padding: 16px;
+  }
+}
+
+/* Высокие разрешения (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .emoji-display {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
