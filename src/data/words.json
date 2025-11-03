@@ -585,15 +585,6 @@
     "difficulty": 1
   },
   {
-    "id": "table",
-    "emoji": "🪑",
-    "hebrew": "שולחן",
-    "russian": "стол",
-    "transliteration": "shulchan",
-    "category": "home",
-    "difficulty": 1
-  },
-  {
     "id": "bed",
     "emoji": "🛏️",
     "hebrew": "מיטה",
