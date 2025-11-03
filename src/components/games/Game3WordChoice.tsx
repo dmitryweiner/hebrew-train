@@ -1,6 +1,6 @@
 // Игра 3: Слово (выбор) - выбор правильного слова для эмодзи
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { getRandomWord } from '../../utils/wordUtils';
@@ -27,6 +27,8 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
   const [selectedOption, setSelectedOption] = useState<Word | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  
+  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -54,6 +56,15 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     }
   }, [words]);
 
+  // Переход к следующему раунду
+  const goToNextRound = () => {
+    if (autoNextTimerRef.current) {
+      clearTimeout(autoNextTimerRef.current);
+      autoNextTimerRef.current = null;
+    }
+    generateNewRound();
+  };
+
   // Обработка выбора варианта
   const handleOptionClick = (option: Word) => {
     if (selectedOption !== null) return; // Уже выбрано
@@ -65,20 +76,29 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
 
     if (correct) {
       addCorrect();
-      // Автоматический переход к следующему слову через 1.5 секунды
-      setTimeout(() => {
+      // Автоматический переход к следующему слову через 4 секунды
+      autoNextTimerRef.current = setTimeout(() => {
         generateNewRound();
-      }, 1500);
+      }, 4000);
     } else {
       addIncorrect();
-      // При ошибке даем возможность попробовать снова через 2 секунды
+      // При ошибке даем возможность попробовать снова через 2.5 секунды
       setTimeout(() => {
         setSelectedOption(null);
         setShowFeedback(false);
         setIsCorrect(null);
-      }, 2000);
+      }, 2500);
     }
   };
+
+  // Очистка таймера при размонтировании
+  useEffect(() => {
+    return () => {
+      if (autoNextTimerRef.current) {
+        clearTimeout(autoNextTimerRef.current);
+      }
+    };
+  }, []);
 
   if (!currentWord) {
     return (
@@ -180,14 +200,22 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
           {showFeedback && (
             <div className="mt-4">
               {isCorrect ? (
-                <div className="alert alert-success mb-0" role="alert">
-                  <strong>✓ Правильно!</strong>
-                  <div className="small mt-1">
-                    {currentWord.emoji} {currentWord.hebrew} = {currentWord.russian}
+                <div>
+                  <div className="alert alert-success mb-3" role="alert">
+                    <strong>✓ Правильно!</strong>
+                    <div className="small mt-1">
+                      {currentWord.emoji} {currentWord.hebrew} = {currentWord.russian}
+                    </div>
+                    <div className="small text-muted">
+                      ({currentWord.transliteration})
+                    </div>
                   </div>
-                  <div className="small text-muted">
-                    ({currentWord.transliteration})
-                  </div>
+                  <button
+                    onClick={goToNextRound}
+                    className="btn btn-primary btn-lg"
+                  >
+                    Дальше! →
+                  </button>
                 </div>
               ) : (
                 <div className="alert alert-danger mb-0" role="alert">

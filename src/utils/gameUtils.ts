@@ -9,7 +9,7 @@ import { shuffleArray } from './wordUtils';
  * @param correctLetter - правильная буква
  * @param word - слово, из которого взята буква
  * @param count - количество дистракторов
- * @returns массив букв-дистракторов
+ * @returns массив букв-дистракторов (без дубликатов и без правильной буквы)
  */
 export const generateLetterDistractors = (
   correctLetter: string,
@@ -18,29 +18,35 @@ export const generateLetterDistractors = (
 ): string[] => {
   const distractors = new Set<string>();
   const normalizedCorrect = normalizeFinalLetters(correctLetter);
-  const wordLetters = Array.from(word).map(l => normalizeFinalLetters(l));
+  const wordLetters = Array.from(word)
+    .map(l => normalizeFinalLetters(l))
+    .filter(l => l !== normalizedCorrect); // Исключаем правильную букву
 
   // 1. Добавляем визуально похожие буквы
   const similar = getSimilarHebrewLetters(correctLetter);
   similar.forEach(letter => {
-    if (distractors.size < count && letter !== normalizedCorrect) {
-      distractors.add(letter);
+    const normalizedLetter = normalizeFinalLetters(letter);
+    if (distractors.size < count && normalizedLetter !== normalizedCorrect) {
+      distractors.add(normalizedLetter);
     }
   });
 
-  // 2. Добавляем другие буквы из того же слова
+  // 2. Добавляем другие буквы из того же слова (уже отфильтрованные)
   wordLetters.forEach(letter => {
-    if (distractors.size < count && letter !== normalizedCorrect && !distractors.has(letter)) {
+    if (distractors.size < count && !distractors.has(letter)) {
       distractors.add(letter);
     }
   });
 
   // 3. Добавляем случайные буквы, если нужно больше
-  while (distractors.size < count) {
+  let attempts = 0;
+  const maxAttempts = 50; // Защита от бесконечного цикла
+  while (distractors.size < count && attempts < maxAttempts) {
     const randomLetter = getRandomHebrewLetter([normalizedCorrect, ...Array.from(distractors)]);
-    if (randomLetter && randomLetter !== normalizedCorrect) {
-      distractors.add(randomLetter);
+    if (randomLetter && normalizeFinalLetters(randomLetter) !== normalizedCorrect) {
+      distractors.add(normalizeFinalLetters(randomLetter));
     }
+    attempts++;
   }
 
   return Array.from(distractors).slice(0, count);

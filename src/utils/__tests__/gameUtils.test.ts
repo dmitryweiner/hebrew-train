@@ -77,6 +77,16 @@ describe('gameUtils', () => {
       expect(distractors).toEqual(unique);
     });
 
+    it('не должен добавлять правильную букву даже если она встречается в слове несколько раз', () => {
+      const correctLetter = 'א';
+      const word = 'אמא'; // буква א встречается дважды
+      const distractors = generateLetterDistractors(correctLetter, word, 5);
+      expect(distractors).not.toContain('א');
+      // Проверяем что все дистракторы уникальны
+      const unique = Array.from(new Set(distractors));
+      expect(distractors).toEqual(unique);
+    });
+
     it('должен возвращать пустой массив для 0 дистракторов', () => {
       const distractors = generateLetterDistractors('ת', 'תפוח', 0);
       expect(distractors).toEqual([]);

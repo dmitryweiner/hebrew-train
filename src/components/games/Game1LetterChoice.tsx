@@ -1,6 +1,6 @@
 // Игра 1: Буква (выбор) - выбор пропущенной буквы из вариантов
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { getRandomWord } from '../../utils/wordUtils';
@@ -30,6 +30,8 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  
+  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -41,10 +43,11 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     
     // Генерируем варианты ответа (4-6 вариантов)
     const distractorCount = Math.floor(Math.random() * 3) + 3; // 3-5 дистракторов
-    const distractor = generateLetterDistractors(hiddenLetter, word.hebrew, distractorCount);
+    const distractors = generateLetterDistractors(hiddenLetter, word.hebrew, distractorCount);
     
-    // Создаем массив вариантов и перемешиваем
-    const allOptions = [hiddenLetter, ...distractor].sort(() => Math.random() - 0.5);
+    // Создаем массив вариантов без дубликатов и перемешиваем
+    const optionsSet = new Set([hiddenLetter, ...distractors]);
+    const allOptions = Array.from(optionsSet).sort(() => Math.random() - 0.5);
 
     setCurrentWord(word);
     setDisplayWord(hiddenWord);
@@ -62,6 +65,16 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     }
   }, [words]);
 
+  // Переход к следующему раунду
+  const goToNextRound = () => {
+    // Отменяем автоматический переход, если он был запланирован
+    if (autoNextTimerRef.current) {
+      clearTimeout(autoNextTimerRef.current);
+      autoNextTimerRef.current = null;
+    }
+    generateNewRound();
+  };
+
   // Обработка выбора варианта
   const handleOptionClick = (option: string) => {
     if (selectedOption !== null) return; // Уже выбрано
@@ -73,20 +86,29 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
 
     if (correct) {
       addCorrect();
-      // Автоматический переход к следующему слову через 1.5 секунды
-      setTimeout(() => {
+      // Автоматический переход к следующему слову через 4 секунды
+      autoNextTimerRef.current = setTimeout(() => {
         generateNewRound();
-      }, 1500);
+      }, 4000);
     } else {
       addIncorrect();
-      // При ошибке даем возможность попробовать снова через 2 секунды
+      // При ошибке даем возможность попробовать снова через 2.5 секунды
       setTimeout(() => {
         setSelectedOption(null);
         setShowFeedback(false);
         setIsCorrect(null);
-      }, 2000);
+      }, 2500);
     }
   };
+
+  // Очистка таймера при размонтировании
+  useEffect(() => {
+    return () => {
+      if (autoNextTimerRef.current) {
+        clearTimeout(autoNextTimerRef.current);
+      }
+    };
+  }, []);
 
   if (!currentWord) {
     return (
@@ -199,11 +221,19 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
           {showFeedback && (
             <div className="mt-4">
               {isCorrect ? (
-                <div className="alert alert-success mb-0" role="alert">
-                  <strong>✓ Правильно!</strong>
-                  <div className="small mt-1">
-                    {currentWord.hebrew} ({currentWord.russian})
+                <div>
+                  <div className="alert alert-success mb-3" role="alert">
+                    <strong>✓ Правильно!</strong>
+                    <div className="small mt-1">
+                      {currentWord.hebrew} ({currentWord.russian})
+                    </div>
                   </div>
+                  <button
+                    onClick={goToNextRound}
+                    className="btn btn-primary btn-lg"
+                  >
+                    Дальше! →
+                  </button>
                 </div>
               ) : (
                 <div className="alert alert-danger mb-0" role="alert">

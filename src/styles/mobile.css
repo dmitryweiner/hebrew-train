@@ -74,9 +74,37 @@
     transform: none;
   }
 
+  /* Отключаем изменение цвета кнопок при hover на мобильных */
+  .btn-outline-primary:hover {
+    color: var(--bs-btn-color) !important;
+    background-color: transparent !important;
+    border-color: var(--bs-btn-border-color) !important;
+  }
+
+  .btn-outline-secondary:hover {
+    color: var(--bs-btn-color) !important;
+    background-color: transparent !important;
+    border-color: var(--bs-btn-border-color) !important;
+  }
+
+  .btn-outline-success:hover {
+    color: var(--bs-success) !important;
+    background-color: transparent !important;
+    border-color: var(--bs-success) !important;
+  }
+
   /* Увеличиваем активную область */
   .btn:active {
     transform: scale(0.98);
+  }
+}
+
+/* Hover-эффекты только для устройств с мышью */
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
   }
 }
 
