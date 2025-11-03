@@ -64,6 +64,35 @@ export const generateLetterOptions = (
 };
 
 /**
+ * Генерирует дистракторы (неправильные варианты) слов для игры
+ * @param correctWord - правильное слово
+ * @param allWords - все доступные слова
+ * @param count - количество дистракторов
+ * @returns массив слов-дистракторов
+ */
+export const generateWordDistractors = (
+  correctWord: Word,
+  allWords: Word[],
+  count: number
+): Word[] => {
+  // Фильтруем слова: исключаем правильное и берём из той же категории
+  let distractors = allWords.filter(
+    word => word.id !== correctWord.id && word.category === correctWord.category
+  );
+
+  // Если недостаточно слов из той же категории, берём любые
+  if (distractors.length < count) {
+    const additional = allWords.filter(
+      word => word.id !== correctWord.id && !distractors.some(d => d.id === word.id)
+    );
+    distractors = [...distractors, ...additional];
+  }
+
+  // Перемешиваем и берём нужное количество
+  return shuffleArray(distractors).slice(0, count);
+};
+
+/**
  * Генерирует варианты ответов для игры с выбором слова
  * @param correctWord - правильное слово
  * @param allWords - все доступные слова
@@ -75,23 +104,8 @@ export const generateWordOptions = (
   allWords: Word[],
   optionsCount: number = 4
 ): Word[] => {
-  // Фильтруем слова: исключаем правильное и берём из той же категории
-  let distractors = allWords.filter(
-    word => word.id !== correctWord.id && word.category === correctWord.category
-  );
-
-  // Если недостаточно слов из той же категории, берём любые
-  if (distractors.length < optionsCount - 1) {
-    const additional = allWords.filter(
-      word => word.id !== correctWord.id && !distractors.some(d => d.id === word.id)
-    );
-    distractors = [...distractors, ...additional];
-  }
-
-  // Перемешиваем и берём нужное количество
-  const shuffledDistractors = shuffleArray(distractors).slice(0, optionsCount - 1);
-  const options = [correctWord, ...shuffledDistractors];
-
+  const distractors = generateWordDistractors(correctWord, allWords, optionsCount - 1);
+  const options = [correctWord, ...distractors];
   return shuffleArray(options);
 };
 

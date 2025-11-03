@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
+  // @ts-ignore - vitest configuration
   test: {
     globals: true,
     environment: 'jsdom',

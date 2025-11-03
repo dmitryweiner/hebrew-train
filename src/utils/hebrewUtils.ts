@@ -110,3 +110,29 @@ export const wordContainsLetter = (word: string, letter: string): boolean => {
   return normalizedWord.includes(normalizedLetter);
 };
 
+/**
+ * Получает случайную позицию в слове
+ * @param word - слово
+ * @returns случайная позиция (индекс)
+ */
+export const getRandomPosition = (word: string): number => {
+  const length = word.trim().length;
+  return Math.floor(Math.random() * length);
+};
+
+/**
+ * Скрывает букву в указанной позиции
+ * @param word - слово
+ * @param position - позиция буквы
+ * @returns объект с отображаемым словом и скрытой буквой
+ */
+export const hideLetterAtPosition = (word: string, position: number): { displayWord: string; hiddenLetter: string } => {
+  const letters = splitHebrewWord(word);
+  const hiddenLetter = letters[position];
+  const displayWord = letters.map((letter, index) => 
+    index === position ? '_' : letter
+  ).join(' ');
+  
+  return { displayWord, hiddenLetter };
+};
+
