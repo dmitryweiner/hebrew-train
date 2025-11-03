@@ -1,10 +1,11 @@
 // Игра 2: Буква (ввод) - ввод пропущенной буквы с клавиатуры
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { useHebrewInput } from '../../hooks/useHebrewInput';
+import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition, normalizeFinalLetters } from '../../utils/hebrewUtils';
 import EmojiDisplay from '../EmojiDisplay';
@@ -33,7 +34,6 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
 
   const { value: userInput, setValue: setUserInput, showWarning } = useHebrewInput({ maxLength: 1 });
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -57,21 +57,15 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
     }, 100);
   };
 
+  // Хук для автоматического перехода к следующему раунду
+  const { scheduleNext, goNext } = useAutoNext(generateNewRound);
+
   // Инициализация первого раунда
   useEffect(() => {
     if (words.length > 0) {
       generateNewRound();
     }
   }, [words]);
-
-  // Переход к следующему раунду
-  const goToNextRound = () => {
-    if (autoNextTimerRef.current) {
-      clearTimeout(autoNextTimerRef.current);
-      autoNextTimerRef.current = null;
-    }
-    generateNewRound();
-  };
 
   // Проверка ответа
   const handleCheck = () => {
@@ -88,9 +82,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
     if (correct) {
       addCorrect();
       // Автоматический переход к следующему слову через 4 секунды
-      autoNextTimerRef.current = setTimeout(() => {
-        generateNewRound();
-      }, 4000);
+      scheduleNext(4000);
     } else {
       addIncorrect();
       setAttempts(prev => prev + 1);
@@ -111,15 +103,6 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
       }
     }
   };
-
-  // Очистка таймера при размонтировании
-  useEffect(() => {
-    return () => {
-      if (autoNextTimerRef.current) {
-        clearTimeout(autoNextTimerRef.current);
-      }
-    };
-  }, []);
 
   // Обработка нажатия Enter
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -260,7 +243,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
                     </div>
                   </div>
                   <button
-                    onClick={goToNextRound}
+                    onClick={goNext}
                     className="btn btn-primary btn-lg"
                   >
                     Дальше! →

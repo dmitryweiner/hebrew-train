@@ -1,8 +1,9 @@
 // Игра 1: Буква (выбор) - выбор пропущенной буквы из вариантов
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
+import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition } from '../../utils/hebrewUtils';
 import { generateLetterDistractors } from '../../utils/gameUtils';
@@ -30,8 +31,6 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  
-  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -58,22 +57,15 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     setShowFeedback(false);
   };
 
+  // Хук для автоматического перехода к следующему раунду
+  const { scheduleNext, goNext } = useAutoNext(generateNewRound);
+
   // Инициализация первого раунда
   useEffect(() => {
     if (words.length > 0) {
       generateNewRound();
     }
   }, [words]);
-
-  // Переход к следующему раунду
-  const goToNextRound = () => {
-    // Отменяем автоматический переход, если он был запланирован
-    if (autoNextTimerRef.current) {
-      clearTimeout(autoNextTimerRef.current);
-      autoNextTimerRef.current = null;
-    }
-    generateNewRound();
-  };
 
   // Обработка выбора варианта
   const handleOptionClick = (option: string) => {
@@ -87,9 +79,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     if (correct) {
       addCorrect();
       // Автоматический переход к следующему слову через 4 секунды
-      autoNextTimerRef.current = setTimeout(() => {
-        generateNewRound();
-      }, 4000);
+      scheduleNext(4000);
     } else {
       addIncorrect();
       // При ошибке даем возможность попробовать снова через 2.5 секунды
@@ -100,15 +90,6 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
       }, 2500);
     }
   };
-
-  // Очистка таймера при размонтировании
-  useEffect(() => {
-    return () => {
-      if (autoNextTimerRef.current) {
-        clearTimeout(autoNextTimerRef.current);
-      }
-    };
-  }, []);
 
   if (!currentWord) {
     return (
@@ -229,7 +210,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
                     </div>
                   </div>
                   <button
-                    onClick={goToNextRound}
+                    onClick={goNext}
                     className="btn btn-primary btn-lg"
                   >
                     Дальше! →

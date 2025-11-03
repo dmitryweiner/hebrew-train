@@ -1,8 +1,9 @@
 // Игра 3: Слово (выбор) - выбор правильного слова для эмодзи
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
+import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { generateWordDistractors } from '../../utils/gameUtils';
 import EmojiDisplay from '../EmojiDisplay';
@@ -27,8 +28,6 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
   const [selectedOption, setSelectedOption] = useState<Word | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  
-  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -49,21 +48,15 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     setShowFeedback(false);
   };
 
+  // Хук для автоматического перехода к следующему раунду
+  const { scheduleNext, goNext } = useAutoNext(generateNewRound);
+
   // Инициализация первого раунда
   useEffect(() => {
     if (words.length > 0) {
       generateNewRound();
     }
   }, [words]);
-
-  // Переход к следующему раунду
-  const goToNextRound = () => {
-    if (autoNextTimerRef.current) {
-      clearTimeout(autoNextTimerRef.current);
-      autoNextTimerRef.current = null;
-    }
-    generateNewRound();
-  };
 
   // Обработка выбора варианта
   const handleOptionClick = (option: Word) => {
@@ -77,9 +70,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     if (correct) {
       addCorrect();
       // Автоматический переход к следующему слову через 4 секунды
-      autoNextTimerRef.current = setTimeout(() => {
-        generateNewRound();
-      }, 4000);
+      scheduleNext(4000);
     } else {
       addIncorrect();
       // При ошибке даем возможность попробовать снова через 2.5 секунды
@@ -90,15 +81,6 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
       }, 2500);
     }
   };
-
-  // Очистка таймера при размонтировании
-  useEffect(() => {
-    return () => {
-      if (autoNextTimerRef.current) {
-        clearTimeout(autoNextTimerRef.current);
-      }
-    };
-  }, []);
 
   if (!currentWord) {
     return (
@@ -211,7 +193,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
                     </div>
                   </div>
                   <button
-                    onClick={goToNextRound}
+                    onClick={goNext}
                     className="btn btn-primary btn-lg"
                   >
                     Дальше! →

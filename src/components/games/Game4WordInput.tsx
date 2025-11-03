@@ -1,10 +1,11 @@
 // Игра 4: Слово (ввод) - написание слова целиком с клавиатуры
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { useHebrewInput } from '../../hooks/useHebrewInput';
+import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { normalizeFinalLetters } from '../../utils/hebrewUtils';
 import EmojiDisplay from '../EmojiDisplay';
@@ -32,7 +33,6 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
 
   const { value: userInput, setValue: setUserInput, showWarning } = useHebrewInput({ maxLength: 20 });
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const autoNextTimerRef = useRef<number | null>(null);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -52,21 +52,15 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
     }, 100);
   };
 
+  // Хук для автоматического перехода к следующему раунду
+  const { scheduleNext, goNext } = useAutoNext(generateNewRound);
+
   // Инициализация первого раунда
   useEffect(() => {
     if (words.length > 0) {
       generateNewRound();
     }
   }, [words]);
-
-  // Переход к следующему раунду
-  const goToNextRound = () => {
-    if (autoNextTimerRef.current) {
-      clearTimeout(autoNextTimerRef.current);
-      autoNextTimerRef.current = null;
-    }
-    generateNewRound();
-  };
 
   // Проверка ответа
   const handleCheck = () => {
@@ -83,9 +77,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
     if (correct) {
       addCorrect();
       // Автоматический переход к следующему слову через 4.5 секунды
-      autoNextTimerRef.current = setTimeout(() => {
-        generateNewRound();
-      }, 4500);
+      scheduleNext(4500);
     } else {
       addIncorrect();
       setAttempts(prev => prev + 1);
@@ -106,15 +98,6 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
       }
     }
   };
-
-  // Очистка таймера при размонтировании
-  useEffect(() => {
-    return () => {
-      if (autoNextTimerRef.current) {
-        clearTimeout(autoNextTimerRef.current);
-      }
-    };
-  }, []);
 
   // Обработка нажатия Enter
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -278,7 +261,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
                     </div>
                   </div>
                   <button
-                    onClick={goToNextRound}
+                    onClick={goNext}
                     className="btn btn-primary btn-lg"
                   >
                     Дальше! →
