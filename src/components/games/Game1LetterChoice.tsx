@@ -146,7 +146,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
           {/* Эмодзи */}
           <EmojiDisplay emoji={currentWord.emoji} size="large" />
 
-          {/* Слово с пропуском */}
+          {/* Слово с пропуском или полное слово при правильном ответе */}
           <div 
             className="display-4 my-4 fw-bold hebrew-text"
             style={{ 
@@ -155,7 +155,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
               direction: 'rtl',
             }}
           >
-            {displayWord}
+            {isCorrect ? currentWord.hebrew : displayWord}
           </div>
 
           {/* Инструкция */}
