@@ -2,7 +2,8 @@
 
 export interface Word {
   id: string;                    // уникальный идентификатор
-  emoji: string;                 // эмодзи символ
+  emoji?: string;                // эмодзи символ (опционально, если есть picture)
+  picture?: string;              // путь к SVG картинке (опционально, если есть emoji)
   hebrew: string;                // слово на иврите
   russian: string;               // перевод на русский
   transliteration: string;       // латинская транслитерация
@@ -45,7 +46,8 @@ export interface GameState {
 
 export interface MatchingPair {
   id: string;
-  emoji: string;
+  emoji?: string;       // эмодзи (если есть)
+  picture?: string;     // путь к картинке (если есть)
   word: string;
   matched: boolean;
   selected: boolean;

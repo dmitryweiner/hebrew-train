@@ -8,7 +8,7 @@ import { useHebrewInput } from '../../hooks/useHebrewInput';
 import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { normalizeFinalLetters } from '../../utils/hebrewUtils';
-import EmojiDisplay from '../EmojiDisplay';
+import WordImage from '../WordImage';
 
 interface Game4WordInputProps {
   words: Word[];
@@ -166,7 +166,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
       <div className="card shadow-sm">
         <div className="card-body text-center p-4">
           {/* Эмодзи */}
-          <EmojiDisplay emoji={currentWord.emoji} size="large" />
+          <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Инструкция */}
           <p className="text-muted mt-4 mb-2">

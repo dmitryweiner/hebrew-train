@@ -8,7 +8,7 @@ import { useHebrewInput } from '../../hooks/useHebrewInput';
 import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition, normalizeFinalLetters } from '../../utils/hebrewUtils';
-import EmojiDisplay from '../EmojiDisplay';
+import WordImage from '../WordImage';
 
 interface Game2LetterInputProps {
   words: Word[];
@@ -164,7 +164,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
       <div className="card shadow-sm">
         <div className="card-body text-center p-4">
           {/* Эмодзи */}
-          <EmojiDisplay emoji={currentWord.emoji} size="large" />
+          <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Слово с пропуском или полное слово при правильном ответе */}
           <div 

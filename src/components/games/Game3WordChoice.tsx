@@ -6,7 +6,7 @@ import { useScore } from '../../hooks/useScore';
 import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { generateWordDistractors } from '../../utils/gameUtils';
-import EmojiDisplay from '../EmojiDisplay';
+import WordImage from '../WordImage';
 
 interface Game3WordChoiceProps {
   words: Word[];
@@ -135,7 +135,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
       <div className="card shadow-sm">
         <div className="card-body text-center p-4">
           {/* Эмодзи */}
-          <EmojiDisplay emoji={currentWord.emoji} size="large" />
+          <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Инструкция */}
           <p className="text-muted mt-4 mb-4">

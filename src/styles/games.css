@@ -1,11 +1,81 @@
 /* Стили специфичные для игр */
 
-/* Отображение эмодзи */
-.emoji-display {
-  font-size: 120px;
+/* Отображение эмодзи или картинки */
+.word-image,
+.word-image-emoji,
+.word-image-picture {
   text-align: center;
   margin: 24px 0;
   user-select: none;
+}
+
+/* Эмодзи */
+.word-image-emoji {
+  font-size: 120px;
+}
+
+/* SVG картинки */
+.word-image-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-image-svg {
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Плейсхолдер */
+.word-image-placeholder {
+  font-size: 120px;
+  opacity: 0.3;
+}
+
+/* Размеры */
+.word-image-small .word-image-emoji,
+.word-image-small.word-image-emoji {
+  font-size: 60px;
+}
+
+.word-image-small .word-image-svg {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.word-image-large .word-image-emoji,
+.word-image-large.word-image-emoji {
+  font-size: 140px;
+}
+
+.word-image-large .word-image-svg {
+  max-width: 140px;
+  max-height: 140px;
+}
+
+/* Мобильная адаптация для изображений */
+@media (max-width: 576px) {
+  .word-image-emoji {
+    font-size: 100px;
+  }
+  
+  .word-image-svg {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .word-image-large .word-image-emoji,
+  .word-image-large.word-image-emoji {
+    font-size: 120px;
+  }
+
+  .word-image-large .word-image-svg {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
 
 /* Ивритский текст */

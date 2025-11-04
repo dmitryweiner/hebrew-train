@@ -7,7 +7,7 @@ import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition } from '../../utils/hebrewUtils';
 import { generateLetterDistractors } from '../../utils/gameUtils';
-import EmojiDisplay from '../EmojiDisplay';
+import WordImage from '../WordImage';
 
 interface Game1LetterChoiceProps {
   words: Word[];
@@ -144,7 +144,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
       <div className="card shadow-sm">
         <div className="card-body text-center p-4">
           {/* Эмодзи */}
-          <EmojiDisplay emoji={currentWord.emoji} size="large" />
+          <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Слово с пропуском или полное слово при правильном ответе */}
           <div 

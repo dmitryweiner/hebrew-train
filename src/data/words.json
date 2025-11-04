@@ -585,6 +585,15 @@
     "difficulty": 1
   },
   {
+    "id": "table",
+    "picture": "table.svg",
+    "hebrew": "שולחן",
+    "russian": "стол",
+    "transliteration": "shulchan",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
     "id": "bed",
     "emoji": "🛏️",
     "hebrew": "מיטה",
@@ -622,7 +631,7 @@
   },
   {
     "id": "refrigerator",
-    "emoji": "🧊",
+    "picture": "refrigerator.png",
     "hebrew": "מקרר",
     "russian": "холодильник",
     "transliteration": "mekarer",
@@ -640,7 +649,7 @@
   },
   {
     "id": "carpet",
-    "emoji": "🧺",
+    "picture": "carpet.png",
     "hebrew": "שטיח",
     "russian": "ковёр",
     "transliteration": "shatiach",
@@ -649,7 +658,7 @@
   },
   {
     "id": "towel",
-    "emoji": "🧻",
+    "picture": "towel.png",
     "hebrew": "מגבת",
     "russian": "полотенце",
     "transliteration": "magevet",
@@ -658,7 +667,7 @@
   },
   {
     "id": "pillow",
-    "emoji": "🛏️",
+    "picture": "pillow.png",
     "hebrew": "כרית",
     "russian": "подушка",
     "transliteration": "karit",
