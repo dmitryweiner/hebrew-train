@@ -36,12 +36,12 @@ const WordImage: React.FC<WordImageProps> = ({
     );
   }
 
-  // Если есть картинка, отображаем SVG
+  // Если есть картинка, отображаем изображение
   if (picture) {
     return (
       <div className={`word-image-picture ${sizeClass} ${className}`}>
         <img 
-          src={`/src/assets/pictures/${picture}`} 
+          src={`/pictures/${picture}`} 
           alt={alt}
           className="word-image-svg"
         />
