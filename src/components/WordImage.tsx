@@ -41,7 +41,7 @@ const WordImage: React.FC<WordImageProps> = ({
     return (
       <div className={`word-image-picture ${sizeClass} ${className}`}>
         <img 
-          src={`/pictures/${picture}`} 
+          src={`./pictures/${picture}`} 
           alt={alt}
           className="word-image-svg"
         />
