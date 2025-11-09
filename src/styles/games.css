@@ -108,10 +108,28 @@
   transition: border-color 0.3s ease;
 }
 
+/* Стиль плейсхолдера - блёклый и с русским текстом */
+.hebrew-input::placeholder,
+input[dir="rtl"]::placeholder,
+input[lang="he"]::placeholder {
+  color: #BDBDBD !important;
+  opacity: 0.6 !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  direction: ltr !important;
+}
+
 .hebrew-input:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.hebrew-input:focus::placeholder,
+input[dir="rtl"]:focus::placeholder,
+input[lang="he"]:focus::placeholder {
+  opacity: 0.4 !important;
 }
 
 .hebrew-input-single {

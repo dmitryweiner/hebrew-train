@@ -202,7 +202,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
                 onKeyPress={handleKeyPress}
                 disabled={showFeedback}
                 className="form-control form-control-lg text-center"
-                placeholder="א"
+                placeholder="Введите букву..."
                 maxLength={1}
                 dir="rtl"
                 lang="he"

@@ -207,7 +207,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
                 onKeyPress={handleKeyPress}
                 disabled={showFeedback}
                 className="form-control form-control-lg text-center"
-                placeholder="הקלד כאן"
+                placeholder="Напишите слово..."
                 dir="rtl"
                 lang="he"
                 inputMode="text"
