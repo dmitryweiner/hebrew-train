@@ -9,6 +9,7 @@ import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition, normalizeFinalLetters } from '../../utils/hebrewUtils';
 import WordImage from '../WordImage';
+import SuccessModal from '../SuccessModal';
 
 interface Game2LetterInputProps {
   words: Word[];
@@ -231,25 +232,10 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
             Проверить
           </button>
 
-          {/* Обратная связь */}
-          {showFeedback && (
+          {/* Обратная связь для ошибок */}
+          {showFeedback && !isCorrect && (
             <div className="mt-4">
-              {isCorrect ? (
-                <div>
-                  <div className="alert alert-success mb-3" role="alert">
-                    <strong>✓ Правильно!</strong>
-                    <div className="small mt-1">
-                      {currentWord.hebrew} ({currentWord.russian})
-                    </div>
-                  </div>
-                  <button
-                    onClick={goNext}
-                    className="btn btn-primary btn-lg"
-                  >
-                    Дальше! →
-                  </button>
-                </div>
-              ) : attempts >= 1 ? (
+              {attempts >= 1 ? (
                 <div className="alert alert-danger mb-0" role="alert">
                   <strong>✗ Неправильно</strong>
                   <div className="small mt-2">
@@ -274,6 +260,13 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
       <div className="text-center mt-3 text-muted small">
         Подсказка: {currentWord.transliteration}
       </div>
+
+      {/* Модальное окно успеха */}
+      <SuccessModal 
+        show={isCorrect === true && showFeedback}
+        word={currentWord}
+        onNext={goNext}
+      />
     </div>
   );
 };

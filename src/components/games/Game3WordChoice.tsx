@@ -7,6 +7,7 @@ import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
 import { generateWordDistractors } from '../../utils/gameUtils';
 import WordImage from '../WordImage';
+import SuccessModal from '../SuccessModal';
 
 interface Game3WordChoiceProps {
   words: Word[];
@@ -178,36 +179,16 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
             })}
           </div>
 
-          {/* Обратная связь */}
-          {showFeedback && (
+          {/* Обратная связь для ошибок */}
+          {showFeedback && !isCorrect && (
             <div className="mt-4">
-              {isCorrect ? (
-                <div>
-                  <div className="alert alert-success mb-3" role="alert">
-                    <strong>✓ Правильно!</strong>
-                    <div className="small mt-1">
-                      {currentWord.emoji} {currentWord.hebrew} = {currentWord.russian}
-                    </div>
-                    <div className="small text-muted">
-                      ({currentWord.transliteration})
-                    </div>
-                  </div>
-                  <button
-                    onClick={goNext}
-                    className="btn btn-primary btn-lg"
-                  >
-                    Дальше! →
-                  </button>
+              <div className="alert alert-danger mb-0" role="alert">
+                <strong>✗ Неправильно</strong>
+                <div className="small mt-2">
+                  Правильный ответ: <span className="fs-5 fw-bold">{currentWord.hebrew}</span>
                 </div>
-              ) : (
-                <div className="alert alert-danger mb-0" role="alert">
-                  <strong>✗ Неправильно</strong>
-                  <div className="small mt-2">
-                    Правильный ответ: <span className="fs-5 fw-bold">{currentWord.hebrew}</span>
-                  </div>
-                  <div className="small mt-1">Попробуйте ещё раз</div>
-                </div>
-              )}
+                <div className="small mt-1">Попробуйте ещё раз</div>
+              </div>
             </div>
           )}
         </div>
@@ -217,6 +198,13 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
       <div className="text-center mt-3 text-muted small">
         Категория: {currentWord.category} • Уровень: {'⭐'.repeat(currentWord.difficulty)}
       </div>
+
+      {/* Модальное окно успеха */}
+      <SuccessModal 
+        show={isCorrect === true && showFeedback}
+        word={currentWord}
+        onNext={goNext}
+      />
     </div>
   );
 };
