@@ -567,6 +567,186 @@
     "difficulty": 1
   },
   {
+    "id": "bottle",
+    "emoji": "🍾",
+    "hebrew": "בקבוק",
+    "russian": "бутылка",
+    "transliteration": "bakbuk",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "box",
+    "emoji": "📦",
+    "hebrew": "קופסה",
+    "russian": "коробка",
+    "transliteration": "kufsa",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "picture",
+    "emoji": "🖼️",
+    "hebrew": "תמונה",
+    "russian": "картина",
+    "transliteration": "tmuna",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "backpack",
+    "emoji": "🎒",
+    "hebrew": "תרמיל",
+    "russian": "рюкзак",
+    "transliteration": "tarmil",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "wallet",
+    "emoji": "💰",
+    "hebrew": "ארנק",
+    "russian": "кошелек",
+    "transliteration": "arnak",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "battery",
+    "emoji": "🔋",
+    "hebrew": "סוללה",
+    "russian": "батарея",
+    "transliteration": "solela",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "calendar",
+    "emoji": "📅",
+    "hebrew": "לוח שנה",
+    "russian": "календарь",
+    "transliteration": "luach shana",
+    "category": "objects",
+    "difficulty": 2
+  },
+  {
+    "id": "envelope",
+    "emoji": "✉️",
+    "hebrew": "מעטפה",
+    "russian": "конверт",
+    "transliteration": "maatafa",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "stamp",
+    "emoji": "📮",
+    "hebrew": "בול",
+    "russian": "марка",
+    "transliteration": "bul",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "notebook",
+    "emoji": "📓",
+    "hebrew": "מחברת",
+    "russian": "тетрадь",
+    "transliteration": "machberet",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "eraser",
+    "emoji": "🧹",
+    "hebrew": "מחק",
+    "russian": "ластик",
+    "transliteration": "machak",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "ruler",
+    "emoji": "📏",
+    "hebrew": "סרגל",
+    "russian": "линейка",
+    "transliteration": "sargel",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "glue",
+    "emoji": "📎",
+    "hebrew": "דבק",
+    "russian": "клей",
+    "transliteration": "devek",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "flashlight",
+    "emoji": "🔦",
+    "hebrew": "פנס",
+    "russian": "фонарик",
+    "transliteration": "panas",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "match",
+    "emoji": "🔥",
+    "hebrew": "גפרור",
+    "russian": "спичка",
+    "transliteration": "gafrur",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "rope",
+    "emoji": "🪢",
+    "hebrew": "חבל",
+    "russian": "веревка",
+    "transliteration": "chevel",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "basket",
+    "emoji": "🧺",
+    "hebrew": "סל",
+    "russian": "корзина",
+    "transliteration": "sal",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "fan",
+    "emoji": "💨",
+    "hebrew": "מאוורר",
+    "russian": "вентилятор",
+    "transliteration": "meorer",
+    "category": "objects",
+    "difficulty": 2
+  },
+  {
+    "id": "radio",
+    "emoji": "📻",
+    "hebrew": "רדיו",
+    "russian": "радио",
+    "transliteration": "radio",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
+    "id": "camera",
+    "emoji": "📷",
+    "hebrew": "מצלמה",
+    "russian": "камера",
+    "transliteration": "matzlema",
+    "category": "objects",
+    "difficulty": 1
+  },
+  {
     "id": "door",
     "emoji": "🚪",
     "hebrew": "דלת",
@@ -673,6 +853,177 @@
     "transliteration": "karit",
     "category": "home",
     "difficulty": 1
+  },
+  {
+    "id": "plate",
+    "emoji": "🍽️",
+    "hebrew": "צלחת",
+    "russian": "тарелка",
+    "transliteration": "tzalachat",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "fork",
+    "emoji": "🍴",
+    "hebrew": "מזלג",
+    "russian": "вилка",
+    "transliteration": "mazleg",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "spoon",
+    "emoji": "🥄",
+    "hebrew": "כף",
+    "russian": "ложка",
+    "transliteration": "kaf",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "knife",
+    "emoji": "🔪",
+    "hebrew": "סכין",
+    "russian": "нож",
+    "transliteration": "sakin",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "cup",
+    "emoji": "☕",
+    "hebrew": "כוס",
+    "russian": "чашка",
+    "transliteration": "kos",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "pot",
+    "emoji": "🍲",
+    "hebrew": "סיר",
+    "russian": "кастрюля",
+    "transliteration": "sir",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "pan",
+    "emoji": "🍳",
+    "hebrew": "מחבת",
+    "russian": "сковорода",
+    "transliteration": "machavat",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "blanket",
+    "emoji": "🛏️",
+    "hebrew": "שמיכה",
+    "russian": "одеяло",
+    "transliteration": "smicha",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "curtain",
+    "emoji": "🪟",
+    "hebrew": "וילון",
+    "russian": "занавеска",
+    "transliteration": "vilon",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "soap",
+    "emoji": "🧼",
+    "hebrew": "סבון",
+    "russian": "мыло",
+    "transliteration": "sabon",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "brush",
+    "emoji": "🪥",
+    "hebrew": "מברשת",
+    "russian": "щетка",
+    "transliteration": "mivreshet",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "candle",
+    "emoji": "🕯️",
+    "hebrew": "נר",
+    "russian": "свеча",
+    "transliteration": "ner",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "trash",
+    "emoji": "🗑️",
+    "hebrew": "פח אשפה",
+    "russian": "мусорное ведро",
+    "transliteration": "pach ashpa",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "clock",
+    "emoji": "🕐",
+    "hebrew": "שעון קיר",
+    "russian": "часы настенные",
+    "transliteration": "shaon kir",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "stove",
+    "emoji": "🔥",
+    "hebrew": "כיריים",
+    "russian": "плита",
+    "transliteration": "kirayim",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "oven",
+    "emoji": "🔥",
+    "hebrew": "תנור",
+    "russian": "духовка",
+    "transliteration": "tanur",
+    "category": "home",
+    "difficulty": 1
+  },
+  {
+    "id": "microwave",
+    "emoji": "📦",
+    "hebrew": "מיקרוגל",
+    "russian": "микроволновка",
+    "transliteration": "mikrogel",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "washing_machine",
+    "emoji": "🧺",
+    "hebrew": "מכונת כביסה",
+    "russian": "стиральная машина",
+    "transliteration": "mechonit kvisa",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "vacuum",
+    "emoji": "🧹",
+    "hebrew": "שואב אבק",
+    "russian": "пылесос",
+    "transliteration": "shoev avak",
+    "category": "home",
+    "difficulty": 2
   },
   {
     "id": "tree",

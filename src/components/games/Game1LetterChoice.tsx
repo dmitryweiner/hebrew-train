@@ -32,6 +32,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   // Генерация нового раунда
   const generateNewRound = () => {
@@ -56,6 +57,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     setSelectedOption(null);
     setIsCorrect(null);
     setShowFeedback(false);
+    setShowHint(false);
   };
 
   // Хук для автоматического перехода к следующему раунду
@@ -211,9 +213,20 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
         </div>
       </div>
 
-      {/* Подсказка внизу */}
-      <div className="text-center mt-3 text-muted small">
-        Подсказка: {currentWord.transliteration}
+      {/* Подсказка ниже загаданного слова */}
+      <div className="text-center mt-3">
+        {!showHint ? (
+          <button 
+            onClick={() => setShowHint(true)}
+            className="btn btn-link text-muted small text-decoration-none"
+          >
+            подсказка
+          </button>
+        ) : (
+          <div className="text-muted small">
+            Подсказка: {currentWord.transliteration}
+          </div>
+        )}
       </div>
 
       {/* Модальное окно успеха */}

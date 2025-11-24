@@ -31,6 +31,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showEmptyError, setShowEmptyError] = useState(false);
 
   const { value: userInput, setValue: setUserInput, showWarning } = useHebrewInput({ maxLength: 20 });
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -46,6 +47,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
     setIsCorrect(null);
     setShowFeedback(false);
     setShowHint(false);
+    setShowEmptyError(false);
 
     // Автофокус на поле ввода
     setTimeout(() => {
@@ -65,7 +67,13 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
 
   // Проверка ответа
   const handleCheck = () => {
-    if (!userInput.trim() || !currentWord) return;
+    if (!userInput.trim() || !currentWord) {
+      if (!userInput.trim()) {
+        setShowEmptyError(true);
+        setTimeout(() => setShowEmptyError(false), 2000);
+      }
+      return;
+    }
 
     // Нормализуем слова для сравнения (обрабатываем конечные формы)
     const normalizedInput = normalizeFinalLetters(userInput.trim());
@@ -224,6 +232,13 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
           {showWarning && !showFeedback && (
             <div className="alert alert-warning py-2 mb-3">
               ⚠️ Переключите раскладку на иврит
+            </div>
+          )}
+
+          {/* Ошибка пустого поля */}
+          {showEmptyError && (
+            <div className="alert alert-warning py-2 mb-3">
+              ⚠️ Введите слово перед проверкой
             </div>
           )}
 

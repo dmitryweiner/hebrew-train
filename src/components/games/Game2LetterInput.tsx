@@ -32,6 +32,8 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
   const [attempts, setAttempts] = useState(0);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+  const [showEmptyError, setShowEmptyError] = useState(false);
 
   const { value: userInput, setValue: setUserInput, showWarning } = useHebrewInput({ maxLength: 1 });
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -51,6 +53,8 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
     setAttempts(0);
     setIsCorrect(null);
     setShowFeedback(false);
+    setShowHint(false);
+    setShowEmptyError(false);
 
     // Автофокус на поле ввода
     setTimeout(() => {
@@ -70,7 +74,11 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
 
   // Проверка ответа
   const handleCheck = () => {
-    if (!userInput.trim()) return;
+    if (!userInput.trim()) {
+      setShowEmptyError(true);
+      setTimeout(() => setShowEmptyError(false), 2000);
+      return;
+    }
 
     // Нормализуем буквы для сравнения (обрабатываем конечные формы)
     const normalizedInput = normalizeFinalLetters(userInput.trim());
@@ -223,6 +231,13 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
             </div>
           )}
 
+          {/* Ошибка пустого поля */}
+          {showEmptyError && (
+            <div className="alert alert-warning py-2 mb-3">
+              ⚠️ Введите букву перед проверкой
+            </div>
+          )}
+
           {/* Кнопка проверки */}
           <button
             onClick={handleCheck}
@@ -256,9 +271,20 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
         </div>
       </div>
 
-      {/* Подсказка внизу */}
-      <div className="text-center mt-3 text-muted small">
-        Подсказка: {currentWord.transliteration}
+      {/* Подсказка ниже загаданного слова */}
+      <div className="text-center mt-3">
+        {!showHint ? (
+          <button 
+            onClick={() => setShowHint(true)}
+            className="btn btn-link text-muted small text-decoration-none"
+          >
+            подсказка
+          </button>
+        ) : (
+          <div className="text-muted small">
+            Подсказка: {currentWord.transliteration}
+          </div>
+        )}
       </div>
 
       {/* Модальное окно успеха */}
