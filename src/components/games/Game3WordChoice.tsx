@@ -1,6 +1,6 @@
 // Игра 3: Слово (выбор) - выбор правильного слова для эмодзи
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { useAutoNext } from '../../hooks/useAutoNext';
@@ -31,7 +31,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
   const [showFeedback, setShowFeedback] = useState(false);
 
   // Генерация нового раунда
-  const generateNewRound = () => {
+  const generateNewRound = useCallback(() => {
     const word = getRandomWord(words);
     if (!word) return;
 
@@ -47,7 +47,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     setSelectedOption(null);
     setIsCorrect(null);
     setShowFeedback(false);
-  };
+  }, [words]);
 
   // Хук для автоматического перехода к следующему раунду
   const { scheduleNext, goNext } = useAutoNext(generateNewRound);
@@ -57,7 +57,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     if (words.length > 0) {
       generateNewRound();
     }
-  }, [words]);
+  }, [words, generateNewRound]);
 
   // Обработка выбора варианта
   const handleOptionClick = (option: Word) => {
