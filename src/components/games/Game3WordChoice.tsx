@@ -35,8 +35,8 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     const word = getRandomWord(words);
     if (!word) return;
 
-    // Генерируем 2-3 дистрактора
-    const distractorCount = Math.floor(Math.random() * 2) + 2; // 2-3 дистракторов
+    // Генерируем ровно 3 дистрактора (итого 4 варианта)
+    const distractorCount = 3;
     const distractors = generateWordDistractors(word, words, distractorCount);
     
     // Создаем массив вариантов и перемешиваем
@@ -139,7 +139,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
           <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Инструкция */}
-          <p className="text-muted mt-3 mb-3">
+          <p className="text-muted mt-4 mb-4">
             Выберите правильное слово:
           </p>
 
@@ -160,14 +160,14 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
               }
 
               return (
-                <div key={option.id} className="col-12 col-md-6">
+                <div key={option.id} className="col-6">
                   <button
                     onClick={() => handleOptionClick(option)}
                     disabled={selectedOption !== null}
                     className={btnClass}
                     style={{
                       minHeight: '70px',
-                      fontSize: '28px',
+                      fontSize: '24px',
                       fontFamily: 'Arial, sans-serif',
                       direction: 'rtl',
                     }}
