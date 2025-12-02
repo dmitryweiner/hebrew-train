@@ -70,6 +70,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
     if (words.length > 0) {
       generateNewRound();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [words]);
 
   // Проверка ответа

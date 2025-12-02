@@ -63,6 +63,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
     if (words.length > 0) {
       generateNewRound();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [words]);
 
   // Проверка ответа

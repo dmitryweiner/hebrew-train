@@ -69,6 +69,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     if (words.length > 0) {
       generateNewRound();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [words]);
 
   // Обработка выбора варианта

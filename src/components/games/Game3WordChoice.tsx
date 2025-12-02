@@ -57,7 +57,8 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     if (words.length > 0) {
       generateNewRound();
     }
-  }, [words, generateNewRound]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [words]);
 
   // Обработка выбора варианта
   const handleOptionClick = (option: Word) => {
