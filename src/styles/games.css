@@ -5,7 +5,6 @@
 .word-image-emoji,
 .word-image-picture {
   text-align: center;
-  margin: 24px 0;
   user-select: none;
 }
 
@@ -69,7 +68,7 @@
 
   .word-image-large .word-image-emoji,
   .word-image-large.word-image-emoji {
-    font-size: 120px;
+    font-size: 100px;
   }
 
   .word-image-large .word-image-svg {

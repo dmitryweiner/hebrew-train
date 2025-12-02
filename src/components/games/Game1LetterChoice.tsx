@@ -15,6 +15,8 @@ interface Game1LetterChoiceProps {
   onExit: () => void;
 }
 
+const DISTRACTOR_COUNT = 3;
+
 export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => {
   const {
     currentCorrect,
@@ -43,8 +45,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     const { displayWord: hiddenWord, hiddenLetter } = hideLetterAtPosition(word.hebrew, position);
     
     // Генерируем варианты ответа (4-6 вариантов)
-    const distractorCount = Math.floor(Math.random() * 3) + 3; // 3-5 дистракторов
-    const distractors = generateLetterDistractors(hiddenLetter, word.hebrew, distractorCount);
+    const distractors = generateLetterDistractors(hiddenLetter, word.hebrew, DISTRACTOR_COUNT);
     
     // Создаем массив вариантов без дубликатов и перемешиваем
     const optionsSet = new Set([hiddenLetter, ...distractors]);
@@ -161,9 +162,23 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
             {isCorrect ? currentWord.hebrew : displayWord}
           </div>
 
+          {/* Подсказка ниже загаданного слова */}
+          <div className="text-center mb-3">
+            
+              <button 
+                onClick={() => setShowHint(true)}
+                className="btn btn-link text-muted small text-decoration-none"
+              >
+                {!showHint 
+                  ? 'подсказка'
+                  : `Подсказка: ${currentWord.transliteration}`
+                }
+              </button>            
+          </div>
+
           {/* Инструкция */}
-          <p className="text-muted mb-4">
-            Выберите пропущенную букву
+          <p className="text-muted mb-3">
+            Выберите пропущенную букву:
           </p>
 
           {/* Варианты ответов */}
@@ -203,7 +218,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
 
           {/* Обратная связь для ошибок */}
           {showFeedback && !isCorrect && (
-            <div className="mt-4">
+            <div className="mt-3">
               <div className="alert alert-danger mb-0" role="alert">
                 <strong>✗ Неправильно</strong>
                 <div className="small mt-1">Попробуйте ещё раз</div>
@@ -211,22 +226,6 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
             </div>
           )}
         </div>
-      </div>
-
-      {/* Подсказка ниже загаданного слова */}
-      <div className="text-center mt-3">
-        {!showHint ? (
-          <button 
-            onClick={() => setShowHint(true)}
-            className="btn btn-link text-muted small text-decoration-none"
-          >
-            подсказка
-          </button>
-        ) : (
-          <div className="text-muted small">
-            Подсказка: {currentWord.transliteration}
-          </div>
-        )}
       </div>
 
       {/* Модальное окно успеха */}

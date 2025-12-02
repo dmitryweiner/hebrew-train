@@ -177,7 +177,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
 
           {/* Слово с пропуском или полное слово при правильном ответе */}
           <div 
-            className="display-4 my-4 fw-bold hebrew-text"
+            className="display-4 my-3 fw-bold hebrew-text"
             style={{ 
               fontFamily: 'Arial, sans-serif',
               letterSpacing: '0.1em',
@@ -187,9 +187,22 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
             {isCorrect ? currentWord.hebrew : displayWord}
           </div>
 
+          {/* Подсказка ниже загаданного слова */}
+          <div className="text-center mb-3">
+            <button 
+              onClick={() => setShowHint(true)}
+              className="btn btn-link text-muted small text-decoration-none"
+            >
+              {!showHint 
+                ? 'подсказка'
+                : `Подсказка: ${currentWord.transliteration}`
+              }
+            </button>            
+          </div>
+
           {/* Инструкция */}
           <p className="text-muted mb-3">
-            Введите пропущенную букву
+            Введите пропущенную букву:
           </p>
 
           {/* Индикатор попыток */}
@@ -216,8 +229,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
                 lang="he"
                 inputMode="text"
                 style={{
-                  fontSize: '48px',
-                  height: '80px',
+                  fontSize: '30px',
                   fontFamily: 'Arial, sans-serif',
                 }}
               />
@@ -241,7 +253,7 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
           {/* Кнопка проверки */}
           <button
             onClick={handleCheck}
-            disabled={!userInput.trim() || showFeedback}
+            disabled={showFeedback}
             className="btn btn-primary btn-lg px-5"
           >
             Проверить
@@ -269,22 +281,6 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
             </div>
           )}
         </div>
-      </div>
-
-      {/* Подсказка ниже загаданного слова */}
-      <div className="text-center mt-3">
-        {!showHint ? (
-          <button 
-            onClick={() => setShowHint(true)}
-            className="btn btn-link text-muted small text-decoration-none"
-          >
-            подсказка
-          </button>
-        ) : (
-          <div className="text-muted small">
-            Подсказка: {currentWord.transliteration}
-          </div>
-        )}
       </div>
 
       {/* Модальное окно успеха */}

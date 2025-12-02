@@ -139,8 +139,8 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
           <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Инструкция */}
-          <p className="text-muted mt-4 mb-4">
-            Выберите правильное слово для этого эмодзи
+          <p className="text-muted mt-3 mb-3">
+            Выберите правильное слово:
           </p>
 
           {/* Варианты ответов */}

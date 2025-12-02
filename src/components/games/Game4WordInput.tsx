@@ -178,8 +178,8 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
           <WordImage emoji={currentWord.emoji} picture={currentWord.picture} alt={currentWord.russian} size="large" />
 
           {/* Инструкция */}
-          <p className="text-muted mt-4 mb-2">
-            Напишите слово на иврите
+          <p className="text-muted mt-3 mb-3">
+            Напишите слово на иврите:
           </p>
 
           {/* Индикатор длины слова */}
@@ -220,8 +220,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
                 lang="he"
                 inputMode="text"
                 style={{
-                  fontSize: '32px',
-                  height: '70px',
+                  fontSize: '30px',
                   fontFamily: 'Arial, sans-serif',
                 }}
               />
