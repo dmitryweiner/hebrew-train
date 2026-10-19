@@ -9,6 +9,9 @@ import { Game1LetterChoice } from './components/games/Game1LetterChoice';
 import { Game2LetterInput } from './components/games/Game2LetterInput';
 import { Game3WordChoice } from './components/games/Game3WordChoice';
 import { Game4WordInput } from './components/games/Game4WordInput';
+import UpdateBanner from './pwa/UpdateBanner';
+import InstallCard from './pwa/InstallCard';
+import BackupCard from './pwa/BackupCard';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<GameType | null>(null);
@@ -30,6 +33,10 @@ function App() {
       {!currentGame ? (
         <main className="container py-4">
           <GameMenu onSelectGame={handleSelectGame} stats={allStats} />
+          <div className="mt-4">
+            <InstallCard />
+            <BackupCard />
+          </div>
         </main>
       ) : (
         <main>
@@ -59,6 +66,7 @@ function App() {
           )}
         </main>
       )}
+      <UpdateBanner />
     </div>
   );
 }

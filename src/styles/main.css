@@ -187,3 +187,27 @@ body {
   display: block;
 }
 
+
+/* Баннер обновления приложения */
+.update-banner {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #1b5e20;
+  color: #fff;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.install-steps li {
+  margin-bottom: 6px;
+}
