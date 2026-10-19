@@ -6,6 +6,8 @@ import { compareHebrewWords, countHebrewLetters, getRandomPosition, isHebrewText
 import WordImage from '../components/WordImage';
 import HebrewText from '../components/HebrewText';
 import AnswerFeedback from '../components/game/AnswerFeedback';
+import HebrewKeyboard from '../components/HebrewKeyboard';
+import { useProgress } from '../state/progressContext';
 import { pluralRu } from '../utils/plural';
 import type { TaskProps } from './types';
 
@@ -14,6 +16,8 @@ const MAX_ATTEMPTS = 3;
 
 const WordInputTask = ({ task, onDone }: TaskProps) => {
   const word = WORD_BY_ID[task.wordIds[0]];
+  const { progress, updateSettings } = useProgress();
+  const screenKeyboard = progress.settings.keyboard === 'screen';
   const [value, setValue] = useState('');
   const [attempts, setAttempts] = useState(0);
   const [finished, setFinished] = useState<boolean | null>(null);   // null — ещё отвечаем
@@ -32,7 +36,7 @@ const WordInputTask = ({ task, onDone }: TaskProps) => {
     setAttempts(next);
     setValue('');
     if (next >= MAX_ATTEMPTS) setFinished(false);
-    else inputRef.current?.focus();
+    else if (!screenKeyboard) inputRef.current?.focus();
   };
 
   // Задание засчитано, только если слово написано с первой попытки
@@ -66,20 +70,37 @@ const WordInputTask = ({ task, onDone }: TaskProps) => {
             value={value}
             onChange={e => setValue(normalizeGeresh(e.target.value).slice(0, 20))}
             onKeyDown={e => e.key === 'Enter' && check()}
-            placeholder="Напишите здесь"
+            placeholder={screenKeyboard ? 'Нажимайте буквы ниже' : 'Напишите здесь'}
             dir="rtl"
             lang="he"
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            autoFocus
+            // С экранной клавиатурой системная не должна выезжать и закрывать задание
+            readOnly={screenKeyboard}
+            inputMode={screenKeyboard ? 'none' : 'text'}
+            autoFocus={!screenKeyboard}
           />
+          {screenKeyboard && (
+            <HebrewKeyboard
+              onKey={key => setValue(v => (v + key).slice(0, 20))}
+              onBackspace={() => setValue(v => Array.from(v).slice(0, -1).join(''))}
+              withSpace={word.hebrew.includes(' ')}
+              withGeresh={word.hebrew.includes('׳')}
+            />
+          )}
           {wrongLayout && <div className="alert alert-warning py-2 mt-2 mb-0">⚠️ Переключите клавиатуру на иврит</div>}
           {attempts > 0 && (
             <div className="text-danger mt-2">✗ Не так. Попытка {attempts + 1} из {MAX_ATTEMPTS}</div>
           )}
           <button className="btn btn-success btn-lg w-100 mt-3" disabled={!value.trim()} onClick={check}>
             Проверить
+          </button>
+          <button
+            className="btn btn-link text-muted"
+            onClick={() => updateSettings({ keyboard: screenKeyboard ? 'system' : 'screen' })}
+          >
+            {screenKeyboard ? '⌨️ Писать системной клавиатурой' : '🔤 Показать экранную клавиатуру'}
           </button>
         </>
       )}

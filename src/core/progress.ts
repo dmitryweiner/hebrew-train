@@ -54,6 +54,7 @@ export interface Settings {
   sound: boolean;
   tts: boolean;
   typing: boolean;
+  keyboard: 'screen' | 'system';   // клавиатура в «Напиши слово»
 }
 
 export interface Progress {
@@ -70,7 +71,7 @@ export interface WordResult {
   correct: boolean;
 }
 
-export const DEFAULT_SETTINGS: Settings = { fontScale: 1, sound: true, tts: true, typing: true };
+export const DEFAULT_SETTINGS: Settings = { fontScale: 1, sound: true, tts: true, typing: true, keyboard: 'screen' };
 
 export const createProgress = (): Progress => ({
   version: 2,

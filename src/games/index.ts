@@ -11,6 +11,7 @@ import MatchingTask from './MatchingTask';
 import AnagramTask from './AnagramTask';
 import MemoryTask from './MemoryTask';
 import SpeedTask from './SpeedTask';
+import ListenTask from './ListenTask';
 
 export const TASK_COMPONENTS: Partial<Record<GameType, ComponentType<TaskProps>>> = {
   'word-choice': WordChoiceTask,
@@ -21,4 +22,5 @@ export const TASK_COMPONENTS: Partial<Record<GameType, ComponentType<TaskProps>>
   anagram: AnagramTask,
   memory: MemoryTask,
   speed: SpeedTask,
+  listen: ListenTask,
 };

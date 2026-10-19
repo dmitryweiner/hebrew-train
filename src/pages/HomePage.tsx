@@ -11,7 +11,6 @@ import { useSpeechAvailable } from '../hooks/useSpeech';
 import { pluralRu } from '../utils/plural';
 import VocabularyCard from '../components/VocabularyCard';
 import InstallCard from '../pwa/InstallCard';
-import BackupCard from '../pwa/BackupCard';
 
 /** Порядок игр в меню. «Угадай букву» используется только в «Тренировке дня». */
 const MENU_GAMES: GameType[] = ['matching', 'word-choice', 'anagram', 'memory', 'flashcards', 'speed', 'listen', 'word-input'];
@@ -87,10 +86,12 @@ const HomePage = () => {
         })}
       </div>
 
-      <div className="mt-4">
-        <InstallCard />
-        <BackupCard />
-      </div>
+      <nav className="home-nav">
+        <Link to="/progress" className="btn btn-outline-primary btn-lg">📊 Прогресс</Link>
+        <Link to="/settings" className="btn btn-outline-secondary btn-lg">⚙️ Настройки</Link>
+      </nav>
+
+      <InstallCard />
     </div>
   );
 };

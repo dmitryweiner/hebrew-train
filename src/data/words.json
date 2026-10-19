@@ -3,1264 +3,2792 @@
     "id": "apple",
     "emoji": "🍎",
     "hebrew": "תפוח",
+    "nikud": "תַּפּוּחַ",
     "russian": "яблоко",
     "transliteration": "tapuach",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ТАПУАХ — яблоко упало с ветки: «тап!» — «ух!»"
   },
   {
     "id": "bread",
     "emoji": "🍞",
     "hebrew": "לחם",
+    "nikud": "לֶחֶם",
     "russian": "хлеб",
     "transliteration": "lechem",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "bakery"
+    ],
+    "mnemonic": "ЛЕХЕМ — Вифлеем (Бейт-Лехем) значит «дом хлеба»"
   },
   {
     "id": "water",
     "emoji": "💧",
     "hebrew": "מים",
+    "nikud": "מַיִם",
     "russian": "вода",
     "transliteration": "mayim",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "drinks"
+    ],
+    "mnemonic": "МАИМ — в мае (май-им) поливаем огород водой"
   },
   {
     "id": "coffee",
     "emoji": "☕",
     "hebrew": "קפה",
+    "nikud": "קָפֶה",
     "russian": "кофе",
     "transliteration": "cafe",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "drinks"
+    ],
+    "mnemonic": "КАФЕ — кофе пьют в кафе"
   },
   {
     "id": "milk",
     "emoji": "🥛",
     "hebrew": "חלב",
+    "nikud": "חָלָב",
     "russian": "молоко",
     "transliteration": "chalav",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "dairy",
+      "drinks"
+    ],
+    "mnemonic": "ХАЛАВ — корова даёт молоко, а «халва» сладкая, как сгущёнка"
   },
   {
     "id": "banana",
     "emoji": "🍌",
     "hebrew": "בננה",
+    "nikud": "בָּנָנָה",
     "russian": "банан",
     "transliteration": "banana",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "БАНАНА — почти как по-русски"
   },
   {
     "id": "carrot",
     "emoji": "🥕",
     "hebrew": "גזר",
+    "nikud": "גֶּזֶר",
     "russian": "морковь",
     "transliteration": "gezer",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ГЕЗЕР — морковку грызёт заяц: «гр-р-ызер»"
   },
   {
     "id": "rice",
     "emoji": "🍚",
     "hebrew": "אורז",
+    "nikud": "אוֹרֶז",
     "russian": "рис",
     "transliteration": "orez",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "grains"
+    ],
+    "mnemonic": "ОРЕЗ — рис, похоже на «ориз» (rice → oryza)"
   },
   {
     "id": "tomato",
     "emoji": "🍅",
     "hebrew": "עגבנייה",
+    "nikud": "עַגְבָנִייָּה",
     "russian": "помидор",
     "transliteration": "agvaniya",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "АГВАНИЯ — красная, как щёки у Агнии"
   },
   {
     "id": "cucumber",
     "emoji": "🥒",
     "hebrew": "מלפפון",
+    "nikud": "מְלָפְפוֹן",
     "russian": "огурец",
     "transliteration": "melafefon",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "МЕЛАФЕФОН — огурец такой длинный, что не влезет в телефон"
   },
   {
     "id": "orange",
     "emoji": "🍊",
     "hebrew": "תפוז",
+    "nikud": "תַּפּוּז",
     "russian": "апельсин",
     "transliteration": "tapuz",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ТАПУЗ — «тапуах-золотой»: золотое яблоко"
   },
   {
     "id": "strawberry",
     "emoji": "🍓",
     "hebrew": "תות",
+    "nikud": "תּוּת",
     "russian": "клубника",
     "transliteration": "tut",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ТУТ — клубника растёт прямо тут, у дома"
   },
   {
     "id": "grape",
     "emoji": "🍇",
     "hebrew": "ענב",
+    "nikud": "עֵנָב",
     "russian": "виноград",
     "transliteration": "anav",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ЭНАВ — виноград: «эна-в» корзину собрали гроздья"
   },
   {
     "id": "lemon",
     "emoji": "🍋",
     "hebrew": "לימון",
+    "nikud": "לִימוֹן",
     "russian": "лимон",
     "transliteration": "limon",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ЛИМОН — как по-русски"
   },
   {
     "id": "cheese",
     "emoji": "🧀",
     "hebrew": "גבינה",
+    "nikud": "גְּבִינָה",
     "russian": "сыр",
     "transliteration": "gvina",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "dairy"
+    ],
+    "mnemonic": "ГВИНА — сыр, «гвинейский» сыр с дырками"
   },
   {
     "id": "egg",
     "emoji": "🥚",
     "hebrew": "ביצה",
+    "nikud": "בֵּיצָה",
     "russian": "яйцо",
     "transliteration": "beytsa",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "dairy"
+    ],
+    "mnemonic": "БЕЙЦА — яйцо: «бей-ца» скорлупу ложкой"
   },
   {
     "id": "meat",
     "emoji": "🍖",
     "hebrew": "בשר",
+    "nikud": "בָּשָׂר",
     "russian": "мясо",
     "transliteration": "basar",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "meat"
+    ],
+    "mnemonic": "БАСАР — мясо продают на базаре"
   },
   {
     "id": "chicken",
     "emoji": "🍗",
     "hebrew": "עוף",
+    "nikud": "עוֹף",
     "russian": "курица",
     "transliteration": "of",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "meat"
+    ],
+    "mnemonic": "ОФ — курица на тарелке: «уф, как вкусно!»"
   },
   {
     "id": "sugar",
     "emoji": "🍬",
     "hebrew": "סוכר",
+    "nikud": "סוּכָּר",
     "russian": "сахар",
     "transliteration": "sukar",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "sweets"
+    ],
+    "mnemonic": "СУКАР — сахар, сладкий сухарь"
   },
   {
     "id": "salt",
     "emoji": "🧂",
     "hebrew": "מלח",
+    "nikud": "מֶלַח",
     "russian": "соль",
     "transliteration": "melach",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "spices"
+    ],
+    "mnemonic": "МЕЛАХ — соль мелкая, как мел"
   },
   {
     "id": "honey",
     "emoji": "🍯",
     "hebrew": "דבש",
+    "nikud": "דְּבַשׁ",
     "russian": "мёд",
     "transliteration": "dvash",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "sweets"
+    ],
+    "mnemonic": "ДВАШ — мёд намазали два раза: «два-ш»"
   },
   {
     "id": "tea",
     "emoji": "🍵",
     "hebrew": "תה",
+    "nikud": "תֵּה",
     "russian": "чай",
     "transliteration": "te",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "drinks"
+    ],
+    "mnemonic": "ТЕ — чай, как английское «tea»"
   },
   {
     "id": "juice",
     "emoji": "🧃",
     "hebrew": "מיץ",
+    "nikud": "מִיץ",
     "russian": "сок",
     "transliteration": "mitz",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "drinks"
+    ],
+    "mnemonic": "МИЦ — сок, похоже на «микс» фруктов"
   },
   {
     "id": "pizza",
     "emoji": "🍕",
     "hebrew": "פיצה",
+    "nikud": "פִּיצָה",
     "russian": "пицца",
     "transliteration": "pitsa",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "fastfood"
+    ],
+    "mnemonic": "ПИЦА — как по-русски"
   },
   {
     "id": "soup",
     "emoji": "🍲",
     "hebrew": "מרק",
+    "nikud": "מָרָק",
     "russian": "суп",
     "transliteration": "marak",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "meals"
+    ],
+    "mnemonic": "МАРАК — суп с макаронами: «ма-рак»"
   },
   {
     "id": "cake",
     "emoji": "🍰",
     "hebrew": "עוגה",
+    "nikud": "עוּגָה",
     "russian": "торт",
     "transliteration": "uga",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "sweets",
+      "bakery"
+    ],
+    "mnemonic": "УГА — торт на день рождения: «у-га!»"
   },
   {
     "id": "chocolate",
     "emoji": "🍫",
     "hebrew": "שוקולד",
+    "nikud": "שׁוֹקוֹלָד",
     "russian": "шоколад",
     "transliteration": "shokolad",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "sweets"
+    ],
+    "mnemonic": "ШОКОЛАД — как по-русски"
   },
   {
     "id": "potato",
     "emoji": "🥔",
     "hebrew": "תפוח אדמה",
+    "nikud": "תַּפּוּחַ אֲדָמָה",
     "russian": "картошка",
     "transliteration": "tapuach adama",
-    "category": "food"
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ТАПУАХ АДАМА — «земляное яблоко», как французское pomme de terre"
   },
   {
     "id": "dog",
     "emoji": "🐕",
     "hebrew": "כלב",
+    "nikud": "כֶּלֶב",
     "russian": "собака",
     "transliteration": "kelev",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "pets"
+    ],
+    "mnemonic": "КЕЛЕВ — собака лает: «кел-ев-ев!»"
   },
   {
     "id": "cat",
     "emoji": "🐈",
     "hebrew": "חתול",
+    "nikud": "חָתוּל",
     "russian": "кот",
     "transliteration": "chatul",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "pets"
+    ],
+    "mnemonic": "ХАТУЛЬ — кот спрятался в капюшоне худи: «ха-туль»"
   },
   {
     "id": "fish",
     "emoji": "🐟",
     "hebrew": "דג",
+    "nikud": "דָּג",
     "russian": "рыба",
     "transliteration": "dag",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "sea"
+    ],
+    "mnemonic": "ДАГ — рыба дёрнула удочку: «дёрг!»"
   },
   {
     "id": "bird",
     "emoji": "🐦",
     "hebrew": "ציפור",
+    "nikud": "צִיפּוֹר",
     "russian": "птица",
     "transliteration": "tsipor",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "birds"
+    ],
+    "mnemonic": "ЦИПОР — птица: «цып-цып» — зовём цыплят"
   },
   {
     "id": "cow",
     "emoji": "🐄",
     "hebrew": "פרה",
+    "nikud": "פָּרָה",
     "russian": "корова",
     "transliteration": "para",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "farm"
+    ],
+    "mnemonic": "ПАРА — корова с телёнком — пара"
   },
   {
     "id": "horse",
     "emoji": "🐎",
     "hebrew": "סוס",
+    "nikud": "סוּס",
     "russian": "лошадь",
     "transliteration": "sus",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "farm"
+    ],
+    "mnemonic": "СУС — лошадь фыркает: «с-с-с»"
   },
   {
     "id": "elephant",
     "emoji": "🐘",
     "hebrew": "פיל",
+    "nikud": "פִּיל",
     "russian": "слон",
     "transliteration": "pil",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ПИЛЬ — слон поднимает пыль"
   },
   {
     "id": "lion",
     "emoji": "🦁",
     "hebrew": "אריה",
+    "nikud": "אַרְיֵה",
     "russian": "лев",
     "transliteration": "arye",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "АРЬЕ — лев рычит: «ар-р-р!»"
   },
   {
     "id": "rabbit",
     "emoji": "🐰",
     "hebrew": "ארנב",
+    "nikud": "אַרְנָב",
     "russian": "кролик",
     "transliteration": "arnav",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "pets"
+    ],
+    "mnemonic": "АРНАВ — кролик в норе: «нор-ав»"
   },
   {
     "id": "bear",
     "emoji": "🐻",
     "hebrew": "דוב",
+    "nikud": "דּוֹב",
     "russian": "медведь",
     "transliteration": "dov",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ДОВ — медведь добрый, но большой"
   },
   {
     "id": "butterfly",
     "emoji": "🦋",
     "hebrew": "פרפר",
+    "nikud": "פַּרְפַּר",
     "russian": "бабочка",
     "transliteration": "parpar",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "insects"
+    ],
+    "mnemonic": "ПАРПАР — бабочка порхает: «пар-пар» крыльями"
   },
   {
     "id": "monkey",
     "emoji": "🐵",
     "hebrew": "קוף",
+    "nikud": "קוֹף",
     "russian": "обезьяна",
     "transliteration": "kof",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "КОФ — обезьяна пьёт кофе"
   },
   {
     "id": "giraffe",
     "emoji": "🦒",
     "hebrew": "ג׳ירפה",
+    "nikud": "גִ׳ירָפָה",
     "russian": "жираф",
     "transliteration": "jirafa",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ЖИРАФА — почти как по-русски"
   },
   {
     "id": "snake",
     "emoji": "🐍",
     "hebrew": "נחש",
+    "nikud": "נָחָשׁ",
     "russian": "змея",
     "transliteration": "nachash",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "НАХАШ — змея шипит: «ш-ш-ш» на конце"
   },
   {
     "id": "frog",
     "emoji": "🐸",
     "hebrew": "צפרדע",
+    "nikud": "צְפַרְדֵּעַ",
     "russian": "лягушка",
     "transliteration": "tzfardea",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ЦФАРДЕА — лягушка квакает так, что не выговоришь"
   },
   {
     "id": "bee",
     "emoji": "🐝",
     "hebrew": "דבורה",
+    "nikud": "דְּבוֹרָה",
     "russian": "пчела",
     "transliteration": "dvora",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "insects"
+    ],
+    "mnemonic": "ДВОРА — пчела летает во дворе"
   },
   {
     "id": "turtle",
     "emoji": "🐢",
     "hebrew": "צב",
+    "nikud": "צָב",
     "russian": "черепаха",
     "transliteration": "tzav",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ЦАВ — черепаха медленная: «цап» — и спряталась"
   },
   {
     "id": "crocodile",
     "emoji": "🐊",
     "hebrew": "תנין",
+    "nikud": "תַּנִּין",
     "russian": "крокодил",
     "transliteration": "tanin",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ТАНИН — крокодил в тине"
   },
   {
     "id": "chicken_animal",
     "emoji": "🐔",
     "hebrew": "תרנגולת",
+    "nikud": "תַּרְנְגוֹלֶת",
     "russian": "курица",
     "transliteration": "tarnegolet",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "farm",
+      "birds"
+    ],
+    "mnemonic": "ТАРНЕГОЛЕТ — курица трезвонит: «тар-не-гол!»"
   },
   {
     "id": "pig",
     "emoji": "🐷",
     "hebrew": "חזיר",
+    "nikud": "חֲזִיר",
     "russian": "свинья",
     "transliteration": "chazir",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "farm"
+    ],
+    "mnemonic": "ХАЗИР — свинья хрюкает в хозяйстве"
   },
   {
     "id": "sheep",
     "emoji": "🐑",
     "hebrew": "כבשה",
+    "nikud": "כִּבְשָׂה",
     "russian": "овца",
     "transliteration": "kivsa",
-    "category": "animals"
+    "category": "animals",
+    "tags": [
+      "farm"
+    ],
+    "mnemonic": "КИВСА — овца с кудрявой шерстью, как кавказская бурка"
   },
   {
     "id": "phone",
     "emoji": "📱",
     "hebrew": "טלפון",
+    "nikud": "טֶלֶפוֹן",
     "russian": "телефон",
     "transliteration": "telefon",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tech"
+    ],
+    "mnemonic": "ТЕЛЕФОН — как по-русски"
   },
   {
     "id": "book",
     "emoji": "📚",
     "hebrew": "ספר",
+    "nikud": "סֵפֶר",
     "russian": "книга",
     "transliteration": "sefer",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "СЕФЕР — книга, «сфера» знаний"
   },
   {
     "id": "pencil",
     "emoji": "✏️",
     "hebrew": "עיפרון",
+    "nikud": "עִיפָּרוֹן",
     "russian": "карандаш",
     "transliteration": "iparon",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "ИПАРОН — карандаш: «и пиши, Арон!»"
   },
   {
     "id": "key",
     "emoji": "🔑",
     "hebrew": "מפתח",
+    "nikud": "מַפְתֵּחַ",
     "russian": "ключ",
     "transliteration": "mafteach",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "МАФТЕАХ — ключ открывает (лифт «ах!»)"
   },
   {
     "id": "watch",
     "emoji": "⌚",
     "hebrew": "שעון",
+    "nikud": "שָׁעוֹן",
     "russian": "часы",
     "transliteration": "shaon",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "ШАОН — часы: «ша, он считает время»"
   },
   {
     "id": "glasses",
     "emoji": "👓",
     "hebrew": "משקפיים",
+    "nikud": "מִשְׁקָפַיִים",
     "russian": "очки",
     "transliteration": "mishkafayim",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "МИШКАФАИМ — очки: мишка в очках"
   },
   {
     "id": "umbrella",
     "emoji": "☂️",
     "hebrew": "מטריה",
+    "nikud": "מִטְרִיָּה",
     "russian": "зонт",
     "transliteration": "mitriya",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "МИТРИЯ — зонт от дождя, Митрий держит зонт"
   },
   {
     "id": "bag",
     "emoji": "👜",
     "hebrew": "תיק",
+    "nikud": "תִּיק",
     "russian": "сумка",
     "transliteration": "tik",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "ТИК — сумка с часами: «тик-так»"
   },
   {
     "id": "computer",
     "emoji": "💻",
     "hebrew": "מחשב",
+    "nikud": "מַחְשֵׁב",
     "russian": "компьютер",
     "transliteration": "machshev",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tech"
+    ],
+    "mnemonic": "МАХШЕВ — компьютер «машет» — считает (хашав — думать)"
   },
   {
     "id": "pen",
     "emoji": "🖊️",
     "hebrew": "עט",
+    "nikud": "עֵט",
     "russian": "ручка",
     "transliteration": "et",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "ЭТ — ручка: «вот эт-а ручка»"
   },
   {
     "id": "paper",
     "emoji": "📄",
     "hebrew": "נייר",
+    "nikud": "נְייָר",
     "russian": "бумага",
     "transliteration": "neyar",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "НЕЙЯР — бумага, белая, как нейлон"
   },
   {
     "id": "scissors",
     "emoji": "✂️",
     "hebrew": "מספריים",
+    "nikud": "מִסְפָּרַיִים",
     "russian": "ножницы",
     "transliteration": "misparayim",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "МИСПАРАИМ — ножницы у парикмахера (миспара — парикмахерская)"
   },
   {
     "id": "mirror",
     "emoji": "🪞",
     "hebrew": "מראה",
+    "nikud": "מַרְאָה",
     "russian": "зеркало",
     "transliteration": "marah",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "МАРА — зеркало: «смотри, вот ты!» (лиръот — видеть)"
   },
   {
     "id": "ball",
     "emoji": "⚽",
     "hebrew": "כדור",
+    "nikud": "כַּדּוּר",
     "russian": "мяч",
     "transliteration": "kadur",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "toys"
+    ],
+    "mnemonic": "КАДУР — мяч круглый, как «кадушка»"
   },
   {
     "id": "bottle",
     "emoji": "🍾",
     "hebrew": "בקבוק",
+    "nikud": "בַּקְבּוּק",
     "russian": "бутылка",
     "transliteration": "bakbuk",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "БАКБУК — бутылка булькает: «бак-бук»"
   },
   {
     "id": "box",
     "emoji": "📦",
     "hebrew": "קופסה",
+    "nikud": "קוּפְסָה",
     "russian": "коробка",
     "transliteration": "kufsa",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "КУФСА — коробка, «куб-са»"
   },
   {
     "id": "picture",
     "emoji": "🖼️",
     "hebrew": "תמונה",
+    "nikud": "תְּמוּנָה",
     "russian": "картина",
     "transliteration": "tmuna",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "ТМУНА — картина в темноте музея"
   },
   {
     "id": "backpack",
     "emoji": "🎒",
     "hebrew": "תרמיל",
+    "nikud": "תַּרְמִיל",
     "russian": "рюкзак",
     "transliteration": "tarmil",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "ТАРМИЛЬ — рюкзак тянет, как «тара» на плечах"
   },
   {
     "id": "wallet",
     "emoji": "👛",
     "hebrew": "ארנק",
+    "nikud": "אַרְנָק",
     "russian": "кошелек",
     "transliteration": "arnak",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "АРНАК — кошелёк: «а — денег нет!»"
   },
   {
     "id": "money",
     "emoji": "💰",
     "hebrew": "כסף",
+    "nikud": "כֶּסֶף",
     "russian": "деньги",
     "transliteration": "kesef",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "personal"
+    ],
+    "mnemonic": "КЕСЕФ — деньги в кассе"
   },
   {
     "id": "battery",
     "emoji": "🔋",
     "hebrew": "סוללה",
+    "nikud": "סוֹלְלָה",
     "russian": "батарея",
     "transliteration": "solela",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tech"
+    ],
+    "mnemonic": "СОЛЕЛА — батарейка «солёная» — щиплет язык"
   },
   {
     "id": "calendar",
     "emoji": "📅",
     "hebrew": "לוח שנה",
+    "nikud": "לוּחַ שָׁנָה",
     "russian": "календарь",
     "transliteration": "luach shana",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "ЛУАХ ШАНА — «доска года»: шана — год (Рош а-Шана)"
   },
   {
     "id": "envelope",
     "emoji": "✉️",
     "hebrew": "מעטפה",
+    "nikud": "מַעֲטָפָה",
     "russian": "конверт",
     "transliteration": "maatafa",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "МААТАФА — конверт «обёртывает» письмо"
   },
   {
     "id": "post",
     "emoji": "📮",
     "hebrew": "דואר",
+    "nikud": "דּוֹאַר",
     "russian": "почта",
     "transliteration": "doar",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "ДОАР — почта доходит: «до-ар»"
   },
   {
     "id": "notebook",
     "emoji": "📓",
     "hebrew": "מחברת",
+    "nikud": "מַחְבֶּרֶת",
     "russian": "тетрадь",
     "transliteration": "machberet",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "МАХБЕРЕТ — тетрадь: «махни» и бери"
   },
   {
     "id": "broom",
     "emoji": "🧹",
     "hebrew": "מטאטא",
+    "nikud": "מַטְאֲטֵא",
     "russian": "метла",
     "transliteration": "matate",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "cleaning"
+    ],
+    "mnemonic": "МАТАТЕ — метла: «мета-те» — метёт туда-сюда"
   },
   {
     "id": "ruler",
     "emoji": "📏",
     "hebrew": "סרגל",
+    "nikud": "סַרְגֵּל",
     "russian": "линейка",
     "transliteration": "sargel",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "stationery"
+    ],
+    "mnemonic": "САРГЕЛЬ — линейка у сержанта всегда ровная"
   },
   {
     "id": "clothespin",
     "picture": "clothespin.png",
     "hebrew": "אטב",
+    "nikud": "אֶטֶב",
     "russian": "прищепка",
     "transliteration": "atav",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "ЭТЕВ — прищепка: «вот э-тот» держит бельё"
   },
   {
     "id": "flashlight",
     "emoji": "🔦",
     "hebrew": "פנס",
+    "nikud": "פָּנָס",
     "russian": "фонарик",
     "transliteration": "panas",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tools",
+      "tech"
+    ],
+    "mnemonic": "ПАНАС — фонарик освещает «панораму»"
   },
   {
     "id": "matches",
     "picture": "matches.png",
     "hebrew": "גפרורים",
+    "nikud": "גַּפְרוּרִים",
     "russian": "спички",
     "transliteration": "gafrurim",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "ГАФРУРИМ — спички с серой (гофрит — сера)"
   },
   {
     "id": "fire",
     "emoji": "🔥",
     "hebrew": "אש",
+    "nikud": "אֵשׁ",
     "russian": "огонь",
     "transliteration": "esh",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "ЭШ — огонь шипит: «эш-ш-ш»"
   },
   {
     "id": "rope",
     "emoji": "🪢",
     "hebrew": "חבל",
+    "nikud": "חֶבֶל",
     "russian": "веревка",
     "transliteration": "chevel",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tools"
+    ],
+    "mnemonic": "ХЕВЕЛЬ — верёвка: тянем — «хэ-эй!»"
   },
   {
     "id": "basket",
     "emoji": "🧺",
     "hebrew": "סל",
+    "nikud": "סַל",
     "russian": "корзина",
     "transliteration": "sal",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "САЛ — корзина с салатом"
   },
   {
     "id": "radio",
     "emoji": "📻",
     "hebrew": "רדיו",
+    "nikud": "רַדְיוֹ",
     "russian": "радио",
     "transliteration": "radio",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tech"
+    ],
+    "mnemonic": "РАДИО — как по-русски"
   },
   {
     "id": "camera",
     "emoji": "📷",
     "hebrew": "מצלמה",
+    "nikud": "מַצְלֵמָה",
     "russian": "камера",
     "transliteration": "matzlema",
-    "category": "objects"
+    "category": "objects",
+    "tags": [
+      "tech"
+    ],
+    "mnemonic": "МАЦЛЕМА — камера снимает «целиком» (целем — фотограф)"
   },
   {
     "id": "door",
     "emoji": "🚪",
     "hebrew": "דלת",
+    "nikud": "דֶּלֶת",
     "russian": "дверь",
     "transliteration": "delet",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "ДЕЛЕТ — дверь: «дела» за дверью"
   },
   {
     "id": "chair",
     "emoji": "🪑",
     "hebrew": "כיסא",
+    "nikud": "כִּיסֵּא",
     "russian": "стул",
     "transliteration": "kise",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "furniture"
+    ],
+    "mnemonic": "КИСЕ — на стуле сидит киса"
   },
   {
     "id": "table",
     "picture": "table.svg",
     "hebrew": "שולחן",
+    "nikud": "שׁוּלְחָן",
     "russian": "стол",
     "transliteration": "shulchan",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "furniture"
+    ],
+    "mnemonic": "ШУЛЬХАН — стол, «Шульхан арух» — «накрытый стол»"
   },
   {
     "id": "bed",
     "emoji": "🛏️",
     "hebrew": "מיטה",
+    "nikud": "מִיטָּה",
     "russian": "кровать",
     "transliteration": "mita",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bedroom",
+      "furniture"
+    ],
+    "mnemonic": "МИТА — кровать: Митя спит"
   },
   {
     "id": "house",
     "emoji": "🏠",
     "hebrew": "בית",
+    "nikud": "בַּיִת",
     "russian": "дом",
     "transliteration": "bayit",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "БАИТ — дом, «бай-бай» — спать дома"
   },
   {
     "id": "window",
     "emoji": "🪟",
     "hebrew": "חלון",
+    "nikud": "חַלּוֹן",
     "russian": "окно",
     "transliteration": "chalon",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "ХАЛОН — окно в холле"
   },
   {
     "id": "lamp",
     "emoji": "💡",
     "hebrew": "מנורה",
+    "nikud": "מְנוֹרָה",
     "russian": "лампа",
     "transliteration": "menora",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "furniture"
+    ],
+    "mnemonic": "МЕНОРА — светильник, как храмовая менора"
   },
   {
     "id": "refrigerator",
     "picture": "refrigerator.png",
     "hebrew": "מקרר",
+    "nikud": "מְקָרֵר",
     "russian": "холодильник",
     "transliteration": "mekarer",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "МЕКАРЕР — холодильник: «кар» — холодно (кар — холодный)"
   },
   {
     "id": "sofa",
     "emoji": "🛋️",
     "hebrew": "ספה",
+    "nikud": "סַפָּה",
     "russian": "диван",
     "transliteration": "sapa",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "furniture"
+    ],
+    "mnemonic": "САПА — диван: сапоги сняли и легли"
   },
   {
     "id": "carpet",
     "picture": "carpet.png",
     "hebrew": "שטיח",
+    "nikud": "שָׁטִיחַ",
     "russian": "ковёр",
     "transliteration": "shatiach",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "furniture"
+    ],
+    "mnemonic": "ШАТИАХ — ковёр стелют (лиштоах — расстилать)"
   },
   {
     "id": "towel",
     "picture": "towel.png",
     "hebrew": "מגבת",
+    "nikud": "מַגֶּבֶת",
     "russian": "полотенце",
     "transliteration": "magevet",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "МАГЕВЕТ — полотенце вытирает (лениггев — вытирать)"
   },
   {
     "id": "pillow",
     "picture": "pillow.png",
     "hebrew": "כרית",
+    "nikud": "כָּרִית",
     "russian": "подушка",
     "transliteration": "karit",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bedroom"
+    ],
+    "mnemonic": "КАРИТ — подушка: Карина спит"
   },
   {
     "id": "plate",
     "emoji": "🍽️",
     "hebrew": "צלחת",
+    "nikud": "צַלַּחַת",
     "russian": "тарелка",
     "transliteration": "tzalachat",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "ЦАЛАХАТ — тарелка целая"
   },
   {
     "id": "fork",
     "emoji": "🍴",
     "hebrew": "מזלג",
+    "nikud": "מַזְלֵג",
     "russian": "вилка",
     "transliteration": "mazleg",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "МАЗЛЕГ — вилка: «маз-лег» — наколол и в рот"
   },
   {
     "id": "spoon",
     "emoji": "🥄",
     "hebrew": "כף",
+    "nikud": "כַּף",
     "russian": "ложка",
     "transliteration": "kaf",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "КАФ — ложка: «кап-кап» суп"
   },
   {
     "id": "knife",
     "emoji": "🔪",
     "hebrew": "סכין",
+    "nikud": "סַכִּין",
     "russian": "нож",
     "transliteration": "sakin",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "САКИН — нож: «сек!» — и отрезал"
   },
   {
     "id": "cup",
+    "picture": "cup.svg",
     "hebrew": "כוס",
+    "nikud": "כּוֹס",
     "russian": "чашка",
     "transliteration": "kos",
     "category": "home",
-    "picture": "cup.svg"
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "КОС — чашка: «кос-ой» наклон — и пролил"
   },
   {
     "id": "pot",
+    "picture": "pot.svg",
     "hebrew": "סיר",
+    "nikud": "סִיר",
     "russian": "кастрюля",
     "transliteration": "sir",
     "category": "home",
-    "picture": "pot.svg"
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "СИР — кастрюля: сэр варит суп"
   },
   {
     "id": "pan",
     "emoji": "🍳",
     "hebrew": "מחבת",
+    "nikud": "מַחֲבַת",
     "russian": "сковорода",
     "transliteration": "machavat",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "МАХАВАТ — сковорода: «маха-ват» — жарко!"
   },
   {
     "id": "blanket",
     "picture": "blanket.png",
     "hebrew": "שמיכה",
+    "nikud": "שְׂמִיכָה",
     "russian": "одеяло",
     "transliteration": "smicha",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bedroom"
+    ],
+    "mnemonic": "СМИХА — одеяло: «смех» под одеялом"
   },
   {
     "id": "curtain",
     "picture": "curtain.png",
     "hebrew": "וילון",
+    "nikud": "וִילוֹן",
     "russian": "занавеска",
     "transliteration": "vilon",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "ВИЛОН — занавеска, «вуаль» на окне"
   },
   {
     "id": "soap",
     "emoji": "🧼",
     "hebrew": "סבון",
+    "nikud": "סַבּוֹן",
     "russian": "мыло",
     "transliteration": "sabon",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "САБОН — мыло: «савон» по-французски"
   },
   {
     "id": "brush",
     "emoji": "🪥",
     "hebrew": "מברשת",
+    "nikud": "מִבְרֶשֶׁת",
     "russian": "щетка",
     "transliteration": "mivreshet",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "МИВРЕШЕТ — щётка «брешет» — шуршит"
   },
   {
     "id": "candle",
     "emoji": "🕯️",
     "hebrew": "נר",
+    "nikud": "נֵר",
     "russian": "свеча",
     "transliteration": "ner",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "НЕР — свеча, «нер тамид» — вечный огонь"
   },
   {
     "id": "trash",
     "emoji": "🗑️",
     "hebrew": "פח אשפה",
+    "nikud": "פַּח אַשְׁפָּה",
     "russian": "мусорное ведро",
     "transliteration": "pach ashpa",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "cleaning"
+    ],
+    "mnemonic": "ПАХ АШПА — мусорное ведро «пахнет»"
   },
   {
     "id": "clock",
     "emoji": "🕐",
     "hebrew": "שעון קיר",
+    "nikud": "שְׁעוֹן קִיר",
     "russian": "часы настенные",
     "transliteration": "shaon kir",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "house"
+    ],
+    "mnemonic": "ШЕОН КИР — часы на стене (кир — стена)"
   },
   {
     "id": "stove",
     "picture": "stove.png",
     "hebrew": "כיריים",
+    "nikud": "כִּירַיִים",
     "russian": "плита",
     "transliteration": "kirayim",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "КИРАИМ — плита с конфорками"
   },
   {
     "id": "oven",
     "picture": "oven.png",
     "hebrew": "תנור",
+    "nikud": "תַּנּוּר",
     "russian": "духовка",
     "transliteration": "tanur",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "ТАНУР — духовка, как тандыр"
   },
   {
     "id": "microwave",
     "picture": "microwave.png",
     "hebrew": "מיקרוגל",
+    "nikud": "מִיקְרוֹגַל",
     "russian": "микроволновка",
     "transliteration": "mikrogel",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "kitchen"
+    ],
+    "mnemonic": "МИКРОГАЛЬ — «микроволна»: галь — волна"
   },
   {
     "id": "washing_machine",
     "picture": "washing_machine.png",
     "hebrew": "מכונת כביסה",
+    "nikud": "מְכוֹנַת כְּבִיסָה",
     "russian": "стиральная машина",
     "transliteration": "mechonat kvisa",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "cleaning"
+    ],
+    "mnemonic": "МЕХОНАТ КВИСА — машина для стирки (квиса — стирка)"
   },
   {
     "id": "vacuum",
     "picture": "vacuum.png",
     "hebrew": "שואב אבק",
+    "nikud": "שׁוֹאֵב אָבָק",
     "russian": "пылесос",
     "transliteration": "shoev avak",
-    "category": "home"
+    "category": "home",
+    "tags": [
+      "cleaning"
+    ],
+    "mnemonic": "ШОЭВ АВАК — «всасывает пыль»: авак — пыль"
   },
   {
     "id": "tree",
     "emoji": "🌳",
     "hebrew": "עץ",
+    "nikud": "עֵץ",
     "russian": "дерево",
     "transliteration": "ets",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "ЭЦ — дерево: «эх, ц-высокое!»"
   },
   {
     "id": "flower",
     "emoji": "🌸",
     "hebrew": "פרח",
+    "nikud": "פֶּרַח",
     "russian": "цветок",
     "transliteration": "perach",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "ПЕРАХ — цветок распускается: «пр-рах!»"
   },
   {
     "id": "sun",
     "emoji": "☀️",
     "hebrew": "שמש",
+    "nikud": "שֶׁמֶשׁ",
     "russian": "солнце",
     "transliteration": "shemesh",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "sky"
+    ],
+    "mnemonic": "ШЕМЕШ — солнце: «шмыг» из-за тучи"
   },
   {
     "id": "moon",
     "emoji": "🌙",
     "hebrew": "ירח",
+    "nikud": "יָרֵחַ",
     "russian": "луна",
     "transliteration": "yareach",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "sky"
+    ],
+    "mnemonic": "ЯРЕАХ — луна яркая"
   },
   {
     "id": "star",
     "emoji": "⭐",
     "hebrew": "כוכב",
+    "nikud": "כּוֹכָב",
     "russian": "звезда",
     "transliteration": "kochav",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "sky"
+    ],
+    "mnemonic": "КОХАВ — звезда: «кох-кох» — мигает"
   },
   {
     "id": "rain",
     "emoji": "🌧️",
     "hebrew": "גשם",
+    "nikud": "גֶּשֶׁם",
     "russian": "дождь",
     "transliteration": "geshem",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "weather"
+    ],
+    "mnemonic": "ГЕШЕМ — дождь: «кошмар, промок!»"
   },
   {
     "id": "cloud",
     "emoji": "☁️",
     "hebrew": "ענן",
+    "nikud": "עָנָן",
     "russian": "облако",
     "transliteration": "anan",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "weather",
+      "sky"
+    ],
+    "mnemonic": "АНАН — облако: «ах, нам бы дождя»"
   },
   {
     "id": "sea",
     "emoji": "🌊",
     "hebrew": "ים",
+    "nikud": "יָם",
     "russian": "море",
     "transliteration": "yam",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "water"
+    ],
+    "mnemonic": "ЯМ — море: «ям-ка» с водой"
   },
   {
     "id": "river",
     "emoji": "🏞️",
     "hebrew": "נהר",
+    "nikud": "נָהָר",
     "russian": "река",
     "transliteration": "nahar",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "water"
+    ],
+    "mnemonic": "НААР — река течёт «на-ар» — направо"
   },
   {
     "id": "mountain",
     "emoji": "⛰️",
     "hebrew": "הר",
+    "nikud": "הַר",
     "russian": "гора",
     "transliteration": "har",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "landscape"
+    ],
+    "mnemonic": "АР — гора: «Ар-арат»"
   },
   {
     "id": "grass",
     "emoji": "🌱",
     "hebrew": "דשא",
+    "nikud": "דֶּשֶׁא",
     "russian": "трава",
     "transliteration": "deshe",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "ДЕШЕ — трава дешёвая — растёт сама"
   },
   {
     "id": "leaf",
     "emoji": "🍃",
     "hebrew": "עלה",
+    "nikud": "עָלֶה",
     "russian": "лист",
     "transliteration": "ale",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "АЛЕ — лист: «але!» — упал"
   },
   {
     "id": "wind",
     "emoji": "💨",
     "hebrew": "רוח",
+    "nikud": "רוּחַ",
     "russian": "ветер",
     "transliteration": "ruach",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "weather"
+    ],
+    "mnemonic": "РУАХ — ветер: «ру-ах!» — дует"
   },
   {
     "id": "snow",
     "emoji": "❄️",
     "hebrew": "שלג",
+    "nikud": "שֶׁלֶג",
     "russian": "снег",
     "transliteration": "sheleg",
-    "category": "nature"
+    "category": "nature",
+    "tags": [
+      "weather"
+    ],
+    "mnemonic": "ШЕЛЕГ — снег шелестит под ногами"
   },
   {
     "id": "car",
     "emoji": "🚗",
     "hebrew": "מכונית",
+    "nikud": "מְכוֹנִית",
     "russian": "машина",
     "transliteration": "mechonit",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "МЕХОНИТ — машина «механическая»"
   },
   {
     "id": "bus",
     "emoji": "🚌",
     "hebrew": "אוטובוס",
+    "nikud": "אוֹטוֹבּוּס",
     "russian": "автобус",
     "transliteration": "autobus",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "ОТОБУС — автобус"
   },
   {
     "id": "plane",
     "emoji": "✈️",
     "hebrew": "מטוס",
+    "nikud": "מָטוֹס",
     "russian": "самолет",
     "transliteration": "matos",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "air"
+    ],
+    "mnemonic": "МАТОС — самолёт: «мотор!»"
   },
   {
     "id": "bicycle",
     "emoji": "🚲",
     "hebrew": "אופניים",
+    "nikud": "אוֹפַנַּיִים",
     "russian": "велосипед",
     "transliteration": "ofanayim",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "ОФАНАИМ — велосипед: два колеса (офан — колесо)"
   },
   {
     "id": "train",
     "emoji": "🚂",
     "hebrew": "רכבת",
+    "nikud": "רַכֶּבֶת",
     "russian": "поезд",
     "transliteration": "rakevet",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "РАКЕВЕТ — поезд мчится, как ракета"
   },
   {
     "id": "ship",
     "emoji": "🚢",
     "hebrew": "אונייה",
+    "nikud": "אוֹנִייָּה",
     "russian": "корабль",
     "transliteration": "oniya",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "water"
+    ],
+    "mnemonic": "ОНИЯ — корабль: «они-я» плывём"
   },
   {
     "id": "helicopter",
     "emoji": "🚁",
     "hebrew": "מסוק",
+    "nikud": "מַסּוֹק",
     "russian": "вертолёт",
     "transliteration": "masok",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "air"
+    ],
+    "mnemonic": "МАСОК — вертолёт: «масок» — несёт вверх"
   },
   {
     "id": "taxi",
     "emoji": "🚕",
     "hebrew": "מונית",
+    "nikud": "מוֹנִית",
     "russian": "такси",
     "transliteration": "monit",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "МОНИТ — такси со счётчиком (моне — счётчик)"
   },
   {
     "id": "motorcycle",
     "emoji": "🏍️",
     "hebrew": "אופנוע",
+    "nikud": "אוֹפַנּוֹעַ",
     "russian": "мотоцикл",
     "transliteration": "ofanoa",
-    "category": "transport"
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "ОФАНОА — мотоцикл: «колесо с мотором»"
   },
   {
     "id": "shirt",
     "emoji": "👕",
     "hebrew": "חולצה",
+    "nikud": "חוּלְצָה",
     "russian": "рубашка",
     "transliteration": "chultsa",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "clothes"
+    ],
+    "mnemonic": "ХУЛЬЦА — рубашка: «хул-ца» — надел"
   },
   {
     "id": "shoe",
     "emoji": "👞",
     "hebrew": "נעל",
+    "nikud": "נַעַל",
     "russian": "ботинок",
     "transliteration": "naal",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "shoes"
+    ],
+    "mnemonic": "НААЛЬ — ботинок: «на-аль» — на ногу"
   },
   {
     "id": "hat",
     "emoji": "👒",
     "hebrew": "כובע",
+    "nikud": "כּוֹבַע",
     "russian": "шляпа",
     "transliteration": "kova",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "accessories"
+    ],
+    "mnemonic": "КОВА — шляпа: «ко-ва» — накрыла голову"
   },
   {
     "id": "pants",
     "emoji": "👖",
     "hebrew": "מכנסיים",
+    "nikud": "מִכְנָסַיִים",
     "russian": "брюки",
     "transliteration": "michnasayim",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "clothes"
+    ],
+    "mnemonic": "МИХНАСАИМ — брюки: две штанины (-аим — пара)"
   },
   {
     "id": "dress",
     "emoji": "👗",
     "hebrew": "שמלה",
+    "nikud": "שִׂמְלָה",
     "russian": "платье",
     "transliteration": "simla",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "clothes"
+    ],
+    "mnemonic": "СИМЛА — платье: «смела» в новом платье"
   },
   {
     "id": "jacket",
     "emoji": "🧥",
     "hebrew": "ז׳קט",
+    "nikud": "זָ׳קֶט",
     "russian": "куртка",
     "transliteration": "jaket",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "clothes"
+    ],
+    "mnemonic": "ЖАКЕТ — как по-русски"
   },
   {
     "id": "socks",
     "emoji": "🧦",
     "hebrew": "גרביים",
+    "nikud": "גַּרְבַּיִים",
     "russian": "носки",
     "transliteration": "garbayim",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "clothes"
+    ],
+    "mnemonic": "ГАРБАИМ — носки: пара (-аим)"
   },
   {
     "id": "gloves",
     "emoji": "🧤",
     "hebrew": "כפפות",
+    "nikud": "כְּפָפוֹת",
     "russian": "перчатки",
     "transliteration": "kfafot",
-    "category": "clothing"
+    "category": "clothing",
+    "tags": [
+      "accessories"
+    ],
+    "mnemonic": "КФАФОТ — перчатки для «каф» — ладони"
   },
   {
     "id": "eye",
     "emoji": "👁️",
     "hebrew": "עין",
+    "nikud": "עַיִן",
     "russian": "глаз",
     "transliteration": "ayin",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "АИН — глаз: «ай, ин-тересно!»"
   },
   {
     "id": "ear",
     "emoji": "👂",
     "hebrew": "אוזן",
+    "nikud": "אוֹזֶן",
     "russian": "ухо",
     "transliteration": "ozen",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "ОЗЕН — ухо: «о-зен» — слышу"
   },
   {
     "id": "nose",
     "emoji": "👃",
     "hebrew": "אף",
+    "nikud": "אַף",
     "russian": "нос",
     "transliteration": "af",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "АФ — нос: «апчхи!» — «аф!»"
   },
   {
     "id": "mouth",
     "emoji": "👄",
     "hebrew": "פה",
+    "nikud": "פֶּה",
     "russian": "рот",
     "transliteration": "pe",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "ПЕ — рот: «пэ-пэ-пэ» — говорит"
   },
   {
     "id": "hand",
     "emoji": "✋",
     "hebrew": "יד",
+    "nikud": "יָד",
     "russian": "рука",
     "transliteration": "yad",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "limbs"
+    ],
+    "mnemonic": "ЯД — рука: «яд» не трогай рукой!"
   },
   {
     "id": "leg",
     "emoji": "🦵",
     "hebrew": "רגל",
+    "nikud": "רֶגֶל",
     "russian": "нога",
     "transliteration": "regel",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "limbs"
+    ],
+    "mnemonic": "РЕГЕЛЬ — нога: «регу-лярно» гуляем"
   },
   {
     "id": "head",
+    "picture": "head.svg",
     "hebrew": "ראש",
+    "nikud": "רֹאשׁ",
     "russian": "голова",
     "transliteration": "rosh",
     "category": "body",
-    "picture": "head.svg"
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "РОШ — голова: Рош а-Шана — «голова года»"
   },
   {
     "id": "hair",
+    "picture": "hair.svg",
     "hebrew": "שיער",
+    "nikud": "שֵׂיעָר",
     "russian": "волосы",
     "transliteration": "sear",
     "category": "body",
-    "picture": "hair.svg"
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "СЕАР — волосы: «седые» волосы"
   },
   {
     "id": "teeth",
     "emoji": "🦷",
     "hebrew": "שיניים",
+    "nikud": "שִׁינַּיִים",
     "russian": "зубы",
     "transliteration": "shinayim",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "ШИНАИМ — зубы: «шина» — грызут"
   },
   {
     "id": "stomach",
+    "picture": "stomach.svg",
     "hebrew": "בטן",
+    "nikud": "בֶּטֶן",
     "russian": "живот",
     "transliteration": "beten",
     "category": "body",
-    "picture": "stomach.svg"
+    "tags": [
+      "torso"
+    ],
+    "mnemonic": "БЕТЕН — живот: «бетон» — полный после обеда"
   },
   {
     "id": "heart",
     "emoji": "❤️",
     "hebrew": "לב",
+    "nikud": "לֵב",
     "russian": "сердце",
     "transliteration": "lev",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "torso"
+    ],
+    "mnemonic": "ЛЕВ — сердце слева"
   },
   {
     "id": "finger",
     "emoji": "👆",
     "hebrew": "אצבע",
+    "nikud": "אֶצְבַּע",
     "russian": "палец",
     "transliteration": "etzba",
-    "category": "body"
+    "category": "body",
+    "tags": [
+      "limbs"
+    ],
+    "mnemonic": "ЭЦБА — палец: «эц-ба» — показываю пальцем"
+  },
+  {
+    "id": "onion",
+    "emoji": "🧅",
+    "hebrew": "בצל",
+    "nikud": "בָּצָל",
+    "russian": "лук",
+    "transliteration": "batsal",
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "БАЦАЛ — лук режем: «бац!» — и слёзы"
+  },
+  {
+    "id": "garlic",
+    "emoji": "🧄",
+    "hebrew": "שום",
+    "nikud": "שׁוּם",
+    "russian": "чеснок",
+    "transliteration": "shum",
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ШУМ — чеснок пахнет на весь дом — шум!"
+  },
+  {
+    "id": "corn",
+    "emoji": "🌽",
+    "hebrew": "תירס",
+    "nikud": "תִּירָס",
+    "russian": "кукуруза",
+    "transliteration": "tiras",
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ТИРАС — кукуруза: «тир» — зёрна, как пульки"
+  },
+  {
+    "id": "bell_pepper",
+    "emoji": "🫑",
+    "hebrew": "פלפל",
+    "nikud": "פִּלְפֵּל",
+    "russian": "перец",
+    "transliteration": "pilpel",
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ПИЛЬПЕЛЬ — перец, как английское pepper"
+  },
+  {
+    "id": "watermelon",
+    "emoji": "🍉",
+    "hebrew": "אבטיח",
+    "nikud": "אֲבַטִּיחַ",
+    "russian": "арбуз",
+    "transliteration": "avatiach",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "АВАТИАХ — арбуз: «ава-тях» — тяжёлый!"
+  },
+  {
+    "id": "pear",
+    "emoji": "🍐",
+    "hebrew": "אגס",
+    "nikud": "אַגָּס",
+    "russian": "груша",
+    "transliteration": "agas",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "АГАС — груша: «ага, сладкая!»"
+  },
+  {
+    "id": "peach",
+    "emoji": "🍑",
+    "hebrew": "אפרסק",
+    "nikud": "אֲפַרְסֵק",
+    "russian": "персик",
+    "transliteration": "afarsek",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "АФАРСЕК — персик: «а-фарсик» — бархатный"
+  },
+  {
+    "id": "cherry",
+    "emoji": "🍒",
+    "hebrew": "דובדבן",
+    "nikud": "דּוּבְדְּבָן",
+    "russian": "вишня",
+    "transliteration": "duvdevan",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ДУВДЕВАН — вишни парой: «дув-дев» — две"
+  },
+  {
+    "id": "pineapple",
+    "emoji": "🍍",
+    "hebrew": "אננס",
+    "nikud": "אֲנָנָס",
+    "russian": "ананас",
+    "transliteration": "ananas",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "АНАНАС — как по-русски"
+  },
+  {
+    "id": "avocado",
+    "emoji": "🥑",
+    "hebrew": "אבוקדו",
+    "nikud": "אָבוֹקָדוֹ",
+    "russian": "авокадо",
+    "transliteration": "avokado",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "АВОКАДО — как по-русски"
+  },
+  {
+    "id": "mushroom",
+    "emoji": "🍄",
+    "hebrew": "פטרייה",
+    "nikud": "פִּטְרִייָּה",
+    "russian": "гриб",
+    "transliteration": "pitriya",
+    "category": "food",
+    "tags": [
+      "vegetables"
+    ],
+    "mnemonic": "ПИТРИЯ — гриб: «Петрия» собирает грибы"
+  },
+  {
+    "id": "ice_cream",
+    "emoji": "🍦",
+    "hebrew": "גלידה",
+    "nikud": "גְּלִידָה",
+    "russian": "мороженое",
+    "transliteration": "glida",
+    "category": "food",
+    "tags": [
+      "sweets"
+    ],
+    "mnemonic": "ГЛИДА — мороженое скользит, как по льду (глиссада)"
+  },
+  {
+    "id": "cookie",
+    "emoji": "🍪",
+    "hebrew": "עוגייה",
+    "nikud": "עוּגִייָּה",
+    "russian": "печенье",
+    "transliteration": "ugiya",
+    "category": "food",
+    "tags": [
+      "sweets",
+      "bakery"
+    ],
+    "mnemonic": "УГИЯ — печенье — маленький торт (уга — торт)"
+  },
+  {
+    "id": "butter",
+    "emoji": "🧈",
+    "hebrew": "חמאה",
+    "nikud": "חֶמְאָה",
+    "russian": "сливочное масло",
+    "transliteration": "chem'a",
+    "category": "food",
+    "tags": [
+      "dairy"
+    ],
+    "mnemonic": "ХЕМА — масло тает: «хе-ма»"
+  },
+  {
+    "id": "olive",
+    "emoji": "🫒",
+    "hebrew": "זית",
+    "nikud": "זַיִת",
+    "russian": "маслина",
+    "transliteration": "zayit",
+    "category": "food",
+    "tags": [
+      "fruits"
+    ],
+    "mnemonic": "ЗАИТ — маслина: «за-ит» — Масличная гора"
+  },
+  {
+    "id": "salad",
+    "emoji": "🥗",
+    "hebrew": "סלט",
+    "nikud": "סָלָט",
+    "russian": "салат",
+    "transliteration": "salat",
+    "category": "food",
+    "tags": [
+      "meals"
+    ],
+    "mnemonic": "САЛАТ — как по-русски"
+  },
+  {
+    "id": "mouse",
+    "emoji": "🐭",
+    "hebrew": "עכבר",
+    "nikud": "עַכְבָּר",
+    "russian": "мышь",
+    "transliteration": "akhbar",
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "АХБАР — мышь: «ах, бар!» — пробежала по бару"
+  },
+  {
+    "id": "duck",
+    "emoji": "🦆",
+    "hebrew": "ברווז",
+    "nikud": "בַּרְווָז",
+    "russian": "утка",
+    "transliteration": "barvaz",
+    "category": "animals",
+    "tags": [
+      "birds",
+      "farm"
+    ],
+    "mnemonic": "БАРВАЗ — утка в барвинке у пруда"
+  },
+  {
+    "id": "owl",
+    "emoji": "🦉",
+    "hebrew": "ינשוף",
+    "nikud": "יַנְשׁוּף",
+    "russian": "сова",
+    "transliteration": "yanshuf",
+    "category": "animals",
+    "tags": [
+      "birds"
+    ],
+    "mnemonic": "ЯНШУФ — сова: «ян-шуф» — шуршит ночью"
+  },
+  {
+    "id": "camel",
+    "emoji": "🐫",
+    "hebrew": "גמל",
+    "nikud": "גָּמָל",
+    "russian": "верблюд",
+    "transliteration": "gamal",
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ГАМАЛЬ — верблюд — буква «гимель» похожа на него"
+  },
+  {
+    "id": "goat",
+    "emoji": "🐐",
+    "hebrew": "עז",
+    "nikud": "עֵז",
+    "russian": "коза",
+    "transliteration": "ez",
+    "category": "animals",
+    "tags": [
+      "farm"
+    ],
+    "mnemonic": "ЭЗ — коза: «э-з» — упрямая"
+  },
+  {
+    "id": "wolf",
+    "emoji": "🐺",
+    "hebrew": "זאב",
+    "nikud": "זְאֵב",
+    "russian": "волк",
+    "transliteration": "ze'ev",
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ЗЕЭВ — волк: имя Зеэв (Владимир Жаботинский)"
+  },
+  {
+    "id": "fox",
+    "emoji": "🦊",
+    "hebrew": "שועל",
+    "nikud": "שׁוּעָל",
+    "russian": "лиса",
+    "transliteration": "shu'al",
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ШУАЛЬ — лиса шуршит хвостом"
+  },
+  {
+    "id": "tiger",
+    "emoji": "🐯",
+    "hebrew": "טיגריס",
+    "nikud": "טִיגְרִיס",
+    "russian": "тигр",
+    "transliteration": "tigris",
+    "category": "animals",
+    "tags": [
+      "wild"
+    ],
+    "mnemonic": "ТИГРИС — тигр, как река Тигр"
+  },
+  {
+    "id": "ant",
+    "emoji": "🐜",
+    "hebrew": "נמלה",
+    "nikud": "נְמָלָה",
+    "russian": "муравей",
+    "transliteration": "nemala",
+    "category": "animals",
+    "tags": [
+      "insects"
+    ],
+    "mnemonic": "НЕМАЛА — муравей «немалый» груз тащит"
+  },
+  {
+    "id": "spider",
+    "emoji": "🕷️",
+    "hebrew": "עכביש",
+    "nikud": "עַכָּבִישׁ",
+    "russian": "паук",
+    "transliteration": "akavish",
+    "category": "animals",
+    "tags": [
+      "insects"
+    ],
+    "mnemonic": "АКАВИШ — паук: «ах, висит!»"
+  },
+  {
+    "id": "dolphin",
+    "emoji": "🐬",
+    "hebrew": "דולפין",
+    "nikud": "דּוֹלְפִין",
+    "russian": "дельфин",
+    "transliteration": "dolfin",
+    "category": "animals",
+    "tags": [
+      "sea"
+    ],
+    "mnemonic": "ДОЛФИН — как по-русски"
+  },
+  {
+    "id": "penguin",
+    "emoji": "🐧",
+    "hebrew": "פינגווין",
+    "nikud": "פִּינְגְּוִוין",
+    "russian": "пингвин",
+    "transliteration": "pingvin",
+    "category": "animals",
+    "tags": [
+      "birds"
+    ],
+    "mnemonic": "ПИНГВИН — как по-русски"
+  },
+  {
+    "id": "foot",
+    "emoji": "🦶",
+    "hebrew": "כף רגל",
+    "nikud": "כַּף רֶגֶל",
+    "russian": "ступня",
+    "transliteration": "kaf regel",
+    "category": "body",
+    "tags": [
+      "limbs"
+    ],
+    "mnemonic": "КАФ РЕГЕЛЬ — «ладонь ноги»: каф — ладонь, регель — нога"
+  },
+  {
+    "id": "tongue",
+    "emoji": "👅",
+    "hebrew": "לשון",
+    "nikud": "לָשׁוֹן",
+    "russian": "язык",
+    "transliteration": "lashon",
+    "category": "body",
+    "tags": [
+      "face"
+    ],
+    "mnemonic": "ЛАШОН — язык: лашон а-кодеш — «святой язык», иврит"
+  },
+  {
+    "id": "bone",
+    "emoji": "🦴",
+    "hebrew": "עצם",
+    "nikud": "עֶצֶם",
+    "russian": "кость",
+    "transliteration": "etsem",
+    "category": "body",
+    "tags": [
+      "torso"
+    ],
+    "mnemonic": "ЭЦЕМ — кость крепкая, как ствол (эц — дерево)"
+  },
+  {
+    "id": "muscle",
+    "emoji": "💪",
+    "hebrew": "שריר",
+    "nikud": "שְׁרִיר",
+    "russian": "мышца",
+    "transliteration": "shrir",
+    "category": "body",
+    "tags": [
+      "limbs"
+    ],
+    "mnemonic": "ШРИР — мышца: «шр-р» — напряглась"
+  },
+  {
+    "id": "scarf",
+    "emoji": "🧣",
+    "hebrew": "צעיף",
+    "nikud": "צָעִיף",
+    "russian": "шарф",
+    "transliteration": "tsa'if",
+    "category": "clothing",
+    "tags": [
+      "accessories"
+    ],
+    "mnemonic": "ЦАИФ — шарф: «ца-иф» — завязал"
+  },
+  {
+    "id": "boot",
+    "emoji": "👢",
+    "hebrew": "מגף",
+    "nikud": "מַגָּף",
+    "russian": "сапог",
+    "transliteration": "magaf",
+    "category": "clothing",
+    "tags": [
+      "shoes"
+    ],
+    "mnemonic": "МАГАФ — сапог: «мага-ф» — шагает по грязи"
+  },
+  {
+    "id": "tie",
+    "emoji": "👔",
+    "hebrew": "עניבה",
+    "nikud": "עֲנִיבָה",
+    "russian": "галстук",
+    "transliteration": "aniva",
+    "category": "clothing",
+    "tags": [
+      "accessories"
+    ],
+    "mnemonic": "АНИВА — галстук завязывает Анива"
+  },
+  {
+    "id": "ring",
+    "emoji": "💍",
+    "hebrew": "טבעת",
+    "nikud": "טַבַּעַת",
+    "russian": "кольцо",
+    "transliteration": "taba'at",
+    "category": "clothing",
+    "tags": [
+      "accessories"
+    ],
+    "mnemonic": "ТАБААТ — кольцо — «табачок» в табакерке круглый"
+  },
+  {
+    "id": "rainbow",
+    "emoji": "🌈",
+    "hebrew": "קשת",
+    "nikud": "קֶשֶׁת",
+    "russian": "радуга",
+    "transliteration": "keshet",
+    "category": "nature",
+    "tags": [
+      "sky",
+      "weather"
+    ],
+    "mnemonic": "КЕШЕТ — радуга — лук (кешет) в небе"
+  },
+  {
+    "id": "world",
+    "emoji": "🌍",
+    "hebrew": "עולם",
+    "nikud": "עוֹלָם",
+    "russian": "мир, земной шар",
+    "transliteration": "olam",
+    "category": "nature",
+    "tags": [
+      "landscape"
+    ],
+    "mnemonic": "ОЛАМ — мир: «шалом ле-олам» — мир всему миру"
+  },
+  {
+    "id": "stone",
+    "emoji": "🪨",
+    "hebrew": "אבן",
+    "nikud": "אֶבֶן",
+    "russian": "камень",
+    "transliteration": "even",
+    "category": "nature",
+    "tags": [
+      "landscape"
+    ],
+    "mnemonic": "ЭВЕН — камень ровный"
+  },
+  {
+    "id": "cactus",
+    "emoji": "🌵",
+    "hebrew": "קקטוס",
+    "nikud": "קַקְטוּס",
+    "russian": "кактус",
+    "transliteration": "kaktus",
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "КАКТУС — как по-русски"
+  },
+  {
+    "id": "palm",
+    "emoji": "🌴",
+    "hebrew": "דקל",
+    "nikud": "דֶּקֶל",
+    "russian": "пальма",
+    "transliteration": "dekel",
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "ДЕКЕЛЬ — пальма: «де-кель» — до самого неба"
+  },
+  {
+    "id": "sunflower",
+    "emoji": "🌻",
+    "hebrew": "חמנייה",
+    "nikud": "חַמָּנִייָּה",
+    "russian": "подсолнух",
+    "transliteration": "chamaniya",
+    "category": "nature",
+    "tags": [
+      "plants"
+    ],
+    "mnemonic": "ХАМАНИЯ — подсолнух смотрит на солнце (хама — солнце)"
+  },
+  {
+    "id": "truck",
+    "emoji": "🚚",
+    "hebrew": "משאית",
+    "nikud": "מַשָּׂאִית",
+    "russian": "грузовик",
+    "transliteration": "masa'it",
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "МАСАИТ — грузовик возит массу груза (маса — груз)"
+  },
+  {
+    "id": "boat",
+    "emoji": "⛵",
+    "hebrew": "סירה",
+    "nikud": "סִירָה",
+    "russian": "лодка",
+    "transliteration": "sira",
+    "category": "transport",
+    "tags": [
+      "water"
+    ],
+    "mnemonic": "СИРА — лодка у берега, Сира гребёт"
+  },
+  {
+    "id": "scooter",
+    "emoji": "🛴",
+    "hebrew": "קורקינט",
+    "nikud": "קוֹרְקִינֶט",
+    "russian": "самокат",
+    "transliteration": "korkinet",
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "КОРКИНЕТ — самокат катит по корке асфальта"
+  },
+  {
+    "id": "ambulance",
+    "emoji": "🚑",
+    "hebrew": "אמבולנס",
+    "nikud": "אַמְבּוּלַנְס",
+    "russian": "скорая помощь",
+    "transliteration": "ambulans",
+    "category": "transport",
+    "tags": [
+      "road"
+    ],
+    "mnemonic": "АМБУЛАНС — скорая: похоже на «амбулаторию»"
+  },
+  {
+    "id": "bucket",
+    "emoji": "🪣",
+    "hebrew": "דלי",
+    "nikud": "דְּלִי",
+    "russian": "ведро",
+    "transliteration": "dli",
+    "category": "home",
+    "tags": [
+      "cleaning"
+    ],
+    "mnemonic": "ДЛИ — ведро: «длинная» ручка"
+  },
+  {
+    "id": "hammer",
+    "emoji": "🔨",
+    "hebrew": "פטיש",
+    "nikud": "פַּטִּישׁ",
+    "russian": "молоток",
+    "transliteration": "patish",
+    "category": "objects",
+    "tags": [
+      "tools"
+    ],
+    "mnemonic": "ПАТИШ — молоток: «пат!» — по гвоздю"
+  },
+  {
+    "id": "gift",
+    "emoji": "🎁",
+    "hebrew": "מתנה",
+    "nikud": "מַתָּנָה",
+    "russian": "подарок",
+    "transliteration": "matana",
+    "category": "objects",
+    "tags": [
+      "holiday"
+    ],
+    "mnemonic": "МАТАНА — подарок для мамы Таны"
+  },
+  {
+    "id": "balloon",
+    "emoji": "🎈",
+    "hebrew": "בלון",
+    "nikud": "בָּלוֹן",
+    "russian": "воздушный шар",
+    "transliteration": "balon",
+    "category": "objects",
+    "tags": [
+      "holiday",
+      "toys"
+    ],
+    "mnemonic": "БАЛОН — шарик надули, как баллон"
+  },
+  {
+    "id": "guitar",
+    "emoji": "🎸",
+    "hebrew": "גיטרה",
+    "nikud": "גִּיטָרָה",
+    "russian": "гитара",
+    "transliteration": "gitara",
+    "category": "objects",
+    "tags": [
+      "music"
+    ],
+    "mnemonic": "ГИТАРА — как по-русски"
+  },
+  {
+    "id": "bell",
+    "emoji": "🔔",
+    "hebrew": "פעמון",
+    "nikud": "פַּעֲמוֹן",
+    "russian": "колокольчик",
+    "transliteration": "pa'amon",
+    "category": "objects",
+    "tags": [
+      "music"
+    ],
+    "mnemonic": "ПААМОН — колокольчик звенит: «па-а-мон!»"
+  },
+  {
+    "id": "toilet",
+    "emoji": "🚽",
+    "hebrew": "אסלה",
+    "nikud": "אַסְלָה",
+    "russian": "унитаз",
+    "transliteration": "asla",
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "АСЛА — унитаз"
+  },
+  {
+    "id": "bathtub",
+    "emoji": "🛁",
+    "hebrew": "אמבטיה",
+    "nikud": "אַמְבַּטְיָה",
+    "russian": "ванна",
+    "transliteration": "ambatya",
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "АМБАТЬЯ — ванна: «ам-бад» — как английское bath"
+  },
+  {
+    "id": "shower",
+    "emoji": "🚿",
+    "hebrew": "מקלחת",
+    "nikud": "מִקְלַחַת",
+    "russian": "душ",
+    "transliteration": "miklachat",
+    "category": "home",
+    "tags": [
+      "bathroom"
+    ],
+    "mnemonic": "МИКЛАХАТ — душ: «клях-клях» — капли"
+  },
+  {
+    "id": "lock",
+    "emoji": "🔒",
+    "hebrew": "מנעול",
+    "nikud": "מַנְעוּל",
+    "russian": "замок",
+    "transliteration": "man'ul",
+    "category": "objects",
+    "tags": [
+      "household"
+    ],
+    "mnemonic": "МАНУЛЬ — замок: «ман-уль» — заперт"
   }
 ]

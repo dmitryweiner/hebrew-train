@@ -54,4 +54,19 @@ describe('words.json', () => {
     const duplicates = hebrew.filter((h, i) => hebrew.indexOf(h) !== i);
     expect(duplicates).toEqual([]);
   });
+
+  it('огласовки без знаков совпадают с написанием слова', () => {
+    for (const w of words) {
+      expect(w.nikud, w.id).toBeTruthy();
+      expect(w.nikud!.replace(/[\u0591-\u05C7]/g, ''), w.id).toBe(w.hebrew);
+    }
+  });
+
+  it('у каждого слова есть мнемоника и хотя бы один тег', () => {
+    for (const w of words) {
+      expect(w.mnemonic, w.id).toBeTruthy();
+      expect(w.tags?.length, w.id).toBeGreaterThan(0);
+      for (const tag of w.tags!) expect(tag, w.id).toMatch(/^[a-z]+$/);
+    }
+  });
 });

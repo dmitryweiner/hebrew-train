@@ -3,6 +3,8 @@
 import { createHashRouter, Navigate, Outlet, RouterProvider } from 'react-router';
 import HomePage from './pages/HomePage';
 import PlayPage from './pages/PlayPage';
+import SettingsPage from './pages/SettingsPage';
+import ProgressPage from './pages/ProgressPage';
 import UpdateBanner from './pwa/UpdateBanner';
 import { ProgressProvider } from './state/ProgressProvider';
 
@@ -19,6 +21,8 @@ const router = createHashRouter([
     children: [
       { path: '/', element: <HomePage /> },
       { path: '/play/:kind', element: <PlayPage /> },
+      { path: '/settings', element: <SettingsPage /> },
+      { path: '/progress', element: <ProgressPage /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },

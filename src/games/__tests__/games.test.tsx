@@ -10,6 +10,7 @@ import MatchingTask from '../MatchingTask';
 import MemoryTask from '../MemoryTask';
 import FlashcardTask from '../FlashcardTask';
 import SpeedTask, { SPEED_DURATION } from '../SpeedTask';
+import ListenTask from '../ListenTask';
 import { progressWithBox, renderTask } from './helpers';
 
 const he = (id: string) => WORD_BY_ID[id].hebrew;
@@ -69,7 +70,7 @@ describe('Угадай букву', () => {
 
 describe('Напиши слово', () => {
   const type = (value: string) => {
-    fireEvent.change(screen.getByPlaceholderText('Напишите здесь'), { target: { value } });
+    fireEvent.change(screen.getByRole('textbox'), { target: { value } });
     fireEvent.click(screen.getByRole('button', { name: 'Проверить' }));
   };
 
@@ -88,6 +89,27 @@ describe('Напиши слово', () => {
     expect(screen.getByText('✓ Верно, но не с первой попытки')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
     expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+
+  it('слово набирается экранной клавиатурой, ⌫ стирает букву', () => {
+    const { onDone } = renderTask(WordInputTask, 'word-input', ['dog']);
+    const keyboard = screen.getByRole('group', { name: 'Клавиатура иврита' });
+    const press = (key: string) => fireEvent.click(within(keyboard).getByRole('button', { name: key }));
+    press('א');
+    press('Стереть букву');
+    for (const letter of Array.from(he('dog'))) press(letter);
+    expect(screen.getByRole('textbox')).toHaveValue(he('dog'));
+    expect(screen.getByRole('textbox')).toHaveAttribute('readonly');
+    fireEvent.click(screen.getByRole('button', { name: 'Проверить' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
+  });
+
+  it('можно переключиться на системную клавиатуру', () => {
+    renderTask(WordInputTask, 'word-input', ['dog']);
+    fireEvent.click(screen.getByRole('button', { name: /системной клавиатурой/ }));
+    expect(screen.queryByRole('group', { name: 'Клавиатура иврита' })).toBeNull();
+    expect(screen.getByRole('textbox')).not.toHaveAttribute('readonly');
   });
 
   it('после трёх ошибок показывает ответ', () => {
@@ -237,5 +259,15 @@ describe('Верно или нет', () => {
     const results = onDone.mock.calls[0][0];
     expect(results).toHaveLength(3);
     expect(within(container).queryByText('✓ Верно')).toBeNull();
+  });
+});
+
+describe('Послушай и выбери', () => {
+  it('выбор правильной картинки', () => {
+    const { onDone } = renderTask(ListenTask, 'listen', ['dog']);
+    expect(screen.getAllByRole('button', { name: /^(?!🔊)/ }).length).toBeGreaterThanOrEqual(4);
+    fireEvent.click(screen.getByRole('button', { name: WORD_BY_ID.dog.russian }));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
   });
 });

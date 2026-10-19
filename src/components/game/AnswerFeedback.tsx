@@ -2,8 +2,11 @@
 
 import { useEffect } from 'react';
 import type { Word } from '../../types';
+import { playAnswerSound } from '../../core/sounds';
+import { useSettings } from '../../state/progressContext';
 import HebrewText from '../HebrewText';
 import WordImage from '../WordImage';
+import SpeakButton from '../SpeakButton';
 
 /** Сколько показывать правильный ответ перед автопереходом */
 export const AUTO_NEXT_DELAY = 1500;
@@ -17,6 +20,14 @@ interface AnswerFeedbackProps {
 }
 
 const AnswerFeedback = ({ word, correct, onNext, message }: AnswerFeedbackProps) => {
+  const { sound } = useSettings();
+
+  useEffect(() => {
+    if (sound) playAnswerSound(correct);
+    // Звук — только в момент ответа
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     // После правильного ответа идём дальше сами; после ошибки ждём, пока человек рассмотрит ответ
     if (!correct) return;
@@ -39,7 +50,9 @@ const AnswerFeedback = ({ word, correct, onNext, message }: AnswerFeedbackProps)
               {word.russian} · <span className="text-muted">{word.transliteration}</span>
             </div>
           </div>
+          <SpeakButton text={word.hebrew} compact />
         </div>
+        {!correct && word.mnemonic && <div className="mnemonic mb-3">💡 {word.mnemonic}</div>}
         <button className={`btn btn-lg w-100 ${correct ? 'btn-success' : 'btn-primary'}`} onClick={onNext}>
           Дальше →
         </button>
