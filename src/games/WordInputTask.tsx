@@ -6,11 +6,11 @@ import { compareHebrewWords, countHebrewLetters, getRandomPosition, isHebrewText
 import WordImage from '../components/WordImage';
 import HebrewText from '../components/HebrewText';
 import AnswerFeedback from '../components/game/AnswerFeedback';
+import { pluralRu } from '../utils/plural';
 import type { TaskProps } from './types';
 
 const MAX_ATTEMPTS = 3;
 
-const pluralLetters = (n: number) => (n === 1 ? 'буква' : n < 5 ? 'буквы' : 'букв');
 
 const WordInputTask = ({ task, onDone }: TaskProps) => {
   const word = WORD_BY_ID[task.wordIds[0]];
@@ -44,7 +44,7 @@ const WordInputTask = ({ task, onDone }: TaskProps) => {
       <WordImage emoji={word.emoji} picture={word.picture} alt={word.russian} size="large" />
       <div className="task-translation">{word.russian}</div>
       <div className="text-muted mb-2">
-        {letterCount} {pluralLetters(letterCount)}
+        {letterCount} {pluralRu(letterCount, 'буква', 'буквы', 'букв')}
       </div>
 
       {attempts === 1 && finished === null && (

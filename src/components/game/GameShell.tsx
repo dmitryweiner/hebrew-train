@@ -31,8 +31,8 @@ const GameShell = ({ title, icon, round, onExit, children }: GameShellProps) => 
         <div className="game-title">
           <span aria-hidden>{icon}</span> {title}
         </div>
-        <div className="game-counter" aria-label={`Задание ${position} из ${total}`}>
-          {position} из {total}
+        <div className="game-counter" aria-label={total > 1 ? `Задание ${position} из ${total}` : undefined}>
+          {total > 1 ? `${position} из ${total}` : ''}
         </div>
       </header>
       {total > 1 && (

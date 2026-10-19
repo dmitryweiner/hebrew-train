@@ -27,12 +27,3 @@ export type GameType =
 
 // Вид раунда: отдельная игра или «Тренировка дня»
 export type RoundKind = GameType | 'daily';
-
-export interface MatchingPair {
-  id: string;
-  emoji?: string;       // эмодзи (если есть)
-  picture?: string;     // путь к картинке (если есть)
-  word: string;
-  matched: boolean;
-  selected: boolean;
-}

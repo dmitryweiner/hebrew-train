@@ -8,6 +8,7 @@ import { GAME_INFO } from '../games/info';
 import { TASK_COMPONENTS } from '../games';
 import { useProgress } from '../state/progressContext';
 import { useSpeechAvailable } from '../hooks/useSpeech';
+import { pluralRu } from '../utils/plural';
 import VocabularyCard from '../components/VocabularyCard';
 import InstallCard from '../pwa/InstallCard';
 import BackupCard from '../pwa/BackupCard';
@@ -52,7 +53,7 @@ const HomePage = () => {
 
       <div className="today-line">
         {todayStats?.rounds
-          ? `Сегодня: ${todayStats.rounds} ${todayStats.rounds === 1 ? 'раунд' : todayStats.rounds < 5 ? 'раунда' : 'раундов'}, ${todayStats.correct} из ${todayStats.total}${todayStats.daily ? ' · цель дня выполнена ✓' : ''}`
+          ? `Сегодня: ${todayStats.rounds} ${pluralRu(todayStats.rounds, 'раунд', 'раунда', 'раундов')}, ${todayStats.correct} из ${todayStats.total}${todayStats.daily ? ' · цель дня выполнена ✓' : ''}`
           : 'Сегодня ещё не занимались'}
       </div>
 

@@ -1,0 +1,241 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { act, fireEvent, screen, within } from '@testing-library/react';
+import { WORD_BY_ID } from '../../data/dictionary';
+import { AUTO_NEXT_DELAY } from '../../components/game/AnswerFeedback';
+import WordChoiceTask from '../WordChoiceTask';
+import LetterChoiceTask from '../LetterChoiceTask';
+import WordInputTask from '../WordInputTask';
+import AnagramTask from '../AnagramTask';
+import MatchingTask from '../MatchingTask';
+import MemoryTask from '../MemoryTask';
+import FlashcardTask from '../FlashcardTask';
+import SpeedTask, { SPEED_DURATION } from '../SpeedTask';
+import { progressWithBox, renderTask } from './helpers';
+
+const he = (id: string) => WORD_BY_ID[id].hebrew;
+
+beforeEach(() => localStorage.clear());
+afterEach(() => vi.useRealTimers());
+
+describe('Угадай слово', () => {
+  it('правильный ответ: «Правильно!» и автопереход', () => {
+    vi.useFakeTimers();
+    const { onDone } = renderTask(WordChoiceTask, 'word-choice', ['dog']);
+    fireEvent.click(screen.getByRole('button', { name: he('dog') }));
+    expect(screen.getByText('✓ Правильно!')).toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(AUTO_NEXT_DELAY));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
+  });
+
+  it('ошибка: варианты блокируются, переход только по «Дальше»', () => {
+    vi.useFakeTimers();
+    const { onDone } = renderTask(WordChoiceTask, 'word-choice', ['dog']);
+    const wrong = screen.getAllByRole('button').find(b => b.textContent !== he('dog'))!;
+    fireEvent.click(wrong);
+    expect(screen.getByText('✗ Неправильно')).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: he('dog') })[0]).toBeDisabled();
+    act(() => vi.advanceTimersByTime(10_000));
+    expect(onDone).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+});
+
+describe('Угадай букву', () => {
+  const missingLetter = (container: HTMLElement, word: string) => {
+    const spans = [...container.querySelectorAll('.gapped-word > span')];
+    return Array.from(word)[spans.findIndex(s => s.classList.contains('gap'))];
+  };
+
+  it('правильная буква засчитывается', () => {
+    const { container, onDone } = renderTask(LetterChoiceTask, 'letter-choice', ['potato']);
+    const letter = missingLetter(container, he('potato'));
+    expect(letter).not.toBe(' ');
+    fireEvent.click(screen.getByRole('button', { name: letter }));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'potato', correct: true }]);
+  });
+
+  it('неправильная буква показывает слово целиком', () => {
+    const { container, onDone } = renderTask(LetterChoiceTask, 'letter-choice', ['cat']);
+    const letter = missingLetter(container, he('cat'));
+    const wrong = [...container.querySelectorAll('.option-btn')].find(b => b.textContent !== letter)!;
+    fireEvent.click(wrong);
+    expect(container.querySelector('.gap')?.textContent).toBe(letter);
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'cat', correct: false }]);
+  });
+});
+
+describe('Напиши слово', () => {
+  const type = (value: string) => {
+    fireEvent.change(screen.getByPlaceholderText('Напишите здесь'), { target: { value } });
+    fireEvent.click(screen.getByRole('button', { name: 'Проверить' }));
+  };
+
+  it('с первой попытки — правильно; апостроф вместо гереша принимается', () => {
+    const { onDone } = renderTask(WordInputTask, 'word-input', ['giraffe']);
+    type("ג'ירפה");
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'giraffe', correct: true }]);
+  });
+
+  it('со второй попытки слово не засчитывается, после первой ошибки — подсказка', () => {
+    const { onDone } = renderTask(WordInputTask, 'word-input', ['dog']);
+    type('חתול');
+    expect(screen.getByText(/Первая буква/)).toBeInTheDocument();
+    type(he('dog'));
+    expect(screen.getByText('✓ Верно, но не с первой попытки')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+
+  it('после трёх ошибок показывает ответ', () => {
+    const { onDone } = renderTask(WordInputTask, 'word-input', ['dog']);
+    type('א');
+    type('ב');
+    type('ג');
+    expect(screen.getByText('✗ Неправильно')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+});
+
+describe('Собери слово', () => {
+  const clickTilesFor = (container: HTMLElement, word: string) => {
+    const used = new Set<Element>();
+    for (const letter of Array.from(word).filter(c => /[א-ת]/.test(c))) {
+      const tile = [...container.querySelectorAll('.anagram-tile:not(:disabled)')].find(
+        t => t.textContent === letter && !used.has(t)
+      )!;
+      used.add(tile);
+      fireEvent.click(tile);
+    }
+  };
+
+  it('слово с пробелом собирается из плиток', () => {
+    const { container, onDone } = renderTask(AnagramTask, 'anagram', ['potato']);
+    expect(container.querySelectorAll('.anagram-slot')).toHaveLength(8);
+    expect(container.querySelectorAll('.anagram-tile')).toHaveLength(10);
+    clickTilesFor(container, he('potato'));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'potato', correct: true }]);
+  });
+
+  it('«Не знаю» показывает ответ и засчитывает ошибку', () => {
+    const { onDone } = renderTask(AnagramTask, 'anagram', ['dog']);
+    fireEvent.click(screen.getByRole('button', { name: 'Не знаю, показать ответ' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+
+  it('клетку можно очистить нажатием', () => {
+    const { container } = renderTask(AnagramTask, 'anagram', ['dog']);
+    fireEvent.click(container.querySelector('.anagram-tile')!);
+    const filled = container.querySelector('.anagram-slot.is-filled')!;
+    fireEvent.click(filled);
+    expect(container.querySelector('.anagram-slot.is-filled')).toBeNull();
+  });
+});
+
+describe('Найди пары', () => {
+  const ids = ['dog', 'cat', 'fish'];
+  const pic = (id: string) => screen.getByRole('button', { name: WORD_BY_ID[id].russian });
+  const word = (id: string) => screen.getByRole('button', { name: new RegExp(`^${he(id)}`) });
+
+  it('все пары без ошибок — все слова правильные', () => {
+    const { onDone } = renderTask(MatchingTask, 'matching', ids);
+    for (const id of ids) {
+      fireEvent.click(pic(id));
+      fireEvent.click(word(id));
+    }
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith(ids.map(id => ({ wordId: id, correct: true })));
+  });
+
+  it('ошибка отмечает слово, с которого начали пару', () => {
+    const { onDone } = renderTask(MatchingTask, 'matching', ids);
+    fireEvent.click(pic('dog'));
+    fireEvent.click(word('cat'));
+    for (const id of ids) {
+      fireEvent.click(pic(id));
+      fireEvent.click(word(id));
+    }
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith([
+      { wordId: 'dog', correct: false },
+      { wordId: 'cat', correct: true },
+      { wordId: 'fish', correct: true },
+    ]);
+  });
+});
+
+describe('Мемори', () => {
+  it('открытая пара остаётся открытой, после всех пар — завершение', () => {
+    vi.useFakeTimers();
+    const ids = ['dog', 'cat', 'fish'];
+    const { container, onDone } = renderTask(MemoryTask, 'memory', ids);
+    const cards = () => [...container.querySelectorAll('.memory-card')];
+    expect(cards()).toHaveLength(6);
+    // Открываем все по одной, чтобы узнать раскладку
+    const layout: string[] = [];
+    for (let i = 0; i < 6; i++) {
+      fireEvent.click(cards()[i]);
+      layout.push(cards()[i].getAttribute('aria-label')!);
+      fireEvent.click(cards()[(i + 1) % 6]);
+      act(() => vi.advanceTimersByTime(2000));
+    }
+    for (const id of ids) {
+      const a = layout.indexOf(WORD_BY_ID[id].russian);
+      const b = layout.indexOf(he(id));
+      if (!cards()[a].classList.contains('is-matched')) {
+        fireEvent.click(cards()[a]);
+        fireEvent.click(cards()[b]);
+        act(() => vi.advanceTimersByTime(100));
+      }
+    }
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledWith(ids.map(id => ({ wordId: id, correct: true })));
+  });
+});
+
+describe('Карточки', () => {
+  it('новое слово показывается сразу, «Запомнил» засчитывается', () => {
+    const { onDone } = renderTask(FlashcardTask, 'flashcards', ['dog']);
+    expect(screen.getByText('Новое слово')).toBeInTheDocument();
+    expect(screen.getByText(he('dog'))).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Запомнил →' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
+  });
+
+  it('знакомое слово скрыто до «Показать слово», «Не знал» — ошибка', () => {
+    const { onDone } = renderTask(FlashcardTask, 'flashcards', ['dog'], progressWithBox('dog', 2));
+    expect(screen.queryByText(he('dog'))).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: '👁 Показать слово' }));
+    fireEvent.click(screen.getByRole('button', { name: '✗ Не знал' }));
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+});
+
+describe('Верно или нет', () => {
+  it('считает ответы и завершается через 60 секунд', () => {
+    vi.useFakeTimers();
+    const ids = ['dog', 'cat', 'fish', 'cow'];
+    const { container, onDone } = renderTask(SpeedTask, 'speed', ids);
+    fireEvent.click(screen.getByRole('button', { name: '▶ Начать' }));
+    for (let i = 0; i < 3; i++) {
+      const shown = container.querySelector('.speed-card .he')!.textContent;
+      const picture = container.querySelector('.speed-card [role=img], .speed-card img')!;
+      expect(picture).toBeTruthy();
+      expect(shown).toBeTruthy();
+      fireEvent.click(screen.getByRole('button', { name: '✓ Верно' }));
+      act(() => vi.advanceTimersByTime(1300));
+    }
+    for (let s = 0; s < SPEED_DURATION; s++) act(() => vi.advanceTimersByTime(1000));
+    expect(screen.getByText(/Время вышло/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Итоги →' }));
+    const results = onDone.mock.calls[0][0];
+    expect(results).toHaveLength(3);
+    expect(within(container).queryByText('✓ Верно')).toBeNull();
+  });
+});
