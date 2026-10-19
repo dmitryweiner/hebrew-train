@@ -7,7 +7,34 @@
  */
 export const isHebrewText = (text: string): boolean => {
   if (!text) return true; // пустая строка считается валидной
-  return /^[\u0590-\u05FF\s]*$/.test(text);
+  return /^[\u0590-\u05FF\s'’`]*$/.test(text);
+};
+
+/**
+ * Заменяет апостроф, набранный с клавиатуры, на ивритский гереш (׳)
+ * @param text - текст для нормализации
+ * @returns текст с герешем вместо апострофа
+ */
+export const normalizeGeresh = (text: string): string => {
+  return text.replace(/['’`]/g, '׳');
+};
+
+/**
+ * Проверяет, является ли символ ивритской буквой (не пробел, не гереш, не огласовка)
+ * @param char - символ
+ * @returns true для букв א–ת, включая конечные формы
+ */
+export const isHebrewLetter = (char: string): boolean => {
+  return /^[\u05D0-\u05EA]$/.test(char);
+};
+
+/**
+ * Считает количество ивритских букв в слове (без пробелов и гереша)
+ * @param word - слово
+ * @returns число букв
+ */
+export const countHebrewLetters = (word: string): number => {
+  return Array.from(word).filter(isHebrewLetter).length;
 };
 
 /**
@@ -32,7 +59,8 @@ export const normalizeFinalLetters = (text: string): string => {
  * @returns true если слова одинаковые
  */
 export const compareHebrewWords = (word1: string, word2: string): boolean => {
-  return normalizeFinalLetters(word1.trim()) === normalizeFinalLetters(word2.trim());
+  const normalize = (word: string) => normalizeFinalLetters(normalizeGeresh(word.trim()));
+  return normalize(word1) === normalize(word2);
 };
 
 /**
@@ -111,13 +139,16 @@ export const wordContainsLetter = (word: string, letter: string): boolean => {
 };
 
 /**
- * Получает случайную позицию в слове
+ * Получает случайную позицию буквы в слове (пробелы и гереш не выбираются)
  * @param word - слово
  * @returns случайная позиция (индекс)
  */
 export const getRandomPosition = (word: string): number => {
-  const length = word.trim().length;
-  return Math.floor(Math.random() * length);
+  const letterPositions = Array.from(word)
+    .map((char, index) => (isHebrewLetter(char) ? index : -1))
+    .filter(index => index >= 0);
+  if (letterPositions.length === 0) return 0;
+  return letterPositions[Math.floor(Math.random() * letterPositions.length)];
 };
 
 /**

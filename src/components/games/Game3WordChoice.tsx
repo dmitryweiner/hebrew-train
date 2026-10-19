@@ -4,9 +4,10 @@ import { useState, useEffect, useCallback } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { useAutoNext } from '../../hooks/useAutoNext';
-import { getRandomWord } from '../../utils/wordUtils';
+import { getRandomWord, shuffleArray } from '../../utils/wordUtils';
 import { generateWordDistractors } from '../../utils/gameUtils';
 import WordImage from '../WordImage';
+import { getCategoryName } from '../../data/categories';
 import SuccessModal from '../SuccessModal';
 
 interface Game3WordChoiceProps {
@@ -40,7 +41,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
     const distractors = generateWordDistractors(word, words, distractorCount);
     
     // Создаем массив вариантов и перемешиваем
-    const allOptions = [word, ...distractors].sort(() => Math.random() - 0.5);
+    const allOptions = shuffleArray([word, ...distractors]);
 
     setCurrentWord(word);
     setOptions(allOptions);
@@ -71,16 +72,11 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
 
     if (correct) {
       addCorrect();
-      // Автоматический переход к следующему слову через 4 секунды
-      scheduleNext(4000);
+      scheduleNext(1500);
     } else {
+      // Задание засчитывается один раз: показываем правильный ответ и идём дальше
       addIncorrect();
-      // При ошибке даем возможность попробовать снова через 2.5 секунды
-      setTimeout(() => {
-        setSelectedOption(null);
-        setShowFeedback(false);
-        setIsCorrect(null);
-      }, 2500);
+      scheduleNext(3000);
     }
   };
 
@@ -188,7 +184,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
                 <div className="small mt-2">
                   Правильный ответ: <span className="fs-5 fw-bold">{currentWord.hebrew}</span>
                 </div>
-                <div className="small mt-1">Попробуйте ещё раз</div>
+                <button onClick={goNext} className="btn btn-outline-danger btn-sm mt-2">Дальше →</button>
               </div>
             </div>
           )}
@@ -197,7 +193,7 @@ export const Game3WordChoice = ({ words, onExit }: Game3WordChoiceProps) => {
 
       {/* Категория внизу */}
       <div className="text-center mt-3 text-muted small">
-        Категория: {currentWord.category} • Уровень: {'⭐'.repeat(currentWord.difficulty)}
+        Категория: {getCategoryName(currentWord.category)}
       </div>
 
       {/* Модальное окно успеха */}

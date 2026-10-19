@@ -27,16 +27,6 @@ export const getWordsByCategory = (words: Word[], category: string): Word[] => {
 };
 
 /**
- * Получает слова по уровню сложности
- * @param words - массив слов
- * @param difficulty - уровень сложности
- * @returns массив слов с указанной сложностью
- */
-export const getWordsByDifficulty = (words: Word[], difficulty: 1 | 2 | 3): Word[] => {
-  return words.filter(word => word.difficulty === difficulty);
-};
-
-/**
  * Получает дистракторы (похожие слова) для игры
  * @param words - массив всех слов
  * @param correctWord - правильное слово

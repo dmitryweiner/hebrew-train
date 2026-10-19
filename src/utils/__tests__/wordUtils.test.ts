@@ -5,7 +5,6 @@ import type { Word } from '../../types';
 import {
   getRandomWord,
   getWordsByCategory,
-  getWordsByDifficulty,
   getDistractorWords,
   shuffleArray,
   getRandomMissingPosition,
@@ -27,7 +26,6 @@ describe('wordUtils', () => {
         russian: 'яблоко',
         transliteration: 'tapuach',
         category: 'food',
-        difficulty: 1,
       },
       {
         id: 'dog',
@@ -36,7 +34,6 @@ describe('wordUtils', () => {
         russian: 'собака',
         transliteration: 'kelev',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'cat',
@@ -45,7 +42,6 @@ describe('wordUtils', () => {
         russian: 'кот',
         transliteration: 'chatul',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'car',
@@ -54,7 +50,6 @@ describe('wordUtils', () => {
         russian: 'машина',
         transliteration: 'mechonit',
         category: 'transport',
-        difficulty: 2,
       },
       {
         id: 'bus',
@@ -63,7 +58,6 @@ describe('wordUtils', () => {
         russian: 'автобус',
         transliteration: 'autobus',
         category: 'transport',
-        difficulty: 2,
       },
     ];
   });
@@ -110,29 +104,6 @@ describe('wordUtils', () => {
 
     it('должен возвращать пустой массив для несуществующей категории', () => {
       const words = getWordsByCategory(testWords, 'nonexistent');
-      expect(words).toHaveLength(0);
-    });
-  });
-
-  describe('getWordsByDifficulty', () => {
-    it('должен возвращать слова уровня 1', () => {
-      const words = getWordsByDifficulty(testWords, 1);
-      expect(words).toHaveLength(3);
-      words.forEach(word => {
-        expect(word.difficulty).toBe(1);
-      });
-    });
-
-    it('должен возвращать слова уровня 2', () => {
-      const words = getWordsByDifficulty(testWords, 2);
-      expect(words).toHaveLength(2);
-      words.forEach(word => {
-        expect(word.difficulty).toBe(2);
-      });
-    });
-
-    it('должен возвращать пустой массив для несуществующего уровня', () => {
-      const words = getWordsByDifficulty(testWords, 3);
       expect(words).toHaveLength(0);
     });
   });

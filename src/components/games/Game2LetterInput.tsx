@@ -89,12 +89,12 @@ export const Game2LetterInput = ({ words, onExit }: Game2LetterInputProps) => {
     setIsCorrect(correct);
     setShowFeedback(true);
 
+    // Задание засчитывается один раз: правильно только с первой попытки
     if (correct) {
-      addCorrect();
-      // Автоматический переход к следующему слову через 4 секунды
-      scheduleNext(4000);
+      if (attempts === 0) addCorrect();
+      scheduleNext(1500);
     } else {
-      addIncorrect();
+      if (attempts === 0) addIncorrect();
       setAttempts(prev => prev + 1);
 
       // Если израсходованы все попытки (2), показываем правильный ответ и переходим дальше

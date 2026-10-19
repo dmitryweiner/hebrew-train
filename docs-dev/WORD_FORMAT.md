@@ -13,7 +13,6 @@ interface Word {
   russian: string;               // перевод на русский
   transliteration: string;       // латинская транслитерация
   category: string;              // категория (food, animals, transport, etc.)
-  difficulty: 1 | 2 | 3;         // 1 - простое, 3 - сложное
   audioUrl?: string;             // опционально: ссылка на аудио произношения
   frequencyRank?: number;        // опционально: частотность слова в иврите
 }
@@ -30,8 +29,7 @@ interface Word {
   "hebrew": "תפוח",
   "russian": "яблоко",
   "transliteration": "tapuach",
-  "category": "food",
-  "difficulty": 1
+  "category": "food"
 }
 ```
 
@@ -44,8 +42,7 @@ interface Word {
   "hebrew": "שולחן",
   "russian": "стол",
   "transliteration": "shulchan",
-  "category": "home",
-  "difficulty": 1
+  "category": "home"
 }
 ```
 
@@ -88,7 +85,6 @@ interface Word {
    - Есть либо `emoji`, либо `picture`
    - Если используется картинка, файл существует в `public/pictures/`
    - Все обязательные поля заполнены
-   - `difficulty` установлен корректно (1, 2 или 3)
 
 ## Компонент отображения
 

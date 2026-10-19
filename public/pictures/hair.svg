@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>волосы</title>
+<path d="M20 120c-6-40 0-70 10-88C40 14 52 8 64 8s24 6 34 24c10 18 16 48 10 88-8-6-14-14-16-24H36c-2 10-8 18-16 24z" fill="#7a4a24"/>
+<ellipse cx="64" cy="62" rx="24" ry="30" fill="#f2c39c"/>
+<path d="M38 52c4-22 14-30 26-30s22 8 26 30c-10-10-30-6-40-16-4 8-8 12-12 16z" fill="#8f5a2e"/>
+<path d="M30 40c4-14 12-22 20-26M98 40c-4-14-12-22-20-26M44 96c-6 10-14 18-22 22M84 96c6 10 14 18 22 22" fill="none" stroke="#5c3518" stroke-width="3" stroke-linecap="round"/>
+<circle cx="55" cy="64" r="3" fill="#333"/><circle cx="73" cy="64" r="3" fill="#333"/>
+<path d="M56 78q8 5 16 0" fill="none" stroke="#a5523c" stroke-width="3" stroke-linecap="round"/>
+</svg>

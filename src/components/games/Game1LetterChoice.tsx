@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Word } from '../../types';
 import { useScore } from '../../hooks/useScore';
 import { useAutoNext } from '../../hooks/useAutoNext';
-import { getRandomWord } from '../../utils/wordUtils';
+import { getRandomWord, shuffleArray } from '../../utils/wordUtils';
 import { getRandomPosition, hideLetterAtPosition } from '../../utils/hebrewUtils';
 import { generateLetterDistractors } from '../../utils/gameUtils';
 import WordImage from '../WordImage';
@@ -49,7 +49,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
     
     // Создаем массив вариантов без дубликатов и перемешиваем
     const optionsSet = new Set([hiddenLetter, ...distractors]);
-    const allOptions = Array.from(optionsSet).sort(() => Math.random() - 0.5);
+    const allOptions = shuffleArray(Array.from(optionsSet));
 
     setCurrentWord(word);
     setDisplayWord(hiddenWord);
@@ -83,16 +83,11 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
 
     if (correct) {
       addCorrect();
-      // Автоматический переход к следующему слову через 4 секунды
-      scheduleNext(4000);
+      scheduleNext(1500);
     } else {
+      // Задание засчитывается один раз: показываем правильный ответ и идём дальше
       addIncorrect();
-      // При ошибке даем возможность попробовать снова через 2.5 секунды
-      setTimeout(() => {
-        setSelectedOption(null);
-        setShowFeedback(false);
-        setIsCorrect(null);
-      }, 2500);
+      scheduleNext(3000);
     }
   };
 
@@ -160,7 +155,7 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
               direction: 'rtl',
             }}
           >
-            {isCorrect ? currentWord.hebrew : displayWord}
+            {showFeedback ? currentWord.hebrew : displayWord}
           </div>
 
           {/* Подсказка ниже загаданного слова */}
@@ -222,7 +217,10 @@ export const Game1LetterChoice = ({ words, onExit }: Game1LetterChoiceProps) => 
             <div className="mt-3">
               <div className="alert alert-danger mb-0" role="alert">
                 <strong>✗ Неправильно</strong>
-                <div className="small mt-1">Попробуйте ещё раз</div>
+                <div className="small mt-1">
+                  Правильная буква: <span className="fs-5 fw-bold">{correctLetter}</span>
+                </div>
+                <button onClick={goNext} className="btn btn-outline-danger btn-sm mt-2">Дальше →</button>
               </div>
             </div>
           )}

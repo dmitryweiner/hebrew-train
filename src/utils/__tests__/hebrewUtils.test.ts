@@ -10,6 +10,10 @@ import {
   getRandomHebrewLetter,
   splitHebrewWord,
   wordContainsLetter,
+  normalizeGeresh,
+  isHebrewLetter,
+  countHebrewLetters,
+  getRandomPosition,
 } from '../hebrewUtils';
 
 describe('hebrewUtils', () => {
@@ -189,5 +193,38 @@ describe('hebrewUtils', () => {
       expect(wordContainsLetter('', 'א')).toBe(false);
     });
   });
-});
 
+  describe('гереш и пробелы', () => {
+    it('normalizeGeresh заменяет апостроф на гереш', () => {
+      expect(normalizeGeresh("ג'ירפה")).toBe('ג׳ירפה');
+      expect(normalizeGeresh('ז’קט')).toBe('ז׳קט');
+    });
+
+    it('isHebrewText принимает апостроф', () => {
+      expect(isHebrewText("ג'ירפה")).toBe(true);
+    });
+
+    it('compareHebrewWords не различает апостроф и гереш', () => {
+      expect(compareHebrewWords("ג'ירפה", 'ג׳ירפה')).toBe(true);
+    });
+
+    it('isHebrewLetter отличает буквы от пробела и гереша', () => {
+      expect(isHebrewLetter('א')).toBe(true);
+      expect(isHebrewLetter('ם')).toBe(true);
+      expect(isHebrewLetter(' ')).toBe(false);
+      expect(isHebrewLetter('׳')).toBe(false);
+    });
+
+    it('countHebrewLetters не считает пробел и гереш', () => {
+      expect(countHebrewLetters('תפוח אדמה')).toBe(8);
+      expect(countHebrewLetters('ג׳ירפה')).toBe(5);
+    });
+
+    it('getRandomPosition никогда не выбирает пробел или гереш', () => {
+      for (let i = 0; i < 200; i++) {
+        expect(isHebrewLetter(Array.from('תפוח אדמה')[getRandomPosition('תפוח אדמה')])).toBe(true);
+        expect(isHebrewLetter(Array.from('ג׳ירפה')[getRandomPosition('ג׳ירפה')])).toBe(true);
+      }
+    });
+  });
+});

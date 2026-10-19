@@ -12,8 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Не игнорируем docs - это выходная папка для GitHub Pages
-# docs/
 
 # Editor directories and files
 .vscode/*

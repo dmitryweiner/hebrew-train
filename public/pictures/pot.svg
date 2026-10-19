@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>кастрюля</title>
+<rect x="56" y="18" width="16" height="10" rx="4" fill="#555"/>
+<path d="M22 40q42-18 84 0z" fill="#9aa3ab"/>
+<rect x="18" y="38" width="92" height="6" rx="3" fill="#7b848c"/>
+<rect x="4" y="54" width="18" height="8" rx="4" fill="#444"/>
+<rect x="106" y="54" width="18" height="8" rx="4" fill="#444"/>
+<path d="M20 46h88v52a16 16 0 0 1-16 16H36a16 16 0 0 1-16-16z" fill="#c5ccd2"/>
+<path d="M20 46h88v8H20z" fill="#aab2b9"/>
+<path d="M32 60v40" stroke="#e6eaee" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -27,7 +27,6 @@ describe('gameUtils', () => {
         russian: 'яблоко',
         transliteration: 'tapuach',
         category: 'food',
-        difficulty: 1,
       },
       {
         id: 'dog',
@@ -36,7 +35,6 @@ describe('gameUtils', () => {
         russian: 'собака',
         transliteration: 'kelev',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'cat',
@@ -45,7 +43,6 @@ describe('gameUtils', () => {
         russian: 'кот',
         transliteration: 'chatul',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'car',
@@ -54,7 +51,6 @@ describe('gameUtils', () => {
         russian: 'машина',
         transliteration: 'mechonit',
         category: 'transport',
-        difficulty: 2,
       },
     ];
   });

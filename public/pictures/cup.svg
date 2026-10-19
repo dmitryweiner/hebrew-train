@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>чашка</title>
+<path d="M88 46h10a18 18 0 0 1 0 36H86" fill="none" stroke="#2f7fb5" stroke-width="10"/>
+<path d="M22 34h72l-6 70a12 12 0 0 1-12 10H40a12 12 0 0 1-12-10z" fill="#3d9be0"/>
+<path d="M22 34h72l-1 10H23z" fill="#2f7fb5"/>
+<path d="M58 86c-14-9-14-20-6-20 3 0 5 2 6 4 1-2 3-4 6-4 8 0 8 11-6 20z" fill="#fff"/>
+</svg>

@@ -17,7 +17,6 @@ describe('useMatching', () => {
         russian: 'яблоко',
         transliteration: 'tapuach',
         category: 'food',
-        difficulty: 1,
       },
       {
         id: 'dog',
@@ -26,7 +25,6 @@ describe('useMatching', () => {
         russian: 'собака',
         transliteration: 'kelev',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'cat',
@@ -35,7 +33,6 @@ describe('useMatching', () => {
         russian: 'кот',
         transliteration: 'chatul',
         category: 'animals',
-        difficulty: 1,
       },
       {
         id: 'car',
@@ -44,7 +41,6 @@ describe('useMatching', () => {
         russian: 'машина',
         transliteration: 'mechonit',
         category: 'transport',
-        difficulty: 2,
       },
     ];
   });

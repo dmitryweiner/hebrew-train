@@ -9,6 +9,8 @@
 - `pillow.png` - подушка (כר)
 - `refrigerator.png` - холодильник (מקרר)
 - `towel.png` - полотенце (מגבת)
+- `head.svg`, `hair.svg`, `stomach.svg` - голова, волосы, живот (эмодзи были двусмысленными)
+- `cup.svg`, `pot.svg` - чашка и кастрюля (эмодзи совпадали с кофе и супом)
 
 ## Как добавить новую картинку
 
@@ -24,8 +26,7 @@
   "hebrew": "ивритское слово",
   "russian": "перевод",
   "transliteration": "transliteratsiya",
-  "category": "category",
-  "difficulty": 1
+  "category": "category"
 }
 ```
 
@@ -34,5 +35,5 @@
 - Файлы из `public/` автоматически копируются в выходную папку при сборке
 - Доступ к картинкам: `/pictures/filename.ext`
 - В dev-режиме: `http://localhost:5173/pictures/filename.ext`
-- В production: копируется в `dist/pictures/` или `docs/pictures/`
+- В production: копируется в `dist/pictures/`
 

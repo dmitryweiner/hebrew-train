@@ -2,6 +2,7 @@
 
 import { describe, it, expect, vi } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
+import type * as React from 'react';
 import { useHebrewInput } from '../useHebrewInput';
 
 describe('useHebrewInput', () => {
@@ -131,7 +132,7 @@ describe('useHebrewInput', () => {
         result.current.setValue('שלום');
       });
       
-      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as any;
+      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as unknown as React.KeyboardEvent;
       
       act(() => {
         result.current.handleKeyDown(event);
@@ -148,7 +149,7 @@ describe('useHebrewInput', () => {
         result.current.setValue('שלום');
       });
       
-      const event = new KeyboardEvent('keydown', { key: 'a' }) as any;
+      const event = new KeyboardEvent('keydown', { key: 'a' }) as unknown as React.KeyboardEvent;
       
       act(() => {
         result.current.handleKeyDown(event);
@@ -161,7 +162,7 @@ describe('useHebrewInput', () => {
       const onSubmit = vi.fn();
       const { result } = renderHook(() => useHebrewInput({ onSubmit }));
       
-      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as any;
+      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as unknown as React.KeyboardEvent;
       
       act(() => {
         result.current.handleKeyDown(event);
@@ -178,7 +179,7 @@ describe('useHebrewInput', () => {
         result.current.setValue('  שלום  ');
       });
       
-      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as any;
+      const event = new KeyboardEvent('keydown', { key: 'Enter' }) as unknown as React.KeyboardEvent;
       
       act(() => {
         result.current.handleKeyDown(event);

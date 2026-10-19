@@ -8,7 +8,6 @@ export interface Word {
   russian: string;               // перевод на русский
   transliteration: string;       // латинская транслитерация
   category: string;              // категория (food, animals, transport, etc.)
-  difficulty: 1 | 2 | 3;         // 1 - простое, 3 - сложное
   audioUrl?: string;             // опционально: ссылка на аудио произношения
   frequencyRank?: number;        // опционально: частотность слова в иврите
 }

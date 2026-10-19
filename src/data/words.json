@@ -1,12 +1,11 @@
-  [
+[
   {
     "id": "apple",
     "emoji": "🍎",
     "hebrew": "תפוח",
     "russian": "яблоко",
     "transliteration": "tapuach",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "bread",
@@ -14,8 +13,7 @@
     "hebrew": "לחם",
     "russian": "хлеб",
     "transliteration": "lechem",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "water",
@@ -23,8 +21,7 @@
     "hebrew": "מים",
     "russian": "вода",
     "transliteration": "mayim",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "coffee",
@@ -32,8 +29,7 @@
     "hebrew": "קפה",
     "russian": "кофе",
     "transliteration": "cafe",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "milk",
@@ -41,8 +37,7 @@
     "hebrew": "חלב",
     "russian": "молоко",
     "transliteration": "chalav",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "banana",
@@ -50,8 +45,7 @@
     "hebrew": "בננה",
     "russian": "банан",
     "transliteration": "banana",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "carrot",
@@ -59,8 +53,7 @@
     "hebrew": "גזר",
     "russian": "морковь",
     "transliteration": "gezer",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "rice",
@@ -68,8 +61,7 @@
     "hebrew": "אורז",
     "russian": "рис",
     "transliteration": "orez",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "tomato",
@@ -77,8 +69,7 @@
     "hebrew": "עגבנייה",
     "russian": "помидор",
     "transliteration": "agvaniya",
-    "category": "food",
-    "difficulty": 2
+    "category": "food"
   },
   {
     "id": "cucumber",
@@ -86,8 +77,7 @@
     "hebrew": "מלפפון",
     "russian": "огурец",
     "transliteration": "melafefon",
-    "category": "food",
-    "difficulty": 2
+    "category": "food"
   },
   {
     "id": "orange",
@@ -95,8 +85,7 @@
     "hebrew": "תפוז",
     "russian": "апельсин",
     "transliteration": "tapuz",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "strawberry",
@@ -104,8 +93,7 @@
     "hebrew": "תות",
     "russian": "клубника",
     "transliteration": "tut",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "grape",
@@ -113,8 +101,7 @@
     "hebrew": "ענב",
     "russian": "виноград",
     "transliteration": "anav",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "lemon",
@@ -122,8 +109,7 @@
     "hebrew": "לימון",
     "russian": "лимон",
     "transliteration": "limon",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "cheese",
@@ -131,17 +117,15 @@
     "hebrew": "גבינה",
     "russian": "сыр",
     "transliteration": "gvina",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "egg",
     "emoji": "🥚",
-    "hebrew": "בייצה",
+    "hebrew": "ביצה",
     "russian": "яйцо",
     "transliteration": "beytsa",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "meat",
@@ -149,8 +133,7 @@
     "hebrew": "בשר",
     "russian": "мясо",
     "transliteration": "basar",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "chicken",
@@ -158,8 +141,7 @@
     "hebrew": "עוף",
     "russian": "курица",
     "transliteration": "of",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "sugar",
@@ -167,8 +149,7 @@
     "hebrew": "סוכר",
     "russian": "сахар",
     "transliteration": "sukar",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "salt",
@@ -176,8 +157,7 @@
     "hebrew": "מלח",
     "russian": "соль",
     "transliteration": "melach",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "honey",
@@ -185,8 +165,7 @@
     "hebrew": "דבש",
     "russian": "мёд",
     "transliteration": "dvash",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "tea",
@@ -194,8 +173,7 @@
     "hebrew": "תה",
     "russian": "чай",
     "transliteration": "te",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "juice",
@@ -203,8 +181,7 @@
     "hebrew": "מיץ",
     "russian": "сок",
     "transliteration": "mitz",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "pizza",
@@ -212,8 +189,7 @@
     "hebrew": "פיצה",
     "russian": "пицца",
     "transliteration": "pitsa",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "soup",
@@ -221,8 +197,7 @@
     "hebrew": "מרק",
     "russian": "суп",
     "transliteration": "marak",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "cake",
@@ -230,8 +205,7 @@
     "hebrew": "עוגה",
     "russian": "торт",
     "transliteration": "uga",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "chocolate",
@@ -239,8 +213,7 @@
     "hebrew": "שוקולד",
     "russian": "шоколад",
     "transliteration": "shokolad",
-    "category": "food",
-    "difficulty": 1
+    "category": "food"
   },
   {
     "id": "potato",
@@ -248,8 +221,7 @@
     "hebrew": "תפוח אדמה",
     "russian": "картошка",
     "transliteration": "tapuach adama",
-    "category": "food",
-    "difficulty": 2
+    "category": "food"
   },
   {
     "id": "dog",
@@ -257,8 +229,7 @@
     "hebrew": "כלב",
     "russian": "собака",
     "transliteration": "kelev",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "cat",
@@ -266,8 +237,7 @@
     "hebrew": "חתול",
     "russian": "кот",
     "transliteration": "chatul",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "fish",
@@ -275,8 +245,7 @@
     "hebrew": "דג",
     "russian": "рыба",
     "transliteration": "dag",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "bird",
@@ -284,8 +253,7 @@
     "hebrew": "ציפור",
     "russian": "птица",
     "transliteration": "tsipor",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "cow",
@@ -293,8 +261,7 @@
     "hebrew": "פרה",
     "russian": "корова",
     "transliteration": "para",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "horse",
@@ -302,8 +269,7 @@
     "hebrew": "סוס",
     "russian": "лошадь",
     "transliteration": "sus",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "elephant",
@@ -311,8 +277,7 @@
     "hebrew": "פיל",
     "russian": "слон",
     "transliteration": "pil",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "lion",
@@ -320,8 +285,7 @@
     "hebrew": "אריה",
     "russian": "лев",
     "transliteration": "arye",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "rabbit",
@@ -329,8 +293,7 @@
     "hebrew": "ארנב",
     "russian": "кролик",
     "transliteration": "arnav",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "bear",
@@ -338,8 +301,7 @@
     "hebrew": "דוב",
     "russian": "медведь",
     "transliteration": "dov",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "butterfly",
@@ -347,8 +309,7 @@
     "hebrew": "פרפר",
     "russian": "бабочка",
     "transliteration": "parpar",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "monkey",
@@ -356,8 +317,7 @@
     "hebrew": "קוף",
     "russian": "обезьяна",
     "transliteration": "kof",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "giraffe",
@@ -365,8 +325,7 @@
     "hebrew": "ג׳ירפה",
     "russian": "жираф",
     "transliteration": "jirafa",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "snake",
@@ -374,8 +333,7 @@
     "hebrew": "נחש",
     "russian": "змея",
     "transliteration": "nachash",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "frog",
@@ -383,8 +341,7 @@
     "hebrew": "צפרדע",
     "russian": "лягушка",
     "transliteration": "tzfardea",
-    "category": "animals",
-    "difficulty": 2
+    "category": "animals"
   },
   {
     "id": "bee",
@@ -392,8 +349,7 @@
     "hebrew": "דבורה",
     "russian": "пчела",
     "transliteration": "dvora",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "turtle",
@@ -401,8 +357,7 @@
     "hebrew": "צב",
     "russian": "черепаха",
     "transliteration": "tzav",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "crocodile",
@@ -410,8 +365,7 @@
     "hebrew": "תנין",
     "russian": "крокодил",
     "transliteration": "tanin",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "chicken_animal",
@@ -419,8 +373,7 @@
     "hebrew": "תרנגולת",
     "russian": "курица",
     "transliteration": "tarnegolet",
-    "category": "animals",
-    "difficulty": 2
+    "category": "animals"
   },
   {
     "id": "pig",
@@ -428,8 +381,7 @@
     "hebrew": "חזיר",
     "russian": "свинья",
     "transliteration": "chazir",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "sheep",
@@ -437,8 +389,7 @@
     "hebrew": "כבשה",
     "russian": "овца",
     "transliteration": "kivsa",
-    "category": "animals",
-    "difficulty": 1
+    "category": "animals"
   },
   {
     "id": "phone",
@@ -446,8 +397,7 @@
     "hebrew": "טלפון",
     "russian": "телефон",
     "transliteration": "telefon",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "book",
@@ -455,8 +405,7 @@
     "hebrew": "ספר",
     "russian": "книга",
     "transliteration": "sefer",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "pencil",
@@ -464,8 +413,7 @@
     "hebrew": "עיפרון",
     "russian": "карандаш",
     "transliteration": "iparon",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "key",
@@ -473,8 +421,7 @@
     "hebrew": "מפתח",
     "russian": "ключ",
     "transliteration": "mafteach",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "watch",
@@ -482,8 +429,7 @@
     "hebrew": "שעון",
     "russian": "часы",
     "transliteration": "shaon",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "glasses",
@@ -491,8 +437,7 @@
     "hebrew": "משקפיים",
     "russian": "очки",
     "transliteration": "mishkafayim",
-    "category": "objects",
-    "difficulty": 2
+    "category": "objects"
   },
   {
     "id": "umbrella",
@@ -500,8 +445,7 @@
     "hebrew": "מטריה",
     "russian": "зонт",
     "transliteration": "mitriya",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "bag",
@@ -509,8 +453,7 @@
     "hebrew": "תיק",
     "russian": "сумка",
     "transliteration": "tik",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "computer",
@@ -518,8 +461,7 @@
     "hebrew": "מחשב",
     "russian": "компьютер",
     "transliteration": "machshev",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "pen",
@@ -527,8 +469,7 @@
     "hebrew": "עט",
     "russian": "ручка",
     "transliteration": "et",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "paper",
@@ -536,8 +477,7 @@
     "hebrew": "נייר",
     "russian": "бумага",
     "transliteration": "neyar",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "scissors",
@@ -545,8 +485,7 @@
     "hebrew": "מספריים",
     "russian": "ножницы",
     "transliteration": "misparayim",
-    "category": "objects",
-    "difficulty": 2
+    "category": "objects"
   },
   {
     "id": "mirror",
@@ -554,8 +493,7 @@
     "hebrew": "מראה",
     "russian": "зеркало",
     "transliteration": "marah",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "ball",
@@ -563,8 +501,7 @@
     "hebrew": "כדור",
     "russian": "мяч",
     "transliteration": "kadur",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "bottle",
@@ -572,8 +509,7 @@
     "hebrew": "בקבוק",
     "russian": "бутылка",
     "transliteration": "bakbuk",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "box",
@@ -581,8 +517,7 @@
     "hebrew": "קופסה",
     "russian": "коробка",
     "transliteration": "kufsa",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "picture",
@@ -590,8 +525,7 @@
     "hebrew": "תמונה",
     "russian": "картина",
     "transliteration": "tmuna",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "backpack",
@@ -599,8 +533,7 @@
     "hebrew": "תרמיל",
     "russian": "рюкзак",
     "transliteration": "tarmil",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "wallet",
@@ -608,8 +541,7 @@
     "hebrew": "ארנק",
     "russian": "кошелек",
     "transliteration": "arnak",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "money",
@@ -617,8 +549,7 @@
     "hebrew": "כסף",
     "russian": "деньги",
     "transliteration": "kesef",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "battery",
@@ -626,8 +557,7 @@
     "hebrew": "סוללה",
     "russian": "батарея",
     "transliteration": "solela",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "calendar",
@@ -635,8 +565,7 @@
     "hebrew": "לוח שנה",
     "russian": "календарь",
     "transliteration": "luach shana",
-    "category": "objects",
-    "difficulty": 2
+    "category": "objects"
   },
   {
     "id": "envelope",
@@ -644,8 +573,7 @@
     "hebrew": "מעטפה",
     "russian": "конверт",
     "transliteration": "maatafa",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "post",
@@ -653,8 +581,7 @@
     "hebrew": "דואר",
     "russian": "почта",
     "transliteration": "doar",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "notebook",
@@ -662,8 +589,7 @@
     "hebrew": "מחברת",
     "russian": "тетрадь",
     "transliteration": "machberet",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "broom",
@@ -671,8 +597,7 @@
     "hebrew": "מטאטא",
     "russian": "метла",
     "transliteration": "matate",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "ruler",
@@ -680,8 +605,7 @@
     "hebrew": "סרגל",
     "russian": "линейка",
     "transliteration": "sargel",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "clothespin",
@@ -689,8 +613,7 @@
     "hebrew": "אטב",
     "russian": "прищепка",
     "transliteration": "atav",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "flashlight",
@@ -698,8 +621,7 @@
     "hebrew": "פנס",
     "russian": "фонарик",
     "transliteration": "panas",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "matches",
@@ -707,8 +629,7 @@
     "hebrew": "גפרורים",
     "russian": "спички",
     "transliteration": "gafrurim",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "fire",
@@ -716,8 +637,7 @@
     "hebrew": "אש",
     "russian": "огонь",
     "transliteration": "esh",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "rope",
@@ -725,8 +645,7 @@
     "hebrew": "חבל",
     "russian": "веревка",
     "transliteration": "chevel",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "basket",
@@ -734,17 +653,7 @@
     "hebrew": "סל",
     "russian": "корзина",
     "transliteration": "sal",
-    "category": "objects",
-    "difficulty": 1
-  },
-  {
-    "id": "wind",
-    "emoji": "💨",
-    "hebrew": "רוח",
-    "russian": "ветер",
-    "transliteration": "ruah",
-    "category": "objects",
-    "difficulty": 2
+    "category": "objects"
   },
   {
     "id": "radio",
@@ -752,8 +661,7 @@
     "hebrew": "רדיו",
     "russian": "радио",
     "transliteration": "radio",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "camera",
@@ -761,8 +669,7 @@
     "hebrew": "מצלמה",
     "russian": "камера",
     "transliteration": "matzlema",
-    "category": "objects",
-    "difficulty": 1
+    "category": "objects"
   },
   {
     "id": "door",
@@ -770,8 +677,7 @@
     "hebrew": "דלת",
     "russian": "дверь",
     "transliteration": "delet",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "chair",
@@ -779,8 +685,7 @@
     "hebrew": "כיסא",
     "russian": "стул",
     "transliteration": "kise",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "table",
@@ -788,8 +693,7 @@
     "hebrew": "שולחן",
     "russian": "стол",
     "transliteration": "shulchan",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "bed",
@@ -797,8 +701,7 @@
     "hebrew": "מיטה",
     "russian": "кровать",
     "transliteration": "mita",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "house",
@@ -806,8 +709,7 @@
     "hebrew": "בית",
     "russian": "дом",
     "transliteration": "bayit",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "window",
@@ -815,8 +717,7 @@
     "hebrew": "חלון",
     "russian": "окно",
     "transliteration": "chalon",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "lamp",
@@ -824,8 +725,7 @@
     "hebrew": "מנורה",
     "russian": "лампа",
     "transliteration": "menora",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "refrigerator",
@@ -833,8 +733,7 @@
     "hebrew": "מקרר",
     "russian": "холодильник",
     "transliteration": "mekarer",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "sofa",
@@ -842,8 +741,7 @@
     "hebrew": "ספה",
     "russian": "диван",
     "transliteration": "sapa",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "carpet",
@@ -851,8 +749,7 @@
     "hebrew": "שטיח",
     "russian": "ковёр",
     "transliteration": "shatiach",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "towel",
@@ -860,8 +757,7 @@
     "hebrew": "מגבת",
     "russian": "полотенце",
     "transliteration": "magevet",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "pillow",
@@ -869,8 +765,7 @@
     "hebrew": "כרית",
     "russian": "подушка",
     "transliteration": "karit",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "plate",
@@ -878,8 +773,7 @@
     "hebrew": "צלחת",
     "russian": "тарелка",
     "transliteration": "tzalachat",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "fork",
@@ -887,8 +781,7 @@
     "hebrew": "מזלג",
     "russian": "вилка",
     "transliteration": "mazleg",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "spoon",
@@ -896,8 +789,7 @@
     "hebrew": "כף",
     "russian": "ложка",
     "transliteration": "kaf",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "knife",
@@ -905,26 +797,23 @@
     "hebrew": "סכין",
     "russian": "нож",
     "transliteration": "sakin",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "cup",
-    "emoji": "☕",
     "hebrew": "כוס",
     "russian": "чашка",
     "transliteration": "kos",
     "category": "home",
-    "difficulty": 1
+    "picture": "cup.svg"
   },
   {
     "id": "pot",
-    "emoji": "🍲",
     "hebrew": "סיר",
     "russian": "кастрюля",
     "transliteration": "sir",
     "category": "home",
-    "difficulty": 1
+    "picture": "pot.svg"
   },
   {
     "id": "pan",
@@ -932,8 +821,7 @@
     "hebrew": "מחבת",
     "russian": "сковорода",
     "transliteration": "machavat",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "blanket",
@@ -941,8 +829,7 @@
     "hebrew": "שמיכה",
     "russian": "одеяло",
     "transliteration": "smicha",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "curtain",
@@ -950,8 +837,7 @@
     "hebrew": "וילון",
     "russian": "занавеска",
     "transliteration": "vilon",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "soap",
@@ -959,8 +845,7 @@
     "hebrew": "סבון",
     "russian": "мыло",
     "transliteration": "sabon",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "brush",
@@ -968,8 +853,7 @@
     "hebrew": "מברשת",
     "russian": "щетка",
     "transliteration": "mivreshet",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "candle",
@@ -977,8 +861,7 @@
     "hebrew": "נר",
     "russian": "свеча",
     "transliteration": "ner",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "trash",
@@ -986,8 +869,7 @@
     "hebrew": "פח אשפה",
     "russian": "мусорное ведро",
     "transliteration": "pach ashpa",
-    "category": "home",
-    "difficulty": 2
+    "category": "home"
   },
   {
     "id": "clock",
@@ -995,8 +877,7 @@
     "hebrew": "שעון קיר",
     "russian": "часы настенные",
     "transliteration": "shaon kir",
-    "category": "home",
-    "difficulty": 2
+    "category": "home"
   },
   {
     "id": "stove",
@@ -1004,8 +885,7 @@
     "hebrew": "כיריים",
     "russian": "плита",
     "transliteration": "kirayim",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "oven",
@@ -1013,8 +893,7 @@
     "hebrew": "תנור",
     "russian": "духовка",
     "transliteration": "tanur",
-    "category": "home",
-    "difficulty": 1
+    "category": "home"
   },
   {
     "id": "microwave",
@@ -1022,8 +901,7 @@
     "hebrew": "מיקרוגל",
     "russian": "микроволновка",
     "transliteration": "mikrogel",
-    "category": "home",
-    "difficulty": 2
+    "category": "home"
   },
   {
     "id": "washing_machine",
@@ -1031,8 +909,7 @@
     "hebrew": "מכונת כביסה",
     "russian": "стиральная машина",
     "transliteration": "mechonat kvisa",
-    "category": "home",
-    "difficulty": 2
+    "category": "home"
   },
   {
     "id": "vacuum",
@@ -1040,8 +917,7 @@
     "hebrew": "שואב אבק",
     "russian": "пылесос",
     "transliteration": "shoev avak",
-    "category": "home",
-    "difficulty": 2
+    "category": "home"
   },
   {
     "id": "tree",
@@ -1049,8 +925,7 @@
     "hebrew": "עץ",
     "russian": "дерево",
     "transliteration": "ets",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "flower",
@@ -1058,8 +933,7 @@
     "hebrew": "פרח",
     "russian": "цветок",
     "transliteration": "perach",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "sun",
@@ -1067,8 +941,7 @@
     "hebrew": "שמש",
     "russian": "солнце",
     "transliteration": "shemesh",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "moon",
@@ -1076,8 +949,7 @@
     "hebrew": "ירח",
     "russian": "луна",
     "transliteration": "yareach",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "star",
@@ -1085,8 +957,7 @@
     "hebrew": "כוכב",
     "russian": "звезда",
     "transliteration": "kochav",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "rain",
@@ -1094,8 +965,7 @@
     "hebrew": "גשם",
     "russian": "дождь",
     "transliteration": "geshem",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "cloud",
@@ -1103,8 +973,7 @@
     "hebrew": "ענן",
     "russian": "облако",
     "transliteration": "anan",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "sea",
@@ -1112,8 +981,7 @@
     "hebrew": "ים",
     "russian": "море",
     "transliteration": "yam",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "river",
@@ -1121,8 +989,7 @@
     "hebrew": "נהר",
     "russian": "река",
     "transliteration": "nahar",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "mountain",
@@ -1130,8 +997,7 @@
     "hebrew": "הר",
     "russian": "гора",
     "transliteration": "har",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "grass",
@@ -1139,8 +1005,7 @@
     "hebrew": "דשא",
     "russian": "трава",
     "transliteration": "deshe",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "leaf",
@@ -1148,8 +1013,7 @@
     "hebrew": "עלה",
     "russian": "лист",
     "transliteration": "ale",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "wind",
@@ -1157,8 +1021,7 @@
     "hebrew": "רוח",
     "russian": "ветер",
     "transliteration": "ruach",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "snow",
@@ -1166,8 +1029,7 @@
     "hebrew": "שלג",
     "russian": "снег",
     "transliteration": "sheleg",
-    "category": "nature",
-    "difficulty": 1
+    "category": "nature"
   },
   {
     "id": "car",
@@ -1175,8 +1037,7 @@
     "hebrew": "מכונית",
     "russian": "машина",
     "transliteration": "mechonit",
-    "category": "transport",
-    "difficulty": 1
+    "category": "transport"
   },
   {
     "id": "bus",
@@ -1184,8 +1045,7 @@
     "hebrew": "אוטובוס",
     "russian": "автобус",
     "transliteration": "autobus",
-    "category": "transport",
-    "difficulty": 2
+    "category": "transport"
   },
   {
     "id": "plane",
@@ -1193,8 +1053,7 @@
     "hebrew": "מטוס",
     "russian": "самолет",
     "transliteration": "matos",
-    "category": "transport",
-    "difficulty": 1
+    "category": "transport"
   },
   {
     "id": "bicycle",
@@ -1202,8 +1061,7 @@
     "hebrew": "אופניים",
     "russian": "велосипед",
     "transliteration": "ofanayim",
-    "category": "transport",
-    "difficulty": 2
+    "category": "transport"
   },
   {
     "id": "train",
@@ -1211,8 +1069,7 @@
     "hebrew": "רכבת",
     "russian": "поезд",
     "transliteration": "rakevet",
-    "category": "transport",
-    "difficulty": 1
+    "category": "transport"
   },
   {
     "id": "ship",
@@ -1220,8 +1077,7 @@
     "hebrew": "אונייה",
     "russian": "корабль",
     "transliteration": "oniya",
-    "category": "transport",
-    "difficulty": 2
+    "category": "transport"
   },
   {
     "id": "helicopter",
@@ -1229,8 +1085,7 @@
     "hebrew": "מסוק",
     "russian": "вертолёт",
     "transliteration": "masok",
-    "category": "transport",
-    "difficulty": 1
+    "category": "transport"
   },
   {
     "id": "taxi",
@@ -1238,8 +1093,7 @@
     "hebrew": "מונית",
     "russian": "такси",
     "transliteration": "monit",
-    "category": "transport",
-    "difficulty": 1
+    "category": "transport"
   },
   {
     "id": "motorcycle",
@@ -1247,8 +1101,7 @@
     "hebrew": "אופנוע",
     "russian": "мотоцикл",
     "transliteration": "ofanoa",
-    "category": "transport",
-    "difficulty": 2
+    "category": "transport"
   },
   {
     "id": "shirt",
@@ -1256,8 +1109,7 @@
     "hebrew": "חולצה",
     "russian": "рубашка",
     "transliteration": "chultsa",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "shoe",
@@ -1265,8 +1117,7 @@
     "hebrew": "נעל",
     "russian": "ботинок",
     "transliteration": "naal",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "hat",
@@ -1274,8 +1125,7 @@
     "hebrew": "כובע",
     "russian": "шляпа",
     "transliteration": "kova",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "pants",
@@ -1283,8 +1133,7 @@
     "hebrew": "מכנסיים",
     "russian": "брюки",
     "transliteration": "michnasayim",
-    "category": "clothing",
-    "difficulty": 2
+    "category": "clothing"
   },
   {
     "id": "dress",
@@ -1292,8 +1141,7 @@
     "hebrew": "שמלה",
     "russian": "платье",
     "transliteration": "simla",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "jacket",
@@ -1301,8 +1149,7 @@
     "hebrew": "ז׳קט",
     "russian": "куртка",
     "transliteration": "jaket",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "socks",
@@ -1310,8 +1157,7 @@
     "hebrew": "גרביים",
     "russian": "носки",
     "transliteration": "garbayim",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "gloves",
@@ -1319,8 +1165,7 @@
     "hebrew": "כפפות",
     "russian": "перчатки",
     "transliteration": "kfafot",
-    "category": "clothing",
-    "difficulty": 1
+    "category": "clothing"
   },
   {
     "id": "eye",
@@ -1328,8 +1173,7 @@
     "hebrew": "עין",
     "russian": "глаз",
     "transliteration": "ayin",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "ear",
@@ -1337,8 +1181,7 @@
     "hebrew": "אוזן",
     "russian": "ухо",
     "transliteration": "ozen",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "nose",
@@ -1346,8 +1189,7 @@
     "hebrew": "אף",
     "russian": "нос",
     "transliteration": "af",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "mouth",
@@ -1355,8 +1197,7 @@
     "hebrew": "פה",
     "russian": "рот",
     "transliteration": "pe",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "hand",
@@ -1364,8 +1205,7 @@
     "hebrew": "יד",
     "russian": "рука",
     "transliteration": "yad",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "leg",
@@ -1373,26 +1213,23 @@
     "hebrew": "רגל",
     "russian": "нога",
     "transliteration": "regel",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "head",
-    "emoji": "🗣️",
     "hebrew": "ראש",
     "russian": "голова",
     "transliteration": "rosh",
     "category": "body",
-    "difficulty": 1
+    "picture": "head.svg"
   },
   {
     "id": "hair",
-    "emoji": "💇",
     "hebrew": "שיער",
     "russian": "волосы",
     "transliteration": "sear",
     "category": "body",
-    "difficulty": 1
+    "picture": "hair.svg"
   },
   {
     "id": "teeth",
@@ -1400,17 +1237,15 @@
     "hebrew": "שיניים",
     "russian": "зубы",
     "transliteration": "shinayim",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "stomach",
-    "emoji": "🤰",
     "hebrew": "בטן",
     "russian": "живот",
     "transliteration": "beten",
     "category": "body",
-    "difficulty": 1
+    "picture": "stomach.svg"
   },
   {
     "id": "heart",
@@ -1418,8 +1253,7 @@
     "hebrew": "לב",
     "russian": "сердце",
     "transliteration": "lev",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   },
   {
     "id": "finger",
@@ -1427,7 +1261,6 @@
     "hebrew": "אצבע",
     "russian": "палец",
     "transliteration": "etzba",
-    "category": "body",
-    "difficulty": 1
+    "category": "body"
   }
 ]

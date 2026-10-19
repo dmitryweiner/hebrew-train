@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>голова</title>
+<path d="M30 128c0-22 15-34 34-34s34 12 34 34z" fill="#9db4c8"/>
+<rect x="54" y="78" width="20" height="20" rx="6" fill="#e8b48c"/>
+<ellipse cx="34" cy="56" rx="7" ry="10" fill="#e0a77e"/>
+<ellipse cx="94" cy="56" rx="7" ry="10" fill="#e0a77e"/>
+<ellipse cx="64" cy="54" rx="30" ry="34" fill="#f2c39c"/>
+<path d="M34 50c0-24 14-34 30-34s30 10 30 34c-8-10-18-14-30-14s-22 4-30 14z" fill="#6b4226"/>
+<circle cx="52" cy="56" r="4" fill="#333"/><circle cx="76" cy="56" r="4" fill="#333"/>
+<path d="M64 60v10h-5" fill="none" stroke="#c98d66" stroke-width="3" stroke-linecap="round"/>
+<path d="M53 76q11 7 22 0" fill="none" stroke="#a5523c" stroke-width="3" stroke-linecap="round"/>
+</svg>

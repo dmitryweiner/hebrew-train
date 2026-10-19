@@ -7,8 +7,9 @@ import { useScore } from '../../hooks/useScore';
 import { useHebrewInput } from '../../hooks/useHebrewInput';
 import { useAutoNext } from '../../hooks/useAutoNext';
 import { getRandomWord } from '../../utils/wordUtils';
-import { normalizeFinalLetters } from '../../utils/hebrewUtils';
+import { compareHebrewWords, countHebrewLetters } from '../../utils/hebrewUtils';
 import WordImage from '../WordImage';
+import { getCategoryName } from '../../data/categories';
 import SuccessModal from '../SuccessModal';
 
 interface Game4WordInputProps {
@@ -76,20 +77,17 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
       return;
     }
 
-    // Нормализуем слова для сравнения (обрабатываем конечные формы)
-    const normalizedInput = normalizeFinalLetters(userInput.trim());
-    const normalizedCorrect = normalizeFinalLetters(currentWord.hebrew);
-    
-    const correct = normalizedInput === normalizedCorrect;
+    // Сравниваем с учётом конечных форм букв и гереша
+    const correct = compareHebrewWords(userInput, currentWord.hebrew);
     setIsCorrect(correct);
     setShowFeedback(true);
 
+    // Задание засчитывается один раз: правильно только с первой попытки
     if (correct) {
-      addCorrect();
-      // Автоматический переход к следующему слову через 4.5 секунды
-      scheduleNext(4500);
+      if (attempts === 0) addCorrect();
+      scheduleNext(1500);
     } else {
-      addIncorrect();
+      if (attempts === 0) addIncorrect();
       setAttempts(prev => prev + 1);
 
       // Если израсходованы все попытки (3), показываем правильный ответ и переходим дальше
@@ -132,6 +130,8 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
       </div>
     );
   }
+
+  const letterCount = countHebrewLetters(currentWord.hebrew);
 
   return (
     <div className="container mt-4">
@@ -186,8 +186,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
           {/* Индикатор длины слова */}
           <div className="mb-3">
             <span className="badge bg-secondary">
-              {currentWord.hebrew.length} {currentWord.hebrew.length === 1 ? 'буква' : 
-               currentWord.hebrew.length < 5 ? 'буквы' : 'букв'}
+              {letterCount} {letterCount === 1 ? 'буква' : letterCount < 5 ? 'буквы' : 'букв'}
             </span>
           </div>
 
@@ -298,7 +297,7 @@ export const Game4WordInput = ({ words, onExit }: Game4WordInputProps) => {
 
       {/* Категория внизу */}
       <div className="text-center mt-3 text-muted small">
-        Категория: {currentWord.category} • Уровень: {'⭐'.repeat(currentWord.difficulty)}
+        Категория: {getCategoryName(currentWord.category)}
       </div>
 
       {/* Модальное окно успеха */}

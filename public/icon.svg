@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="112" fill="#2e7d32"/>
+<circle cx="256" cy="256" r="176" fill="#43a047"/>
+<text x="256" y="262" font-family="Arial, 'Noto Sans Hebrew', sans-serif" font-size="300" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">א</text>
+</svg>

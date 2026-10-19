@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>живот</title>
+<path d="M30 8h68c4 30 10 52 10 74 0 26-20 42-44 42S20 108 20 82c0-22 6-44 10-74z" fill="#f2c39c"/>
+<path d="M30 8h68l2 14H28z" fill="#5b8fc7"/>
+<ellipse cx="64" cy="80" rx="34" ry="30" fill="#eab089"/>
+<path d="M60 84q4 6 8 0" fill="none" stroke="#b7754f" stroke-width="4" stroke-linecap="round"/>
+<path d="M20 116h88v12H20z" fill="#5b6f8a"/>
+</svg>
