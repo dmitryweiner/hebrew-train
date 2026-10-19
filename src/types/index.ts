@@ -8,40 +8,25 @@ export interface Word {
   russian: string;               // перевод на русский
   transliteration: string;       // латинская транслитерация
   category: string;              // категория (food, animals, transport, etc.)
-  audioUrl?: string;             // опционально: ссылка на аудио произношения
-  frequencyRank?: number;        // опционально: частотность слова в иврите
+  nikud?: string;                // слово с огласовками: תַּפּוּחַ
+  mnemonic?: string;             // ассоциация на русском для запоминания
+  tags?: string[];               // тематические наборы: kitchen, stationery, ...
 }
 
-export type GameType = 
-  | 'letter-choice'    // Игра 1: Выбор пропущенной буквы
-  | 'letter-input'     // Игра 2: Ввод пропущенной буквы
-  | 'word-choice'      // Игра 3: Выбор правильного слова
-  | 'word-input'       // Игра 4: Написание слова целиком
-  | 'anagram'          // Игра 5: Составление слова из букв
-  | 'matching'         // Игра 6: Сопоставление пар
-  | 'speed';           // Игра 7: Проверка знаний (да/нет)
+// Виды заданий (одно задание — один экран игры)
+export type GameType =
+  | 'letter-choice'    // Угадай букву: выбор пропущенной буквы (шаг знакомства)
+  | 'word-choice'      // Угадай слово: картинка → 4 слова
+  | 'word-input'       // Напиши слово: ввод слова целиком
+  | 'anagram'          // Собери слово из плиток
+  | 'matching'         // Найди пары: картинки ↔ слова
+  | 'memory'           // Мемори: карточки рубашкой вверх
+  | 'flashcards'       // Карточки с самооценкой
+  | 'speed'            // Верно / Неверно на время
+  | 'listen';          // Послушай и выбери картинку
 
-export interface GameScore {
-  correct: number;     // количество правильных ответов
-  total: number;       // общее количество попыток
-  percentage: number;  // процент правильных ответов
-}
-
-export type GameStats = {
-  [K in GameType]?: GameScore;
-} & {
-  lastSession?: string;
-};
-
-export interface GameState {
-  currentGame: GameType | null;
-  currentWord: Word | null;
-  missingPosition: number;     // позиция пропущенной буквы
-  options: string[];           // варианты ответов
-  userAnswer: string;
-  isCorrect: boolean | null;
-  attempts: number;
-}
+// Вид раунда: отдельная игра или «Тренировка дня»
+export type RoundKind = GameType | 'daily';
 
 export interface MatchingPair {
   id: string;
@@ -51,4 +36,3 @@ export interface MatchingPair {
   matched: boolean;
   selected: boolean;
 }
-

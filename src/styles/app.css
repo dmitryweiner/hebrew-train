@@ -1,0 +1,383 @@
+/* Стили Hebrew Train. Крупные элементы и высокая контрастность для пожилых пользователей. */
+
+:root {
+  --font-scale: 1;
+  --c-primary: #2e7d32;
+  --c-primary-dark: #1b5e20;
+  --c-primary-soft: #e8f5e9;
+  --c-accent: #1565c0;
+  --c-error: #c62828;
+  --c-error-soft: #ffebee;
+  --c-warning: #f9a825;
+  --c-bg: #f4f6f4;
+  --c-card: #ffffff;
+  --c-text: #1f2421;
+  --c-muted: #5f6b63;
+  --c-border: #d7ddd8;
+  --radius: 16px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  font-size: calc(100% * var(--font-scale));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1.125rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root,
+.app-container {
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 16px calc(32px + env(safe-area-inset-bottom));
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn-lg {
+  min-height: 56px;
+  font-size: 1.25rem;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--c-primary);
+  --bs-btn-border-color: var(--c-primary);
+  --bs-btn-hover-bg: var(--c-primary-dark);
+  --bs-btn-hover-border-color: var(--c-primary-dark);
+  --bs-btn-active-bg: var(--c-primary-dark);
+  --bs-btn-disabled-bg: var(--c-primary);
+  --bs-btn-disabled-border-color: var(--c-primary);
+}
+
+.card {
+  border: none;
+  border-radius: var(--radius);
+}
+
+/* Иврит */
+.he {
+  font-family: Arial, 'Noto Sans Hebrew', 'David', sans-serif;
+  font-weight: 700;
+  unicode-bidi: isolate;
+}
+.he-sm { font-size: 1.25rem; }
+.he-md { font-size: 1.6rem; }
+.he-lg { font-size: 2.2rem; }
+.he-xl { font-size: 3rem; }
+
+/* Картинки слов */
+.word-image,
+.word-image-emoji,
+.word-image-picture,
+.word-image-placeholder {
+  text-align: center;
+  user-select: none;
+  line-height: 1.1;
+}
+.word-image-emoji { font-size: 6rem; }
+.word-image-picture { display: flex; justify-content: center; align-items: center; }
+.word-image-svg { width: 6.5rem; height: 6.5rem; object-fit: contain; }
+.word-image-placeholder { font-size: 6rem; opacity: 0.3; }
+.word-image-small.word-image-emoji,
+.word-image-small .word-image-emoji { font-size: 2.4rem; }
+.word-image-small .word-image-svg { width: 2.6rem; height: 2.6rem; }
+.word-image-large.word-image-emoji,
+.word-image-large .word-image-emoji { font-size: 7rem; }
+.word-image-large .word-image-svg { width: 8rem; height: 8rem; }
+
+/* Главный экран */
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+.streak {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #eceff1;
+  color: var(--c-muted);
+  filter: grayscale(1);
+}
+.streak.is-active {
+  background: #fff3e0;
+  color: #e65100;
+  filter: none;
+}
+.today-line {
+  color: var(--c-muted);
+  margin-bottom: 16px;
+}
+
+.daily-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+}
+.daily-button:hover,
+.daily-button:focus { color: #fff; }
+.daily-button.is-done { background: linear-gradient(135deg, #546e7a, #78909c); box-shadow: var(--shadow); }
+.daily-icon { font-size: 2.6rem; }
+.daily-title { display: block; font-size: 1.5rem; font-weight: 700; }
+.daily-subtitle { display: block; opacity: 0.9; font-size: 1rem; }
+
+.vocab-card { margin-bottom: 8px; box-shadow: var(--shadow); }
+.vocab-ring { width: 96px; height: 96px; flex: none; transform: rotate(-90deg); }
+.vocab-ring circle { fill: none; stroke-width: 12; }
+.ring-track { stroke: #e0e0e0; }
+.ring-learning { stroke: #90caf9; }
+.ring-learned { stroke: var(--c-primary); }
+.ring-label { transform: rotate(90deg); transform-origin: 50px 50px; font-size: 20px; font-weight: 700; fill: var(--c-text); }
+.vocab-numbers { display: flex; gap: 16px; flex-wrap: wrap; }
+.vocab-numbers > div { display: flex; flex-direction: column; line-height: 1.1; color: var(--c-muted); font-size: 0.9rem; }
+.vocab-num { font-size: 1.8rem; font-weight: 700; }
+
+.section-title { font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; }
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.game-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--c-card);
+  box-shadow: var(--shadow);
+  color: var(--c-text);
+  text-decoration: none;
+  min-height: 140px;
+}
+.game-tile:active { transform: scale(0.98); }
+.game-tile:hover { color: var(--c-text); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
+.game-tile-icon { font-size: 2.2rem; line-height: 1; }
+.game-tile-title { font-weight: 700; font-size: 1.15rem; }
+.game-tile-desc { color: var(--c-muted); font-size: 0.9rem; line-height: 1.3; }
+.game-tile-stats { margin-top: auto; padding-top: 6px; font-size: 0.85rem; color: var(--c-primary-dark); }
+
+@media (max-width: 360px) {
+  .game-grid { grid-template-columns: 1fr; }
+}
+
+/* Игра */
+.game-shell {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px 8px;
+}
+.btn-exit { min-height: 48px; font-size: 1rem; white-space: nowrap; }
+.game-title { font-weight: 700; text-align: center; font-size: 1.05rem; line-height: 1.2; }
+.game-counter { font-weight: 700; white-space: nowrap; color: var(--c-muted); }
+.round-progress {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px 8px;
+}
+.round-progress-segment {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: #dfe5e0;
+}
+.round-progress-segment.is-current { background: #9ccc65; }
+.round-progress-segment.is-ok { background: var(--c-primary); }
+.round-progress-segment.is-bad { background: #e57373; }
+.game-body {
+  flex: 1;
+  padding: 8px 16px calc(24px + env(safe-area-inset-bottom));
+}
+
+.task {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.task > * { width: 100%; }
+.task-prompt { font-size: 1.2rem; color: var(--c-muted); margin: 4px 0; }
+.task-translation { font-size: 1.3rem; font-weight: 600; }
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.option-btn {
+  min-height: 72px;
+  border-radius: 14px;
+  border: 2px solid var(--c-border);
+  background: var(--c-card);
+  color: var(--c-text);
+  padding: 8px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.option-btn:not(:disabled):active { transform: scale(0.97); }
+.option-btn.is-correct { background: var(--c-primary-soft); border-color: var(--c-primary); }
+.option-btn.is-wrong { background: var(--c-error-soft); border-color: var(--c-error); }
+.option-btn.is-dimmed { opacity: 0.45; }
+.option-btn:disabled { cursor: default; }
+.options-grid-letters .option-btn { min-height: 80px; }
+
+.gapped-word {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin: 8px 0;
+}
+.gapped-word .gap {
+  min-width: 1.2em;
+  border-bottom: 4px solid var(--c-accent);
+  color: var(--c-accent);
+}
+.gapped-word .gap.is-correct { color: var(--c-primary); border-color: var(--c-primary); }
+.gapped-word .gap.is-wrong { color: var(--c-error); border-color: var(--c-error); }
+.gapped-word .gap-space { width: 0.6em; }
+
+.hint {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+.word-input { font-size: 2rem; font-family: Arial, sans-serif; min-height: 64px; }
+
+/* Обратная связь после ответа */
+.answer-feedback {
+  position: relative;
+  z-index: 20;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--c-card);
+  border: 3px solid var(--c-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: feedback-in 0.2s ease-out;
+}
+.answer-feedback.is-wrong { border-color: var(--c-error); }
+.answer-feedback-title { font-size: 1.4rem; font-weight: 700; color: var(--c-primary); }
+.answer-feedback.is-wrong .answer-feedback-title { color: var(--c-error); }
+.answer-feedback-word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+.answer-feedback-translation { font-size: 1.05rem; }
+.tap-catcher { position: fixed; inset: 0; z-index: 10; }
+
+@keyframes feedback-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* Диалог */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.dialog-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--c-card);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+/* Итоги раунда */
+.round-summary { padding-top: 16px; }
+.summary-stars { text-align: center; font-size: 3.5rem; line-height: 1; }
+.summary-stars .star { color: #cfd8dc; }
+.summary-stars .star.is-on { color: #ffb300; }
+.summary-score { text-align: center; font-size: 1.4rem; margin: 8px 0 16px; }
+.summary-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.summary-words { list-style: none; padding: 0; margin: 0; }
+.summary-words li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--c-card);
+}
+.summary-words li.is-wrong { background: var(--c-error-soft); }
+.summary-mark { font-size: 1.4rem; font-weight: 700; width: 1.4rem; text-align: center; }
+.summary-words li.is-correct .summary-mark { color: var(--c-primary); }
+.summary-words li.is-wrong .summary-mark { color: var(--c-error); }
+.summary-word { display: flex; flex-direction: column; align-items: flex-start; flex: 1; line-height: 1.2; }
+.summary-up { color: var(--c-primary-dark); font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+
+/* Баннер обновления приложения */
+.update-banner {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--c-primary-dark);
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.install-steps li { margin-bottom: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
