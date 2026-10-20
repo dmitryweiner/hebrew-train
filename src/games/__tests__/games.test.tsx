@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { act, fireEvent, screen, within } from '@testing-library/react';
 import { WORD_BY_ID } from '../../data/dictionary';
-import { AUTO_NEXT_DELAY } from '../../components/game/AnswerFeedback';
+import { createProgress, DEFAULT_SETTINGS } from '../../core/progress';
 import WordChoiceTask from '../WordChoiceTask';
 import LetterChoiceTask from '../LetterChoiceTask';
 import WordInputTask from '../WordInputTask';
@@ -12,6 +12,8 @@ import FlashcardTask from '../FlashcardTask';
 import SpeedTask, { SPEED_DURATION } from '../SpeedTask';
 import ListenTask from '../ListenTask';
 import { progressWithBox, renderTask } from './helpers';
+
+const AUTO_NEXT_DELAY = DEFAULT_SETTINGS.feedbackDelay * 1000;
 
 const he = (id: string) => WORD_BY_ID[id].hebrew;
 
@@ -39,6 +41,56 @@ describe('Угадай слово', () => {
     expect(onDone).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
     expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+  });
+
+  it('пока звучит слово, карточка ответа не закрывается', () => {
+    vi.useFakeTimers();
+    const utterances: { onend: (() => void) | null }[] = [];
+    vi.stubGlobal('SpeechSynthesisUtterance', class { onend = null; onerror = null; constructor() { utterances.push(this); } });
+    vi.stubGlobal('speechSynthesis', {
+      getVoices: () => [{ lang: 'he-IL' }],
+      cancel: () => undefined,
+      speak: () => undefined,
+      addEventListener: () => undefined,
+      removeEventListener: () => undefined,
+    });
+    try {
+      const { onDone } = renderTask(WordChoiceTask, 'word-choice', ['dog']);
+      fireEvent.click(screen.getByRole('button', { name: he('dog') }));
+      fireEvent.click(screen.getByRole('button', { name: '🔊' }));
+      act(() => vi.advanceTimersByTime(10_000));
+      expect(onDone).not.toHaveBeenCalled();
+      act(() => utterances.at(-1)!.onend!());
+      act(() => vi.advanceTimersByTime(AUTO_NEXT_DELAY));
+      expect(onDone).toHaveBeenCalledTimes(1);
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
+  it('без автоперехода ждёт «Дальше», переход засчитывается один раз', () => {
+    vi.useFakeTimers();
+    const progress = createProgress();
+    progress.settings = { ...progress.settings, autoNext: false };
+    const { onDone } = renderTask(WordChoiceTask, 'word-choice', ['dog'], progress);
+    fireEvent.click(screen.getByRole('button', { name: he('dog') }));
+    act(() => vi.advanceTimersByTime(10_000));
+    expect(onDone).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
+    expect(onDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('задержка автоперехода берётся из настроек', () => {
+    vi.useFakeTimers();
+    const progress = createProgress();
+    progress.settings = { ...progress.settings, feedbackDelay: 3 };
+    const { onDone } = renderTask(WordChoiceTask, 'word-choice', ['dog'], progress);
+    fireEvent.click(screen.getByRole('button', { name: he('dog') }));
+    act(() => vi.advanceTimersByTime(2900));
+    expect(onDone).not.toHaveBeenCalled();
+    act(() => vi.advanceTimersByTime(100));
+    expect(onDone).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -81,18 +133,20 @@ describe('Напиши слово', () => {
     expect(onDone).toHaveBeenCalledWith([{ wordId: 'giraffe', correct: true }]);
   });
 
-  it('со второй попытки слово не засчитывается, после первой ошибки — подсказка', () => {
+  it('со второй попытки слово засчитывается, после первой ошибки — подсказка', () => {
     const { onDone } = renderTask(WordInputTask, 'word-input', ['dog']);
     type('חתול');
     expect(screen.getByText(/Первая буква/)).toBeInTheDocument();
     type(he('dog'));
-    expect(screen.getByText('✓ Верно, но не с первой попытки')).toBeInTheDocument();
+    expect(screen.getByText('✓ Верно, но не с первой попытки').closest('.answer-feedback')).toHaveClass('is-correct');
     fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
-    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: false }]);
+    expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
   });
 
-  it('слово набирается экранной клавиатурой, ⌫ стирает букву', () => {
+  it('экранная клавиатура включается кнопкой, ⌫ стирает букву', () => {
     const { onDone } = renderTask(WordInputTask, 'word-input', ['dog']);
+    expect(screen.queryByRole('group', { name: 'Клавиатура иврита' })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /экранную клавиатуру/ }));
     const keyboard = screen.getByRole('group', { name: 'Клавиатура иврита' });
     const press = (key: string) => fireEvent.click(within(keyboard).getByRole('button', { name: key }));
     press('א');
@@ -105,8 +159,13 @@ describe('Напиши слово', () => {
     expect(onDone).toHaveBeenCalledWith([{ wordId: 'dog', correct: true }]);
   });
 
-  it('можно переключиться на системную клавиатуру', () => {
-    renderTask(WordInputTask, 'word-input', ['dog']);
+  it('на экранной клавиатуре стандартная раскладка с конечными буквами', () => {
+    const progress = createProgress();
+    progress.settings = { ...progress.settings, keyboard: 'screen' };
+    renderTask(WordInputTask, 'word-input', ['dog'], progress);
+    const keyboard = screen.getByRole('group', { name: 'Клавиатура иврита' });
+    const rows = [...keyboard.querySelectorAll('.he-keyboard-row')].map(r => r.textContent);
+    expect(rows.slice(0, 3)).toEqual(['קראטוןםפ', 'שדגכעיחלךף', 'זסבהנמצתץ']);
     fireEvent.click(screen.getByRole('button', { name: /системной клавиатурой/ }));
     expect(screen.queryByRole('group', { name: 'Клавиатура иврита' })).toBeNull();
     expect(screen.getByRole('textbox')).not.toHaveAttribute('readonly');

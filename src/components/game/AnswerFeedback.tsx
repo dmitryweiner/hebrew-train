@@ -1,15 +1,12 @@
 // Короткая карточка после ответа: правильно/неправильно, слово и перевод
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Word } from '../../types';
-import { playAnswerSound } from '../../core/sounds';
 import { useSettings } from '../../state/progressContext';
+import { useAnswerSound } from '../../hooks/useAnswerSound';
 import HebrewText from '../HebrewText';
 import WordImage from '../WordImage';
 import SpeakButton from '../SpeakButton';
-
-/** Сколько показывать правильный ответ перед автопереходом */
-export const AUTO_NEXT_DELAY = 1500;
 
 interface AnswerFeedbackProps {
   word: Word;
@@ -20,24 +17,36 @@ interface AnswerFeedbackProps {
 }
 
 const AnswerFeedback = ({ word, correct, onNext, message }: AnswerFeedbackProps) => {
-  const { sound } = useSettings();
+  const { autoNext, feedbackDelay } = useSettings();
+  const playSound = useAnswerSound();
+  // Пока слово звучит, автопереход ждёт, иначе карточка исчезнет посреди слова
+  const [speaking, setSpeaking] = useState(false);
+  const next = useRef(onNext);
+  next.current = onNext;
+  // Нажатие «Дальше» и таймер не должны засчитать переход дважды
+  const done = useRef(false);
+  const goNext = () => {
+    if (done.current) return;
+    done.current = true;
+    next.current();
+  };
 
   useEffect(() => {
-    if (sound) playAnswerSound(correct);
+    playSound(correct);
     // Звук — только в момент ответа
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    // После правильного ответа идём дальше сами; после ошибки ждём, пока человек рассмотрит ответ
-    if (!correct) return;
-    const timer = window.setTimeout(onNext, AUTO_NEXT_DELAY);
+    // После ошибки ждём «Дальше»: нужно время рассмотреть ответ и подсказку
+    if (!correct || !autoNext || speaking) return;
+    const timer = window.setTimeout(goNext, feedbackDelay * 1000);
     return () => window.clearTimeout(timer);
-  }, [correct, onNext]);
+  }, [correct, autoNext, speaking, feedbackDelay]);
 
   return (
     <>
-      {correct && <div className="tap-catcher" onClick={onNext} aria-hidden />}
+      {correct && <div className="tap-catcher" onClick={goNext} aria-hidden />}
       <div className={`answer-feedback ${correct ? 'is-correct' : 'is-wrong'}`} role="status">
         <div className="answer-feedback-title">
           {message ?? (correct ? '✓ Правильно!' : '✗ Неправильно')}
@@ -50,10 +59,15 @@ const AnswerFeedback = ({ word, correct, onNext, message }: AnswerFeedbackProps)
               {word.russian} · <span className="text-muted">{word.transliteration}</span>
             </div>
           </div>
-          <SpeakButton text={word.hebrew} compact />
+          <SpeakButton
+            text={word.hebrew}
+            compact
+            onSpeak={() => setSpeaking(true)}
+            onEnd={() => setSpeaking(false)}
+          />
         </div>
         {!correct && word.mnemonic && <div className="mnemonic mb-3">💡 {word.mnemonic}</div>}
-        <button className={`btn btn-lg w-100 ${correct ? 'btn-success' : 'btn-primary'}`} onClick={onNext}>
+        <button className={`btn btn-lg w-100 ${correct ? 'btn-success' : 'btn-primary'}`} onClick={goNext}>
           Дальше →
         </button>
       </div>

@@ -5,6 +5,7 @@ import { WORD_BY_ID } from '../data/dictionary';
 import { shuffleArray } from '../utils/wordUtils';
 import WordImage from '../components/WordImage';
 import HebrewText from '../components/HebrewText';
+import { useAnswerSound } from '../hooks/useAnswerSound';
 import type { TaskProps } from './types';
 
 type Side = 'pic' | 'word';
@@ -21,6 +22,7 @@ const MatchingTask = ({ task, onDone }: TaskProps) => {
   const [mistakes, setMistakes] = useState<string[]>([]);
   const [flash, setFlash] = useState<Selection[]>([]);
   const finished = matched.length === task.wordIds.length;
+  const playSound = useAnswerSound();
 
   const tap = (side: Side, id: string) => {
     if (matched.includes(id) || finished) return;
@@ -28,6 +30,7 @@ const MatchingTask = ({ task, onDone }: TaskProps) => {
       setSelected({ side, id });
       return;
     }
+    playSound(selected.id === id);
     if (selected.id === id) {
       setMatched(m => [...m, id]);
     } else {

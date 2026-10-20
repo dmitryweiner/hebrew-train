@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>сахар</title>
+<path d="M14 112h100" stroke="#c9b8a0" stroke-width="4" stroke-linecap="round"/>
+<g stroke="#b8b0a6" stroke-width="2.5" stroke-linejoin="round">
+<path d="M18 74l22-10 22 10v32l-22 8-22-8z" fill="#fff"/>
+<path d="M18 74l22 9 22-9-22-10z" fill="#f4f1ec"/>
+<path d="M40 83v31" fill="none"/>
+<path d="M62 74l22-10 22 10v32l-22 8-22-8z" fill="#fff"/>
+<path d="M62 74l22 9 22-9-22-10z" fill="#f4f1ec"/>
+<path d="M84 83v31" fill="none"/>
+<path d="M40 38l22-10 22 10v32l-22 8-22-8z" fill="#fff"/>
+<path d="M40 38l22 9 22-9-22-10z" fill="#f4f1ec"/>
+<path d="M62 47v31" fill="none"/>
+</g>
+<g fill="#ddd6cc"><circle cx="50" cy="58" r="2"/><circle cx="72" cy="62" r="2"/><circle cx="28" cy="94" r="2"/><circle cx="94" cy="96" r="2"/><circle cx="76" cy="52" r="1.5"/><circle cx="52" cy="98" r="1.5"/></g>
+</svg>

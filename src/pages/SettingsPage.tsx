@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import type { Settings } from '../core/progress';
+import { FEEDBACK_DELAY_MAX, FEEDBACK_DELAY_MIN, type Settings } from '../core/progress';
 import { speak } from '../core/speech';
 import { useProgress } from '../state/progressContext';
 import { useHebrewVoice } from '../hooks/useSpeech';
@@ -15,6 +15,8 @@ const FONT_SCALES: { value: Settings['fontScale']; label: string }[] = [
   { value: 1.15, label: 'A+' },
   { value: 1.3, label: 'A++' },
 ];
+
+const formatSeconds = (value: number) => `${String(value).replace('.', ',')} с`;
 
 interface ToggleProps {
   label: string;
@@ -71,6 +73,35 @@ const SettingsPage = () => {
           <div className="mt-2 text-muted">
             Пример: <span className="he he-md" dir="rtl" lang="he">שלום</span> — привет
           </div>
+        </div>
+      </section>
+
+      <section className="card shadow-sm mb-3">
+        <div className="card-body">
+          <Toggle
+            label="Автопереход"
+            hint="После правильного ответа следующее задание открывается само. После ошибки — по кнопке «Дальше»"
+            checked={settings.autoNext}
+            onChange={autoNext => updateSettings({ autoNext })}
+          />
+          {settings.autoNext && (
+            <div className="setting-row setting-row-stacked">
+              <label htmlFor="feedback-delay">
+                <span className="setting-label">Показывать ответ: {formatSeconds(settings.feedbackDelay)}</span>
+                <span className="setting-hint">Сколько видно ответ перед следующим заданием</span>
+              </label>
+              <input
+                id="feedback-delay"
+                type="range"
+                className="form-range"
+                min={FEEDBACK_DELAY_MIN}
+                max={FEEDBACK_DELAY_MAX}
+                step={0.5}
+                value={settings.feedbackDelay}
+                onChange={e => updateSettings({ feedbackDelay: Number(e.target.value) })}
+              />
+            </div>
+          )}
         </div>
       </section>
 

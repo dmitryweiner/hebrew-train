@@ -13,7 +13,6 @@ import type { TaskProps } from './types';
 
 const MAX_ATTEMPTS = 3;
 
-
 const WordInputTask = ({ task, onDone }: TaskProps) => {
   const word = WORD_BY_ID[task.wordIds[0]];
   const { progress, updateSettings } = useProgress();
@@ -39,8 +38,8 @@ const WordInputTask = ({ task, onDone }: TaskProps) => {
     else if (!screenKeyboard) inputRef.current?.focus();
   };
 
-  // Задание засчитано, только если слово написано с первой попытки
-  const correct = finished === true && attempts === 0;
+  // Написал сам, пусть и с подсказкой, — ответ засчитан
+  const correct = finished === true;
 
   return (
     <div className="task">
@@ -109,7 +108,7 @@ const WordInputTask = ({ task, onDone }: TaskProps) => {
         <AnswerFeedback
           word={word}
           correct={correct}
-          message={finished && !correct ? '✓ Верно, но не с первой попытки' : undefined}
+          message={correct && attempts > 0 ? '✓ Верно, но не с первой попытки' : undefined}
           onNext={() => onDone([{ wordId: word.id, correct }])}
         />
       )}

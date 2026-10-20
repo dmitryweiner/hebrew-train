@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Word } from '../../types';
-import { buildDailyRound, buildGameRound, pickWords, tasksForWords } from '../scheduler';
+import { buildDailyRound, buildGameRound, interleaveByCategory, pickWords, tasksForWords } from '../scheduler';
 import { createProgress, type Box, type Progress } from '../progress';
 import { addDays } from '../dates';
 
@@ -16,6 +16,21 @@ const withBoxes = (boxes: Record<string, [Box, string?]>): Progress => {
   }
   return p;
 };
+
+describe('interleaveByCategory', () => {
+  it('чередует темы, сохраняя порядок внутри темы', () => {
+    const byCategory = (ids: string[]) => ids.map(id => ({ ...words[0], id, category: id[0] }));
+    const result = interleaveByCategory(byCategory(['a1', 'a2', 'a3', 'b1', 'c1', 'c2']));
+    expect(result.map(w => w.id)).toEqual(['a1', 'b1', 'c1', 'a2', 'c2', 'a3']);
+  });
+
+  it('новые слова «Тренировки дня» — из разных тем, даже если в файле подряд одна тема', () => {
+    const sorted = [...words].sort((a, b) => a.category.localeCompare(b.category));
+    const tasks = buildDailyRound(createProgress(), sorted, today, { typing: true, tts: false });
+    const fresh = tasks.filter(t => t.game === 'flashcards').map(t => sorted.find(w => w.id === t.wordIds[0])!.category);
+    expect(new Set(fresh)).toEqual(new Set(['food', 'home']));
+  });
+});
 
 describe('pickWords', () => {
   it('сначала слова к повторению, затем не больше 5 новых', () => {

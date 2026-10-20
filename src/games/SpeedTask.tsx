@@ -7,6 +7,7 @@ import { generateWordDistractors } from '../utils/gameUtils';
 import type { WordResult } from '../core/progress';
 import WordImage from '../components/WordImage';
 import HebrewText from '../components/HebrewText';
+import { useAnswerSound } from '../hooks/useAnswerSound';
 import type { TaskProps } from './types';
 
 export const SPEED_DURATION = 60;
@@ -31,6 +32,7 @@ const SpeedTask = ({ task, onDone }: TaskProps) => {
   const [flash, setFlash] = useState<'ok' | 'bad' | null>(null);
   const results = useRef<WordResult[]>([]);
   const finished = started && timeLeft <= 0;
+  const playSound = useAnswerSound();
 
   useEffect(() => {
     if (!started || finished) return;
@@ -42,6 +44,7 @@ const SpeedTask = ({ task, onDone }: TaskProps) => {
     if (finished || flash) return;
     const correct = saysMatch === (card.shown.id === card.word.id);
     results.current.push({ wordId: card.word.id, correct });
+    playSound(correct);
     setStreak(s => (correct ? s + 1 : 0));
     setFlash(correct ? 'ok' : 'bad');
     // После ошибки чуть дольше показываем правильное слово

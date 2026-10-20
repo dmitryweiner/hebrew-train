@@ -9,6 +9,9 @@ export const CATEGORY_NAMES: Record<string, string> = {
   transport: 'Транспорт',
   clothing: 'Одежда',
   body: 'Тело',
+  people: 'Люди',
+  city: 'Город',
+  colors: 'Цвета',
 };
 
 export const getCategoryName = (category: string): string => CATEGORY_NAMES[category] ?? category;

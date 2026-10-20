@@ -25,13 +25,26 @@ export const waitForHebrewVoice = (timeout = 2000): Promise<boolean> => {
   });
 };
 
-export const speak = (text: string, rate = 0.8): void => {
+let current: SpeechSynthesisUtterance | null = null;
+
+/** onEnd вызывается, когда слово договорено или озвучка прервана; без голоса — сразу */
+export const speak = (text: string, onEnd?: () => void): void => {
   const voice = findHebrewVoice();
-  if (!voice) return;
+  if (!voice) {
+    onEnd?.();
+    return;
+  }
+  // Прерванное новым словом не сообщает о конце: оно уже заменено
+  if (current) current.onend = current.onerror = null;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.voice = voice;
   utterance.lang = voice.lang;
-  utterance.rate = rate;   // чуть медленнее обычного — для начинающих
+  utterance.rate = 0.8;   // чуть медленнее обычного — для начинающих
+  if (onEnd) {
+    utterance.onend = () => onEnd();
+    utterance.onerror = () => onEnd();
+  }
+  current = utterance;
   window.speechSynthesis.speak(utterance);
 };

@@ -55,7 +55,12 @@ export interface Settings {
   tts: boolean;
   typing: boolean;
   keyboard: 'screen' | 'system';   // клавиатура в «Напиши слово»
+  autoNext: boolean;               // переходить к следующему заданию самому
+  feedbackDelay: number;           // сколько секунд показывать ответ перед автопереходом
 }
+
+export const FEEDBACK_DELAY_MIN = 0.5;
+export const FEEDBACK_DELAY_MAX = 3;
 
 export interface Progress {
   version: 2;
@@ -71,7 +76,15 @@ export interface WordResult {
   correct: boolean;
 }
 
-export const DEFAULT_SETTINGS: Settings = { fontScale: 1, sound: true, tts: true, typing: true, keyboard: 'screen' };
+export const DEFAULT_SETTINGS: Settings = {
+  fontScale: 1,
+  sound: true,
+  tts: true,
+  typing: true,
+  keyboard: 'system',
+  autoNext: true,
+  feedbackDelay: 1,
+};
 
 export const createProgress = (): Progress => ({
   version: 2,

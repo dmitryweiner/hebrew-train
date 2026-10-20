@@ -33,6 +33,18 @@ export const GAME_CONFIG: Record<GameType, GameConfig> = {
   listen: { tasks: 10, wordsPerTask: 1, minBox: 1, affectsBoxes: true, retryOnError: true },
 };
 
+/** Новые слова по очереди из разных тем, чтобы первые раунды не состояли из одной еды */
+export const interleaveByCategory = (words: Word[]): Word[] => {
+  const groups = new Map<string, Word[]>();
+  for (const w of words) groups.set(w.category, [...(groups.get(w.category) ?? []), w]);
+  const lists = [...groups.values()];
+  const result: Word[] = [];
+  for (let i = 0; result.length < words.length; i++) {
+    for (const list of lists) if (i < list.length) result.push(list[i]);
+  }
+  return result;
+};
+
 /** Сколько новых слов можно ввести за один раунд */
 export const NEW_WORDS_PER_ROUND = 5;
 
@@ -62,7 +74,7 @@ export const pickWords = (
   const due = inRange
     .filter(w => isDue(progress.words[w.id], today))
     .sort((a, b) => progress.words[a.id].due.localeCompare(progress.words[b.id].due) || boxOf(a) - boxOf(b));
-  const fresh = inRange.filter(w => boxOf(w) === 0).slice(0, newLimit);
+  const fresh = interleaveByCategory(inRange.filter(w => boxOf(w) === 0)).slice(0, newLimit);
   const rest = inRange
     .filter(w => boxOf(w) > 0 && !isDue(progress.words[w.id], today))
     .sort((a, b) => progress.words[a.id].lastSeen.localeCompare(progress.words[b.id].lastSeen));
@@ -166,7 +178,7 @@ export const buildDailyRound = (
   const dueCount = words.filter(w => isDue(progress.words[w.id], today)).length;
   const newCount = dueCount >= 8 ? 2 : dueCount >= 4 ? 3 : NEW_WORDS_PER_ROUND;
 
-  const fresh = words.filter(w => boxOf(w.id) === 0).slice(0, newCount);
+  const fresh = interleaveByCategory(words.filter(w => boxOf(w.id) === 0)).slice(0, newCount);
   const tasks: Task[] = [
     ...fresh.map(w => makeTask('flashcards', [w.id])),
     ...shuffleArray(fresh).map(w => makeTask('letter-choice', [w.id])),

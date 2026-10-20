@@ -8,9 +8,12 @@ interface SpeakButtonProps {
   text: string;
   autoPlay?: boolean;
   compact?: boolean;
+  /** Нажали «Послушать»: onEnd придёт, когда слово договорено */
+  onSpeak?: () => void;
+  onEnd?: () => void;
 }
 
-const SpeakButton = ({ text, autoPlay = false, compact = false }: SpeakButtonProps) => {
+const SpeakButton = ({ text, autoPlay = false, compact = false, onSpeak, onEnd }: SpeakButtonProps) => {
   const available = useSpeechAvailable();
 
   useEffect(() => {
@@ -25,7 +28,8 @@ const SpeakButton = ({ text, autoPlay = false, compact = false }: SpeakButtonPro
       className={`btn btn-outline-primary speak-btn ${compact ? 'btn-sm' : ''}`}
       onClick={e => {
         e.stopPropagation();
-        speak(text);
+        onSpeak?.();
+        speak(text, onEnd);
       }}
     >
       🔊 {compact ? '' : 'Послушать'}

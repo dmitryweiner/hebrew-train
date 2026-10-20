@@ -236,7 +236,7 @@
   },
   {
     "id": "sugar",
-    "emoji": "🍬",
+    "picture": "sugar.svg",
     "hebrew": "סוכר",
     "nikud": "סוּכָּר",
     "russian": "сахар",
@@ -246,6 +246,19 @@
       "sweets"
     ],
     "mnemonic": "СУКАР — сахар, сладкий сухарь"
+  },
+  {
+    "id": "candy",
+    "emoji": "🍬",
+    "hebrew": "סוכרייה",
+    "nikud": "סוּכָּרִייָּה",
+    "russian": "конфета",
+    "transliteration": "sukariya",
+    "category": "food",
+    "tags": [
+      "sweets"
+    ],
+    "mnemonic": "СУКАРИЯ — конфета из сукара, то есть из сахара"
   },
   {
     "id": "salt",
@@ -2790,5 +2803,551 @@
       "household"
     ],
     "mnemonic": "МАНУЛЬ — замок: «ман-уль» — заперт"
+  },
+  {
+    "id": "man",
+    "emoji": "👨",
+    "hebrew": "איש",
+    "nikud": "אִישׁ",
+    "russian": "мужчина",
+    "transliteration": "ish",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "ИШ — мужчина ИЩет ключи"
+  },
+  {
+    "id": "woman",
+    "emoji": "👩",
+    "hebrew": "אישה",
+    "nikud": "אִישָּׁה",
+    "russian": "женщина",
+    "transliteration": "isha",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "ИША — женщина, а мужчина — ИШ"
+  },
+  {
+    "id": "baby",
+    "emoji": "👶",
+    "hebrew": "תינוק",
+    "nikud": "תִּינוֹק",
+    "russian": "малыш",
+    "transliteration": "tinok",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "ТИНОК — малыш тихонько «тин-тин» в кроватке"
+  },
+  {
+    "id": "boy",
+    "emoji": "👦",
+    "hebrew": "ילד",
+    "nikud": "יֶלֶד",
+    "russian": "мальчик",
+    "transliteration": "yeled",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "ЕЛЕД — мальчик ел ледышку"
+  },
+  {
+    "id": "girl",
+    "emoji": "👧",
+    "hebrew": "ילדה",
+    "nikud": "יַלְדָּה",
+    "russian": "девочка",
+    "transliteration": "yalda",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "ЯЛДА — девочка, а мальчик — ЕЛЕД"
+  },
+  {
+    "id": "grandmother",
+    "emoji": "👵",
+    "hebrew": "סבתא",
+    "nikud": "סַבְתָּא",
+    "russian": "бабушка",
+    "transliteration": "savta",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "САВТА — бабушка в субботу печёт пироги"
+  },
+  {
+    "id": "grandfather",
+    "emoji": "👴",
+    "hebrew": "סבא",
+    "nikud": "סַבָּא",
+    "russian": "дедушка",
+    "transliteration": "saba",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "САБА — дедушка и его САБАКА"
+  },
+  {
+    "id": "family",
+    "emoji": "👨‍👩‍👧",
+    "hebrew": "משפחה",
+    "nikud": "מִשְׁפָּחָה",
+    "russian": "семья",
+    "transliteration": "mishpacha",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "МИШПАХА — вся семья за столом, пахнет пирогом"
+  },
+  {
+    "id": "king",
+    "emoji": "🤴",
+    "hebrew": "מלך",
+    "nikud": "מֶלֶךְ",
+    "russian": "король",
+    "transliteration": "melech",
+    "category": "people",
+    "tags": [
+      "family"
+    ],
+    "mnemonic": "МЕЛЕХ — король мелкий, а корона большая"
+  },
+  {
+    "id": "doctor",
+    "emoji": "🧑‍⚕️",
+    "hebrew": "רופא",
+    "nikud": "רוֹפֵא",
+    "russian": "врач",
+    "transliteration": "rofe",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "РОФЭ — врач смотрит: «открой рот!»"
+  },
+  {
+    "id": "teacher",
+    "emoji": "🧑‍🏫",
+    "hebrew": "מורה",
+    "nikud": "מוֹרֶה",
+    "russian": "учитель",
+    "transliteration": "more",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "МОРЭ — учитель рассказывает про море"
+  },
+  {
+    "id": "police",
+    "emoji": "👮",
+    "hebrew": "שוטר",
+    "nikud": "שׁוֹטֵר",
+    "russian": "полицейский",
+    "transliteration": "shoter",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "ШОТЭР — полицейский штрафует"
+  },
+  {
+    "id": "cook",
+    "emoji": "🧑‍🍳",
+    "hebrew": "טבח",
+    "nikud": "טַבָּח",
+    "russian": "повар",
+    "transliteration": "tabach",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "ТАБАХ — повар бах! кастрюлю на плиту"
+  },
+  {
+    "id": "firefighter",
+    "emoji": "🧑‍🚒",
+    "hebrew": "כבאי",
+    "nikud": "כַּבַּאי",
+    "russian": "пожарный",
+    "transliteration": "kabai",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "КАБАЙ — пожарный: «кап-кап» водой на огонь"
+  },
+  {
+    "id": "farmer",
+    "emoji": "🧑‍🌾",
+    "hebrew": "חקלאי",
+    "nikud": "חַקְלַאי",
+    "russian": "фермер",
+    "transliteration": "chaklai",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "ХАКЛАЙ — фермер, рядом лает собака"
+  },
+  {
+    "id": "pupil",
+    "emoji": "🧑‍🎓",
+    "hebrew": "תלמיד",
+    "nikud": "תַּלְמִיד",
+    "russian": "ученик",
+    "transliteration": "talmid",
+    "category": "people",
+    "tags": [
+      "jobs"
+    ],
+    "mnemonic": "ТАЛМИД — ученик учит Талмуд"
+  },
+  {
+    "id": "city",
+    "emoji": "🏙️",
+    "hebrew": "עיר",
+    "nikud": "עִיר",
+    "russian": "город",
+    "transliteration": "ir",
+    "category": "city",
+    "tags": [
+      "street"
+    ],
+    "mnemonic": "ИР — город Иерусалим"
+  },
+  {
+    "id": "road",
+    "emoji": "🛣️",
+    "hebrew": "כביש",
+    "nikud": "כְּבִישׁ",
+    "russian": "шоссе",
+    "transliteration": "kvish",
+    "category": "city",
+    "tags": [
+      "street"
+    ],
+    "mnemonic": "КВИШ — шоссе, машины «вжиш!»"
+  },
+  {
+    "id": "traffic_light",
+    "emoji": "🚦",
+    "hebrew": "רמזור",
+    "nikud": "רַמְזוֹר",
+    "russian": "светофор",
+    "transliteration": "ramzor",
+    "category": "city",
+    "tags": [
+      "street"
+    ],
+    "mnemonic": "РАМЗОР — светофор в рамке, «зор» — смотри!"
+  },
+  {
+    "id": "bridge",
+    "emoji": "🌉",
+    "hebrew": "גשר",
+    "nikud": "גֶּשֶׁר",
+    "russian": "мост",
+    "transliteration": "gesher",
+    "category": "city",
+    "tags": [
+      "street"
+    ],
+    "mnemonic": "ГЕШЕР — по мосту гуськом шуршат"
+  },
+  {
+    "id": "bench",
+    "picture": "bench.svg",
+    "hebrew": "ספסל",
+    "nikud": "סַפְסָל",
+    "russian": "скамейка",
+    "transliteration": "safsal",
+    "category": "city",
+    "tags": [
+      "street"
+    ],
+    "mnemonic": "САФСАЛ — сел на скамейку и сопит"
+  },
+  {
+    "id": "hospital",
+    "emoji": "🏥",
+    "hebrew": "בית חולים",
+    "nikud": "בֵּית חוֹלִים",
+    "russian": "больница",
+    "transliteration": "beit cholim",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "БЕЙТ ХОЛИМ — дом больных: «бейт» — дом"
+  },
+  {
+    "id": "school",
+    "emoji": "🏫",
+    "hebrew": "בית ספר",
+    "nikud": "בֵּית סֵפֶר",
+    "russian": "школа",
+    "transliteration": "beit sefer",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "БЕЙТ СЕФЕР — дом книги: «сефер» — книга"
+  },
+  {
+    "id": "pharmacy",
+    "picture": "pharmacy.svg",
+    "hebrew": "בית מרקחת",
+    "nikud": "בֵּית מִרְקַחַת",
+    "russian": "аптека",
+    "transliteration": "beit mirkachat",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "БЕЙТ МИРКАХАТ — в аптеке микстуры"
+  },
+  {
+    "id": "shop",
+    "emoji": "🏪",
+    "hebrew": "חנות",
+    "nikud": "חֲנוּת",
+    "russian": "магазин",
+    "transliteration": "chanut",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "ХАНУТ — в магазине хватает всего"
+  },
+  {
+    "id": "bank",
+    "emoji": "🏦",
+    "hebrew": "בנק",
+    "nikud": "בַּנְק",
+    "russian": "банк",
+    "transliteration": "bank",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "БАНК — так же, как по-русски"
+  },
+  {
+    "id": "synagogue",
+    "emoji": "🕍",
+    "hebrew": "בית כנסת",
+    "nikud": "בֵּית כְּנֶסֶת",
+    "russian": "синагога",
+    "transliteration": "beit kneset",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "БЕЙТ КНЕСЕТ — дом собрания, как Кнессет"
+  },
+  {
+    "id": "factory",
+    "emoji": "🏭",
+    "hebrew": "מפעל",
+    "nikud": "מִפְעָל",
+    "russian": "завод",
+    "transliteration": "mif'al",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "МИФЪАЛЬ — на заводе пыхтят трубы"
+  },
+  {
+    "id": "castle",
+    "emoji": "🏰",
+    "hebrew": "טירה",
+    "nikud": "טִירָה",
+    "russian": "замок",
+    "transliteration": "tira",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "ТИРА — в замке есть тир для рыцарей"
+  },
+  {
+    "id": "tent",
+    "emoji": "⛺",
+    "hebrew": "אוהל",
+    "nikud": "אוֹהֶל",
+    "russian": "палатка",
+    "transliteration": "ohel",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "ОХЕЛЬ — в палатке «ох» как тесно"
+  },
+  {
+    "id": "elevator",
+    "emoji": "🛗",
+    "hebrew": "מעלית",
+    "nikud": "מַעֲלִית",
+    "russian": "лифт",
+    "transliteration": "ma'alit",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "МААЛИТ — лифт «малый», но едет высоко"
+  },
+  {
+    "id": "ladder",
+    "emoji": "🪜",
+    "hebrew": "סולם",
+    "nikud": "סוּלָּם",
+    "russian": "лестница",
+    "transliteration": "sulam",
+    "category": "city",
+    "tags": [
+      "buildings"
+    ],
+    "mnemonic": "СУЛАМ — лестница Иакова, «сулам» Яакова"
+  },
+  {
+    "id": "red",
+    "emoji": "🔴",
+    "hebrew": "אדום",
+    "nikud": "אָדוֹם",
+    "russian": "красный",
+    "transliteration": "adom",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "АДОМ — красный, как Эдом — красная чечевичная похлёбка"
+  },
+  {
+    "id": "green",
+    "emoji": "🟢",
+    "hebrew": "ירוק",
+    "nikud": "יָרוֹק",
+    "russian": "зелёный",
+    "transliteration": "yarok",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ЯРОК — зелёный яркий луг"
+  },
+  {
+    "id": "blue",
+    "emoji": "🔵",
+    "hebrew": "כחול",
+    "nikud": "כָּחוֹל",
+    "russian": "синий",
+    "transliteration": "kachol",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "КАХОЛЬ — синий, как флаг Израиля: «кахоль-лаван»"
+  },
+  {
+    "id": "yellow",
+    "emoji": "🟡",
+    "hebrew": "צהוב",
+    "nikud": "צָהוֹב",
+    "russian": "жёлтый",
+    "transliteration": "tzahov",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ЦАХОВ — жёлтый цыплёнок"
+  },
+  {
+    "id": "black",
+    "emoji": "⚫",
+    "hebrew": "שחור",
+    "nikud": "שָׁחוֹר",
+    "russian": "чёрный",
+    "transliteration": "shachor",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ШАХОР — чёрный, как шахта"
+  },
+  {
+    "id": "white",
+    "emoji": "⚪",
+    "hebrew": "לבן",
+    "nikud": "לָבָן",
+    "russian": "белый",
+    "transliteration": "lavan",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ЛАВАН — белый, как лебедь"
+  },
+  {
+    "id": "orange_color",
+    "emoji": "🟠",
+    "hebrew": "כתום",
+    "nikud": "כָּתוֹם",
+    "russian": "оранжевый",
+    "transliteration": "katom",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "КАТОМ — оранжевый кот"
+  },
+  {
+    "id": "purple",
+    "emoji": "🟣",
+    "hebrew": "סגול",
+    "nikud": "סָגוֹל",
+    "russian": "фиолетовый",
+    "transliteration": "sagol",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "САГОЛЬ — фиолетовый, как огласовка «сеголь»"
+  },
+  {
+    "id": "brown",
+    "emoji": "🟤",
+    "hebrew": "חום",
+    "nikud": "חוּם",
+    "russian": "коричневый",
+    "transliteration": "chum",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ХУМ — коричневый, как хумус"
+  },
+  {
+    "id": "pink",
+    "picture": "pink.svg",
+    "hebrew": "ורוד",
+    "nikud": "וָרוֹד",
+    "russian": "розовый",
+    "transliteration": "varod",
+    "category": "colors",
+    "tags": [
+      "colors"
+    ],
+    "mnemonic": "ВАРОД — розовый, как «веред» — роза"
   }
 ]

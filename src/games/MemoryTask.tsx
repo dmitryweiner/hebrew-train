@@ -6,6 +6,7 @@ import { shuffleArray } from '../utils/wordUtils';
 import WordImage from '../components/WordImage';
 import HebrewText from '../components/HebrewText';
 import { pluralRu } from '../utils/plural';
+import { useAnswerSound } from '../hooks/useAnswerSound';
 import type { TaskProps } from './types';
 
 interface Card {
@@ -27,10 +28,12 @@ const MemoryTask = ({ task, onDone }: TaskProps) => {
   const [matched, setMatched] = useState<string[]>([]);
   const [moves, setMoves] = useState(0);
   const finished = matched.length === task.wordIds.length;
+  const playSound = useAnswerSound();
 
   useEffect(() => {
     if (open.length !== 2) return;
     const [a, b] = open.map(key => cards.find(c => c.key === key)!);
+    playSound(a.wordId === b.wordId);
     if (a.wordId === b.wordId) {
       setMatched(m => [...m, a.wordId]);
       setOpen([]);
@@ -38,7 +41,7 @@ const MemoryTask = ({ task, onDone }: TaskProps) => {
     }
     const timer = window.setTimeout(() => setOpen([]), FLIP_BACK_DELAY);
     return () => window.clearTimeout(timer);
-  }, [open, cards]);
+  }, [open, cards, playSound]);
 
   const flip = (card: Card) => {
     if (open.length >= 2 || open.includes(card.key) || matched.includes(card.wordId)) return;

@@ -546,25 +546,29 @@ body {
 
 /* Экранная клавиатура */
 .he-keyboard {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  --key-gap: 4px;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
   margin-top: 10px;
 }
+/* Все клавиши одной ширины — десятая часть самого длинного ряда; короткие ряды по центру */
+.he-keyboard-row { display: flex; justify-content: center; gap: var(--key-gap); }
 .he-key {
+  flex: 0 0 calc((100% - 9 * var(--key-gap)) / 10);
   min-height: 52px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--c-card);
   box-shadow: 0 2px 0 #b8c2bc;
   font-family: Arial, sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--c-text);
   padding: 0;
 }
 .he-key:active { transform: translateY(2px); box-shadow: none; background: #e3f2fd; }
-.he-key-wide { grid-column: span 2; font-size: 1rem; font-family: inherit; }
+.he-key-wide { flex-basis: calc((100% - 9 * var(--key-gap)) / 10 * 3 + 2 * var(--key-gap)); font-size: 1rem; font-family: inherit; }
 .he-key-back { background: #fbe9e7; }
 
 /* Второстепенные страницы и настройки */
@@ -591,6 +595,10 @@ body {
   cursor: pointer;
 }
 .setting-row:last-of-type { border-bottom: none; }
+.setting-row-stacked { flex-direction: column; align-items: stretch; gap: 8px; }
+.setting-row-stacked .form-range { height: 2rem; }
+.form-range::-webkit-slider-thumb { width: 1.6rem; height: 1.6rem; margin-top: -0.55rem; background: var(--c-primary); }
+.form-range::-moz-range-thumb { width: 1.6rem; height: 1.6rem; background: var(--c-primary); }
 .setting-label { display: block; font-weight: 700; }
 .setting-hint { display: block; color: var(--c-muted); font-size: 0.9rem; }
 .setting-switch { width: 3.2em !important; height: 1.7em; cursor: pointer; }

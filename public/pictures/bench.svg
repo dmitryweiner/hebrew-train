@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>скамейка</title>
+<path d="M24 74v36M104 74v36" stroke="#4a4f55" stroke-width="7" stroke-linecap="round"/>
+<path d="M30 40v34M98 40v34" stroke="#4a4f55" stroke-width="5"/>
+<rect x="18" y="34" width="92" height="12" rx="4" fill="#b5713a"/>
+<rect x="18" y="50" width="92" height="12" rx="4" fill="#c98446"/>
+<rect x="12" y="70" width="104" height="12" rx="4" fill="#a8652f"/>
+<rect x="12" y="82" width="104" height="5" rx="2" fill="#8a5226"/>
+<path d="M14 112h100" stroke="#7cb342" stroke-width="5" stroke-linecap="round"/>
+</svg>
