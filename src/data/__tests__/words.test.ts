@@ -4,9 +4,11 @@ import { describe, it, expect } from 'vitest';
 import type { Word } from '../../types';
 import wordsData from '../words.json';
 import { CATEGORY_NAMES } from '../categories';
+import { emojiFileName } from '../../utils/emojiSupport';
 
 const words = wordsData as Word[];
 const pictureFiles = Object.keys(import.meta.glob('../../../public/pictures/*')).map(p => p.split('/').pop());
+const emojiFiles = Object.keys(import.meta.glob('../../../public/emoji/*')).map(p => p.split('/').pop());
 
 describe('words.json', () => {
   it('у всех слов уникальный id', () => {
@@ -34,6 +36,13 @@ describe('words.json', () => {
   it('файлы картинок существуют', () => {
     for (const w of words.filter(w => w.picture)) {
       expect(pictureFiles, w.id).toContain(w.picture);
+    }
+  });
+
+  // Нужна для устройств, в шрифте которых нет эмодзи (старые Android): node scripts/fetch-emoji.mjs
+  it('у каждого эмодзи есть запасная SVG-картинка', () => {
+    for (const w of words.filter(w => w.emoji)) {
+      expect(emojiFiles, `${w.id} ${w.emoji}`).toContain(emojiFileName(w.emoji!));
     }
   });
 

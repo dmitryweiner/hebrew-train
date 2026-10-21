@@ -108,3 +108,5 @@ src/
 ## 📄 Лицензия
 
 См. [LICENSE](LICENSE).
+
+Запасные картинки эмодзи в `public/emoji/` взяты из [Twemoji](https://github.com/jdecked/twemoji) (© Twitter, Inc и другие участники), лицензия [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).

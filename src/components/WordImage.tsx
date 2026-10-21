@@ -1,6 +1,7 @@
 // Компонент отображения эмодзи или картинки для слова
 
-import React from 'react';
+import React, { useState } from 'react';
+import { emojiFileName, isEmojiSupported } from '../utils/emojiSupport';
 
 interface WordImageProps {
   emoji?: string;
@@ -17,21 +18,32 @@ const WordImage: React.FC<WordImageProps> = ({
   size = 'medium', 
   className = '' 
 }) => {
+  // Если встроенная картинка вдруг не загрузилась — остаётся эмодзи текстом
+  const [fallbackFailed, setFallbackFailed] = useState(false);
+
   const sizeClass = {
     small: 'word-image-small',
     medium: 'word-image',
     large: 'word-image-large',
   }[size];
 
-  // Если есть эмодзи, отображаем его
+  // Если есть эмодзи, отображаем его; если шрифт устройства его не знает — SVG-копию
   if (emoji) {
+    const useFallback = !fallbackFailed && !isEmojiSupported(emoji);
     return (
       <div 
         className={`word-image-emoji ${sizeClass} ${className}`} 
         role="img" 
         aria-label={alt}
       >
-        {emoji}
+        {useFallback ? (
+          <img
+            src={`./emoji/${emojiFileName(emoji)}`}
+            alt=""
+            className="word-image-emoji-img"
+            onError={() => setFallbackFailed(true)}
+          />
+        ) : emoji}
       </div>
     );
   }

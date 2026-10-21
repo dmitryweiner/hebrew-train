@@ -96,6 +96,8 @@ body {
 .word-image-picture { display: flex; justify-content: center; align-items: center; }
 .word-image-svg { width: 6.5rem; height: 6.5rem; object-fit: contain; }
 .word-image-placeholder { font-size: 6rem; opacity: 0.3; }
+/* SVG вместо эмодзи, которого нет в шрифте: размер как у текста эмодзи */
+.word-image-emoji-img { width: 1em; height: 1em; vertical-align: -0.1em; }
 .word-image-small.word-image-emoji,
 .word-image-small .word-image-emoji { font-size: 2.4rem; }
 .word-image-small .word-image-svg { width: 2.6rem; height: 2.6rem; }

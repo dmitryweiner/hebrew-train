@@ -252,29 +252,72 @@ describe('Найди пары', () => {
 });
 
 describe('Мемори', () => {
-  it('открытая пара остаётся открытой, после всех пар — завершение', () => {
+  const ids = ['dog', 'cat', 'fish'];
+  const FLIP_BACK_DELAY = 1100;
+
+  const setup = () => {
     vi.useFakeTimers();
-    const ids = ['dog', 'cat', 'fish'];
-    const { container, onDone } = renderTask(MemoryTask, 'memory', ids);
-    const cards = () => [...container.querySelectorAll('.memory-card')];
-    expect(cards()).toHaveLength(6);
-    // Открываем все по одной, чтобы узнать раскладку
+    const utils = renderTask(MemoryTask, 'memory', ids);
+    const cards = () => [...utils.container.querySelectorAll('.memory-card')];
+    return { ...utils, cards };
+  };
+
+  // Раскладка случайная, поэтому сначала подсматриваем её: открываем непересекающиеся
+  // пары карточек (0-1, 2-3, 4-5). Так никогда не остаётся «висящей» одной открытой
+  // карточки, и следующие клики не теряются — при любом перемешивании.
+  const revealLayout = (cards: () => Element[]) => {
     const layout: string[] = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < cards().length; i += 2) {
       fireEvent.click(cards()[i]);
-      layout.push(cards()[i].getAttribute('aria-label')!);
-      fireEvent.click(cards()[(i + 1) % 6]);
-      act(() => vi.advanceTimersByTime(2000));
+      fireEvent.click(cards()[i + 1]);
+      layout.push(cards()[i].getAttribute('aria-label')!, cards()[i + 1].getAttribute('aria-label')!);
+      act(() => vi.advanceTimersByTime(FLIP_BACK_DELAY));
     }
+    expect(layout).not.toContain('закрытая карточка');
+    return layout;
+  };
+
+  const pairOf = (layout: string[], id: string) =>
+    [layout.indexOf(WORD_BY_ID[id].russian), layout.indexOf(he(id))];
+
+  it('неверная пара закрывается через паузу, верная остаётся открытой', () => {
+    // Фиксированная раскладка, в которой соседние карточки не образуют пар:
+    // после подсматривания все три пары ещё не найдены
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const { cards } = setup();
+    vi.mocked(Math.random).mockRestore();
+    const layout = revealLayout(cards);
+    expect(cards().filter(c => c.classList.contains('is-matched'))).toHaveLength(0);
+
+    const [dogPic, dogWord] = pairOf(layout, 'dog');
+    const [catPic] = pairOf(layout, 'cat');
+    fireEvent.click(cards()[dogPic]);
+    fireEvent.click(cards()[catPic]);
+    expect(cards()[dogPic]).toHaveClass('is-open');
+    expect(cards()[catPic]).toHaveClass('is-open');
+    act(() => vi.advanceTimersByTime(FLIP_BACK_DELAY));
+    expect(cards()[dogPic]).not.toHaveClass('is-open');
+    expect(cards()[catPic]).not.toHaveClass('is-open');
+
+    fireEvent.click(cards()[dogPic]);
+    fireEvent.click(cards()[dogWord]);
+    act(() => vi.advanceTimersByTime(FLIP_BACK_DELAY));
+    expect(cards()[dogPic]).toHaveClass('is-matched');
+    expect(cards()[dogWord]).toHaveClass('is-matched');
+    expect(screen.getByText('Ходов: 5')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Дальше →' })).toBeNull();
+  });
+
+  // Раскладка случайная: тест обязан проходить при любом перемешивании
+  it('после всех пар — завершение, все слова засчитаны', () => {
+    const { cards, onDone } = setup();
+    const layout = revealLayout(cards);
     for (const id of ids) {
-      const a = layout.indexOf(WORD_BY_ID[id].russian);
-      const b = layout.indexOf(he(id));
-      if (!cards()[a].classList.contains('is-matched')) {
-        fireEvent.click(cards()[a]);
-        fireEvent.click(cards()[b]);
-        act(() => vi.advanceTimersByTime(100));
-      }
+      const [a, b] = pairOf(layout, id);
+      fireEvent.click(cards()[a]);
+      fireEvent.click(cards()[b]);
     }
+    expect(cards().filter(c => c.classList.contains('is-matched'))).toHaveLength(6);
     fireEvent.click(screen.getByRole('button', { name: 'Дальше →' }));
     expect(onDone).toHaveBeenCalledWith(ids.map(id => ({ wordId: id, correct: true })));
   });
