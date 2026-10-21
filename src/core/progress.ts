@@ -59,8 +59,8 @@ export interface Settings {
   feedbackDelay: number;           // сколько секунд показывать ответ перед автопереходом
 }
 
-export const FEEDBACK_DELAY_MIN = 0.5;
-export const FEEDBACK_DELAY_MAX = 3;
+export const FEEDBACK_DELAY_MIN = 1;
+export const FEEDBACK_DELAY_MAX = 4;
 
 export interface Progress {
   version: 2;

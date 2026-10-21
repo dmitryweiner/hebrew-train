@@ -1,7 +1,15 @@
 // Чтение и запись прогресса в localStorage с версией схемы и миграцией
 
 import type { RoundKind } from '../types';
-import { createProgress, emptyGameProgress, DEFAULT_SETTINGS, type Progress } from './progress';
+import {
+  createProgress,
+  emptyGameProgress,
+  DEFAULT_SETTINGS,
+  FEEDBACK_DELAY_MAX,
+  FEEDBACK_DELAY_MIN,
+  type Progress,
+  type Settings,
+} from './progress';
 
 export const STORAGE_KEY = 'hebrew-train/v2';
 export const LEGACY_STORAGE_KEY = 'hebrew-train-stats';
@@ -33,6 +41,13 @@ export const migrateLegacy = (legacy: Record<string, unknown>): Progress => {
   return progress;
 };
 
+const normalizeSettings = (raw: Partial<Settings> | undefined): Settings => {
+  const settings = { ...DEFAULT_SETTINGS, ...raw };
+  // диапазон задержки менялся — подтягиваем старые значения в допустимые границы
+  settings.feedbackDelay = Math.min(FEEDBACK_DELAY_MAX, Math.max(FEEDBACK_DELAY_MIN, Number(settings.feedbackDelay) || DEFAULT_SETTINGS.feedbackDelay));
+  return settings;
+};
+
 /** Дополняет загруженные данные полями по умолчанию, чтобы старые копии не ломали приложение */
 const normalize = (raw: Partial<Progress>): Progress => {
   const base = createProgress();
@@ -44,7 +59,7 @@ const normalize = (raw: Partial<Progress>): Progress => {
     games: raw.games ?? {},
     days: raw.days ?? {},
     streak: { ...base.streak, ...raw.streak },
-    settings: { ...DEFAULT_SETTINGS, ...raw.settings },
+    settings: normalizeSettings(raw.settings),
   };
 };
 
